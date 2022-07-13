@@ -1,0 +1,165 @@
+/* Padrões da página */
+* {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI';
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    max-width: 80%;
+    transform: scale(0.8);
+}
+
+/* Seção inicial */
+#header {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#header img {
+    width:6.5em;
+}
+
+/* Seção principal: 1ª etapa => Email  */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22em;
+    height: 1em;
+    margin: 6em 6em 3em;
+    padding: 1em;
+    /* background: #E2E2E2; */
+    border-radius: .6em;
+    /* transform: translate(16em, -2em); */
+    /* z-index: 1; */
+    /* box-shadow: .3em .3em #b6b6b7; */
+}
+
+.logo img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+}
+
+.formLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 10em;
+    padding: .5em 1em;
+    background: #E2E2E2;
+    border-radius: .6em;
+    box-shadow: .3em .3em #b6b6b7;
+}
+
+#emailForm {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+#emailForm label,
+input,
+button {
+    margin: .3em;
+    padding: .3em;
+}
+
+#emailForm label {
+    display: block;
+    width: 100%;
+    font-size: 1.5em;
+    padding: 0em;
+}
+
+#emailForm input {
+    width: 100%;
+    background: #E2E2E2;
+    border: none;
+    border-bottom: .1em solid #06283D;
+}
+
+#emailForm input:focus {
+    background: #E9E9E9;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    border-bottom: .15em solid #000;
+}
+
+#buttonNextForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #FFFFFF;
+    border: none;
+    border-radius: .6em;
+    cursor: pointer;
+    transition: ease .5s;
+}
+
+#buttonNextForm:hover {
+    transform: translateY(-0.1em) scale(1.01);
+}
+
+#buttonNextForm .hidding {
+    color: aqua;
+    transform: translateY(-0.1em) scale(1.01);
+    animation: hidding 1.5s ease linear;
+}
+
+/* Seção principal: 2ª etapa => Senha  */
+#passwordForm {
+    display: none;
+}
+
+#passwordForm #password {
+
+}
+
+#passwordForm img {
+    
+}
+
+/* Seção final  */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.65em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@keyframes hidding {
+    50% {
+        transform: translateX(-0.7em);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(-1.5em);
+        opacity: 0;
+        display: none;
+    }
+}
