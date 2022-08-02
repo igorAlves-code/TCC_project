@@ -1,0 +1,285 @@
+/* Padrões da página */
+* {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI';
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+/* Seção inicial */
+#header {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#header img {
+    width: 6.5em;
+}
+
+/* Seção principal */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    max-width: 100%;
+    transform: scale(0.8);
+}
+
+/* 1ª etapa => Email  */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25em;
+    height: 1em;
+    margin: 6em 6em 3em;
+    padding: 1em;
+    /* background: #E2E2E2; */
+    border-radius: .6em;
+    /* transform: translate(16em, -2em); */
+    /* z-index: 1; */
+    /* box-shadow: .3em .3em #b6b6b7; */
+}
+
+.logo img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+}
+
+.formLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    padding: .5em 1em;
+    background: #E2E2E2;
+    border-radius: .6em;
+    box-shadow: .3em .3em #b6b6b7;
+}
+
+#emailForm {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+#emailForm label,
+input,
+button {
+    margin: .3em;
+    padding: .3em;
+}
+
+#emailForm label {
+    display: block;
+    width: 100%;
+    font-size: 1.5em;
+    padding: 0em;
+}
+
+#emailForm input {
+    display: inline-block;
+    width: 60%;
+    background: #E2E2E2;
+    border: none;
+    border-bottom: .1em solid #06283D;
+    margin-left: 0em;
+}
+
+#emailForm input:focus {
+    background: #E9E9E9;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    border-bottom: .15em solid #000;
+}
+
+#emailForm span {
+    display: inline-block;
+    width: 35%;
+    background: #ccc;
+    border-radius: 5%;
+    margin: auto 0em;
+    padding: 0;
+}
+
+#emailForm span p {
+    text-align: start;
+    color: #555;
+    padding: 0.5em;
+}
+
+#emailForm.hidding {
+    color: aqua;
+    /* transform: translateY(-0.1em) scale(1.01); */
+    /* animation: hidding 1s ease linear; */
+}
+
+#buttonNextForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #FFFFFF;
+    border: none;
+    border-radius: .6em;
+    cursor: pointer;
+    transition: ease .5s;
+}
+
+#buttonNextForm:hover {
+    transform: translateY(-0.1em) scale(1.01);
+}
+
+/* 2ª etapa => Senha  */
+#passwordForm {
+    display: none;
+}
+
+#passwordForm #password {
+
+}
+
+#passwordForm img {
+
+}
+
+/* Seção final  */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.65em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@keyframes hidding {
+    50% {
+        transform: translateX(-0.7em);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(-1.5em);
+        opacity: 0;
+        display: none;
+    }
+}
+
+/* Mobile S */
+@media (max-width: 374px) {
+    * {
+        font-size: 10px;
+    }
+
+    main {
+        transform: scale(1);
+        margin-top: 10em;
+    }
+
+    .logo img {
+        width: 100%;
+    }
+
+    #emailForm span p {
+        font-size: 0.8em;
+    }
+}
+
+/* Mobile M */
+@media (min-width: 375px) and (max-width: 424px) {
+    * {
+        font-size: 14px;
+    }
+
+    .logo img {
+        width: 100%;
+        transform: scale(1.4);
+    }
+
+    #emailForm span p {
+        font-size: 0.7em;
+    }
+}
+
+/* Mobile L */
+@media (min-width: 425px) and (max-width: 575px) {
+    * {
+        font-size: 14px;
+    }
+
+    .logo img {
+        width: 100%;
+        transform: scale(1.2);
+    }
+
+    #emailForm span p {
+        font-size: 0.8em;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+    main {
+        transform: scale(0.7);
+        margin-top: -3em;
+    }
+
+    .logo img {
+        width: 100%;
+        transform: scale(1.2);
+    }
+
+    #emailForm span p {
+        font-size: 0.8em;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px)  {
+    main {
+        transform: scale(0.7);
+        margin-top: -3em;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    main {
+        transform: scale(0.7);
+    }
+
+    .formLogin {
+        width: 60%;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    main {
+        transform: scale(0.8);
+    }
+} 
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    main {
+        transform: scale(0.9);
+    }
+}

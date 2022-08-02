@@ -1,5 +1,5 @@
-# ASR - Agendamento de salas e recursos
-## Trabalho de conclusão de curso (TCC) apresentado à ETEC Doutor Celso Giglio
+# ASR - Agendamento de Salas e Recursos
+## Trabalho de conclusão de curso (TCC) apresentado à ETEC Doutor Celso Giglio em 2022
 
 * Justificativa:
 
@@ -10,4 +10,5 @@ Devido a dificuldade para estabelecer um diálogo eficiente entre os dois pólos
 Esse projeto se justifica através da criação de um sistema que ajude de forma eficiente e concreta no processo de organização do ambiente escolar em contribuição para o seu público alvo à vantagem de manter o espaço organizado e com um fluxo de trabalho e estudos em andamento.
 
 * Metodologia:
+
 * Protótipo:
