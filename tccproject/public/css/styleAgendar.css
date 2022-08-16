@@ -1,0 +1,27 @@
+.agendarMain{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 5vh;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/**--------------------------------------------MOBILE-----------------------------------------------**/
+
+
+@media only screen and (max-width: 768px) {
+
+    .agendarMain{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        margin-top: 10vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    
+}

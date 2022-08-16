@@ -17,8 +17,21 @@ Route::get('/', function () {
     return view('index');
 });
 
-/*
-Route::get('/home', function () {
-    return view('home');
+
+Route::get('agendar', function () {
+    return view('agendar');
 });
-*/
+
+
+Route::get('agendamentos', function () {
+    return view('agendamentos');
+});
+
+
+Route::get('ocorrencia', function () {
+    return view('ocorrencia');
+});
+
+// Route::get('/home', function () {
+//     return view('home');
+// });

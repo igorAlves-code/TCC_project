@@ -1,0 +1,230 @@
+main{
+    display:flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info{
+    display:flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 30vw;
+    margin-top: 12vh;
+
+}
+
+.form{
+    display:flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.form textarea{
+    background: transparent;
+    padding: 3px;
+    border: 1px solid rgba(22, 22, 22, 0.418);
+    margin-top: 5px;
+    width: 500px;
+    height: 230px;
+     margin: 0;
+     padding: 5px;
+     resize: none;
+     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  
+}
+
+.form textarea:first-child{
+    width: 500px;
+    height: 30px;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+.formInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+
+}
+
+
+.formInfo input{
+    border: none;
+    background-color: rgb(167, 167, 167);
+    border-radius: 3px;
+}
+
+.formInfo span{
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.data{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+
+}
+
+
+.data input{
+    border: none;
+    padding: 1px;
+    font-size: 12px;
+    background-color: rgb(167, 167, 167);
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.data span{
+    text-transform: uppercase;
+    font-size: 13px;
+
+}
+
+.form button{
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    height: 30px;
+    width: 350px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(230, 230, 230);
+    background-color: rgb(0, 0, 0);
+    transition: ease .2s;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.form button:hover{
+    background-color: rgba(0, 0, 0, 0.856);
+}
+
+
+
+
+
+/**--------------------------------------------MOBILE-----------------------------------------------**/
+
+@media only screen and (max-width: 768px) {
+
+    
+    .info{
+        display:flex; 
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 95vw;
+        margin-top: 8vh;
+    }
+
+    .form{
+        display:flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .form textarea{
+        background: transparent;
+        padding: 3px;
+        border: 1px solid rgba(22, 22, 22, 0.418);
+        border-radius: 5px;
+        margin-top: 5px;
+        width: 95vw;
+        height: 35vh;
+        margin: 0;
+        padding: 5px;
+        resize: none;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    
+    }
+
+    .form textarea:first-child{
+        width: 95vw;
+        height: 5vh;
+        margin-bottom: 5px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+
+    .form button{
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        height: 5vh;
+        width: 90vw;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: rgb(230, 230, 230);
+        background-color: rgb(0, 0, 0);
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+
+    .form button:hover{
+        background-color: rgba(0, 0, 0, 0.856);
+    }
+
+
+    .formInfo{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        margin-top: 0;
+    }
+
+
+    .formInfo input{
+        width: 25vw;
+        border: none;
+        background-color: rgb(184, 184, 184);
+    }
+
+    .formInfo span{
+
+        text-transform: uppercase;
+        font-size: 11px;
+    }
+
+
+    .data{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        margin-top: 0;
+        margin-bottom: 0;
+
+    }
+
+    .data input{
+        border: none;
+        padding: 1px;
+        font-size: 11px;
+        background-color: rgb(184, 184, 184);
+        cursor: pointer;
+        border-radius: 3px;
+    }
+
+    .data span{
+        font-size: 11px;
+        text-transform: uppercase;
+
+
+    }
+
+}

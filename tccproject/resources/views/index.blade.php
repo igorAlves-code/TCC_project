@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.login')
 
 @section('title', 'A.S.R - Agendamento de Salas e Recursos')
 
@@ -22,12 +22,13 @@
         {{-- 1ª etapa => Email --}}
         <div id="emailForm">
             <label for="email">Entrar</label>
-            <input type="text" placeholder="Email (até o @)" id="email" name="email" required>
+            <input type="text" placeholder="Email (até o @)" id="email" name="email">
             <span>
                 <p>@etec.sp.gov.br</p>
             </span>
 
-            <button id="buttonNextForm">Próximo</button>
+            <div id="buttonNextForm">Próximo</div>
+            <!-- <button id="buttonNextForm">Próximo</button> -->
             <!-- <button onclick="nextForm()" id="buttonNextForm">Próximo</button> -->
         </div>
 
@@ -35,12 +36,12 @@
         <div id="passwordForm">
             <label for="password">Insira a senha</label>
             <input type="password" placeholder="Senha" id="password">
-            <img id="eyePassword" src="">
+            <img id="eyePassword" src="/tccproject/public/img/eyePassword.svg">
             <a href="#">Esqueceu a senha?</a>
-            <input type="submit" value="Entrar" id="submitForm">
+            <!-- <input type="submit" value="Entrar" id="submitForm"> -->
+            <button id="submitForm">Entrar</button>
         </div>
     </form>
 </main>
-
 
 @endsection

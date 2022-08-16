@@ -1,0 +1,44 @@
+.empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vh;
+}
+
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform:uppercase;
+    border-radius: 3px;
+    background-color: rgba(158, 158, 158, 0.295);
+}
+
+/**--------------------------------------------MOBILE-----------------------------------------------**/
+
+
+@media only screen and (max-width: 768px) {
+
+    .empty {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3vh;
+    }
+    
+    .text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50vw;
+        font-size: 11px;
+        text-transform:uppercase;
+        border-radius: 3px;
+        background-color: rgba(158, 158, 158, 0.295);
+    }
+
+}

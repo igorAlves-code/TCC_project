@@ -1,0 +1,291 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI';
+   
+}
+
+body{
+    background-color: rgba(192, 192, 192, 0.637);
+}
+
+/**Header**/
+
+#menuBar{
+    display: none;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+
+.header{
+ display: flex;
+ background-color: transparent;
+ border-radius: 2px;
+ height: 28px;
+ width: 80vw;
+ padding: 5px;
+ justify-content: space-between; 
+ align-items: center;
+ border-bottom: 1px solid black;
+ box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.header a{ 
+    margin-top: 0;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding-right: 120px;
+    padding-left: 120px;
+    
+}
+
+.exitButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 3px;
+    margin-right: -.7vw;
+
+}
+
+
+.exitButton button{
+
+    width: 50px;
+    height: 28px;
+    font-size: 12px;
+    justify-content: center;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    background-color: #D40000;
+    border-bottom: 1px solid black;
+
+}
+
+.exitButton button:hover{
+    background-color: #be0101;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+
+}
+
+.navigation:first-child{
+    margin-left:-1vw;
+}
+
+a.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    font-weight: 500;
+    border-radius: 3px;
+    color:white; 
+    background-color: black;
+}
+
+
+/* Fotter */
+
+footer{ 
+    padding: 4px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI';
+    font-size: 11px;
+    font-weight: 600;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+
+
+/**Titulo agendamentos, ocorrência e Agendar**/ 
+
+.title{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4vh;
+}
+
+.title h1{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: -1vh;
+}
+
+.separatorTitle{
+    width: 25vw;
+    border-bottom: 1px solid rgba(22, 22, 22, 0.904);
+}
+
+
+
+/**--------------------------------------------MOBILE-----------------------------------------------**/
+
+
+@media only screen and (max-width: 768px) {
+
+    /* ----------------------------------HEADER--------------------- */
+    header {
+      display: none;
+    }
+
+    .menuBg, #menuBar{
+        top:0;
+        left: 0;
+        position: absolute;
+    }
+
+    #menuBar{
+        z-index:2;
+        display: inline-block;
+
+    }
+
+
+    #menu{
+        width: 35px;
+        height: 30px;
+        margin: 30px 0 20px 20px;
+        cursor: pointer;
+    }
+    .bar{
+        height: 5px;
+        width: 100%;
+        background-color: #000000;
+        display: block;
+        border-radius: 1px;
+        transition: 0.3s ease;
+    }
+    #bar1{
+        transform: translateY(-4px);
+    }
+    #bar3{
+        transform: translateY(4px);
+    }
+    .navigationMobile li a
+    {
+        font-size: 15 px;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    
+    }
+    .navigationMobile li:nth-child(4) a{
+        color: red;
+    }
+    .navigationMobile li a:hover
+    {
+        color: #bebebe;
+    }
+    
+    .navigationMobile li:nth-child(4) a:hover
+    {
+        color: #af0000;
+    }
+    .navigationMobile li
+    {
+        list-style: none;
+        padding: 15px 0;
+        margin-top: 10px;
+    }
+    .navigationMobile
+    {
+        padding: 0;
+        margin: 0 20px;
+        transition: 0.3s ease;
+        display: none;
+    }
+  
+    .menuBg{
+        z-index: 1;
+        width: 0;
+        height: 0;
+        background: rgb(0, 0, 0);
+        margin: 30px 0 20px 20px;
+        border-radius: 50%;
+        transition: 0.2s ease;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+
+    .changeBg
+    {
+        width: 500px;
+        height:450px;
+        transform: translate(-54%, -33%);
+    }
+    .change .bar{
+        background-color: white;
+    }
+    .change #bar1{
+        transform: translateY(4px) rotateZ(-45deg);
+    }
+    .change #bar3{
+        transform: translateY(-6px) rotate(45deg);
+    }
+    .change #bar2{
+        opacity: 0;
+    }
+    .change{
+        display: block;
+    } 
+
+    a.active {
+       
+        display: initial;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-weight: 500;
+        border-radius: 0;
+        background-color: transparent;
+        border-bottom: 1px solid #ffff;
+    }
+    
+    /* ------------------------------------------------------ */
+
+
+    /**Titulo agendamentos e ocorrência**/ 
+
+    .title{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 13vh;
+    }
+
+    .title h1{
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .separatorTitle{
+        width: 65vw;
+        border-bottom: 1px solid rgba(22, 22, 22, 0.904);
+    }
+
+}

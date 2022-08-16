@@ -125,9 +125,10 @@ button {
 }
 
 #emailForm.hidding {
-    color: aqua;
+    /* color: aqua; */
     /* transform: translateY(-0.1em) scale(1.01); */
-    /* animation: hidding 1s ease linear; */
+    animation: hidding 1s;
+    animation-fill-mode: forwards;
 }
 
 #buttonNextForm {
@@ -149,14 +150,40 @@ button {
 /* 2ª etapa => Senha  */
 #passwordForm {
     display: none;
+    transform: translateX(30em);
 }
 
-#passwordForm #password {
+#passwordForm label, input {
+    margin: .3em;
+    padding: .3em;
+}
 
+#passwordForm label {
+    display: block;
+    width: 100%;
+    font-size: 1.5em;
+    padding: 0em;
+}
+
+#passwordForm input {
+    display: inline-block;
+    width: 60%;
+    background: #E2E2E2;
+    border: none;
+    border-bottom: .1em solid #06283D;
+    margin-left: 0em;
 }
 
 #passwordForm img {
 
+}
+
+#passwordForm.appearing {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    animation: appearing 1s;
+    animation-fill-mode: forwards;
 }
 
 /* Seção final  */
@@ -171,14 +198,107 @@ footer {
 }
 
 @keyframes hidding {
+    10% {
+        transform: translateX(-1.5em);
+        opacity: 0.9;
+    }
+
+    20% {
+        transform: translateX(-3em);
+        opacity: 0.8;
+    }
+
+    30% {
+        transform: translateX(-4.5em);
+        opacity: 0.7;
+    }
+
+    40% {
+        transform: translateX(-6em);
+        opacity: 0.6;
+    }
+
     50% {
-        transform: translateX(-0.7em);
+        transform: translateX(-7.5em);
         opacity: 0.5;
     }
+
+    60% {
+        transform: translateX(-9em);
+        opacity: 0.4;
+    }
+
+    70% {
+        transform: translateX(-10.5em);
+        opacity: 0.3;
+    }
+
+    80% {
+        transform: translateX(-12em);
+        opacity: 0.2;
+    }
+
+    90% {
+        transform: translateX(-15em);
+        opacity: 0.1;
+    }
+
     100% {
-        transform: translateX(-1.5em);
+        transform: translateX(-300em);
         opacity: 0;
         display: none;
+    }
+}
+
+@keyframes appearing {
+    10% {
+        opacity: 0.1;
+        transform: translateX(15em);
+    }
+    
+    20% {
+        opacity: 0.2;
+        transform: translateX(12em);
+    }
+
+    30% {
+        opacity: 0.3;
+        transform: translateX(10.5em);
+    }
+
+    40% {
+        opacity: 0.4;
+        transform: translateX(9em);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateX(7.5em);
+    }
+    
+    60% {
+        opacity: 0.6;
+        transform: translateX(6em);
+    }
+
+    70% {
+        opacity: 0.7;
+        transform: translateX(4.5em);
+    }
+
+    80% {
+        opacity: 0.8;
+        transform: translateX(3em);
+    }
+    
+    90% {
+        opacity: 0.9;
+        transform: translateX(1.5em);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0em);
     }
 }
 
