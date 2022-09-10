@@ -44,7 +44,6 @@ form {
 }
 
 .form input {
-    padding: 3px;
     border: 1px solid rgba(22, 22, 22, 0.418);
     border-radius: 3px;
     margin-top: 5px;
@@ -92,6 +91,7 @@ form {
     width: 350px;
     padding: 5px;
     border-radius: 5px;
+    border: none;
     cursor: pointer;
     color: rgb(230, 230, 230);
     background-color: rgb(0, 0, 0);
@@ -177,7 +177,6 @@ form {
     }
 }
 
-.close:focus{
+.close:focus {
     outline: 0;
-    }
-    
+}

@@ -10,10 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
         locale: "pt-br",
         selectable: true,
         selectHelper: true,
-        select: function(start){
-             $('#bookingModal').modal('toggle')
-        }
-        
+        select: function (start) {
+            $("#bookingModal").modal("toggle");
+        },
     });
     calendar.render();
 });
