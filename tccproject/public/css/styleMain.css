@@ -1,66 +1,69 @@
-*{
+* {
     padding: 0;
     margin: 0;
     outline: 0;
     box-sizing: border-box;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI';
-   
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI";
 }
 
-body{
+body {
     background-color: rgba(192, 192, 192, 0.637);
+}
+
+body::-webkit-scrollbar {
+    width: 1px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;
 }
 
 /**Header**/
 
-#menuBar{
+#menuBar {
     display: none;
 }
 
-header{
+header {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 15px;
 }
 
-
-.header{
- display: flex;
- background-color: transparent;
- border-radius: 2px;
- height: 28px;
- width: 80vw;
- padding: 5px;
- justify-content: space-between; 
- align-items: center;
- border-bottom: 1px solid black;
- box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+.header {
+    display: flex;
+    background-color: transparent;
+    border-radius: 2px;
+    height: 28px;
+    width: 80vw;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-.header a{ 
+.header a {
     margin-top: 0;
     text-decoration: none;
     color: #000;
     text-transform: uppercase;
     font-size: 12px;
-    padding-right: 120px;
-    padding-left: 120px;
-    
 }
 
-.exitButton{
+.exitButton {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 8px 3px;
-    margin-right: -.7vw;
-
 }
 
-
-.exitButton button{
-
+.exitButton button {
     width: 50px;
     height: 28px;
     font-size: 12px;
@@ -69,24 +72,24 @@ header{
     border-radius: 3px;
     cursor: pointer;
     color: white;
-    background-color: #D40000;
-    border-bottom: 1px solid black;
-
+    background-color: #d40000;
+    margin-right: -0.6vw;
+    outline: 0;
 }
 
-.exitButton button:hover{
+.exitButton button:hover {
     background-color: #be0101;
 }
 
-.navigation{
+.navigation {
     display: flex;
-    justify-content: space-between; 
+    justify-content: center;
     align-items: center;
-
+    width: 20vw;
 }
 
-.navigation:first-child{
-    margin-left:-1vw;
+.navigation:first-child {
+    margin-left: -0.3vw;
 }
 
 a.active {
@@ -94,85 +97,77 @@ a.active {
     justify-content: center;
     align-items: center;
     height: 28px;
+    width: 20vw;
     font-weight: 500;
     border-radius: 3px;
-    color:white; 
+    color: white;
     background-color: black;
 }
 
-
 /* Fotter */
 
-footer{ 
+footer {
     padding: 4px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI';
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI";
     font-size: 11px;
     font-weight: 600;
     bottom: 0;
-    position: fixed;
+    position: absolute;
     width: 100%;
     text-align: center;
     text-transform: uppercase;
-    
 }
 
+/**Titulo agendamentos, ocorrência e Agendar**/
 
-
-/**Titulo agendamentos, ocorrência e Agendar**/ 
-
-.title{
+.title {
     display: flex;
     flex-direction: column;
     gap: 12px;
     align-items: center;
     justify-content: center;
-    margin-top: 4vh;
+    margin-top: 5vh;
 }
 
-.title h1{
+.title h1 {
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 500;
     margin-bottom: -1vh;
 }
 
-.separatorTitle{
+.separatorTitle {
     width: 25vw;
     border-bottom: 1px solid rgba(22, 22, 22, 0.904);
 }
 
-
-
 /**--------------------------------------------MOBILE-----------------------------------------------**/
 
-
 @media only screen and (max-width: 768px) {
-
     /* ----------------------------------HEADER--------------------- */
     header {
-      display: none;
+        display: none;
     }
 
-    .menuBg, #menuBar{
-        top:0;
+    .menuBg,
+    #menuBar {
+        top: 0;
         left: 0;
         position: absolute;
     }
 
-    #menuBar{
-        z-index:2;
+    #menuBar {
+        z-index: 2;
         display: inline-block;
-
     }
 
-
-    #menu{
+    #menu {
         width: 35px;
         height: 30px;
         margin: 30px 0 20px 20px;
         cursor: pointer;
     }
-    .bar{
+    .bar {
         height: 5px;
         width: 100%;
         background-color: #000000;
@@ -180,46 +175,40 @@ footer{
         border-radius: 1px;
         transition: 0.3s ease;
     }
-    #bar1{
+    #bar1 {
         transform: translateY(-4px);
     }
-    #bar3{
+    #bar3 {
         transform: translateY(4px);
     }
-    .navigationMobile li a
-    {
-        font-size: 15 px;
+    .navigationMobile li a {
+        font-size: 15px;
         color: rgb(255, 255, 255);
         text-decoration: none;
-    
     }
-    .navigationMobile li:nth-child(4) a{
+    .navigationMobile li:nth-child(4) a {
         color: red;
     }
-    .navigationMobile li a:hover
-    {
+    .navigationMobile li a:hover {
         color: #bebebe;
     }
-    
-    .navigationMobile li:nth-child(4) a:hover
-    {
+
+    .navigationMobile li:nth-child(4) a:hover {
         color: #af0000;
     }
-    .navigationMobile li
-    {
+    .navigationMobile li {
         list-style: none;
         padding: 15px 0;
         margin-top: 10px;
     }
-    .navigationMobile
-    {
+    .navigationMobile {
         padding: 0;
         margin: 0 20px;
         transition: 0.3s ease;
         display: none;
     }
-  
-    .menuBg{
+
+    .menuBg {
         z-index: 1;
         width: 0;
         height: 0;
@@ -227,33 +216,32 @@ footer{
         margin: 30px 0 20px 20px;
         border-radius: 50%;
         transition: 0.2s ease;
-        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+            rgba(0, 0, 0, 0.23) 0px 6px 6px;
     }
 
-    .changeBg
-    {
+    .changeBg {
         width: 500px;
-        height:450px;
+        height: 450px;
         transform: translate(-54%, -33%);
     }
-    .change .bar{
+    .change .bar {
         background-color: white;
     }
-    .change #bar1{
+    .change #bar1 {
         transform: translateY(4px) rotateZ(-45deg);
     }
-    .change #bar3{
+    .change #bar3 {
         transform: translateY(-6px) rotate(45deg);
     }
-    .change #bar2{
+    .change #bar2 {
         opacity: 0;
     }
-    .change{
+    .change {
         display: block;
-    } 
+    }
 
     a.active {
-       
         display: initial;
         justify-content: flex-start;
         align-items: flex-start;
@@ -262,13 +250,12 @@ footer{
         background-color: transparent;
         border-bottom: 1px solid #ffff;
     }
-    
+
     /* ------------------------------------------------------ */
 
+    /**Titulo agendamentos e ocorrência**/
 
-    /**Titulo agendamentos e ocorrência**/ 
-
-    .title{
+    .title {
         display: flex;
         flex-direction: column;
         gap: 12px;
@@ -277,15 +264,14 @@ footer{
         margin-top: 13vh;
     }
 
-    .title h1{
+    .title h1 {
         font-size: 13px;
         text-transform: uppercase;
         font-weight: 500;
     }
 
-    .separatorTitle{
+    .separatorTitle {
         width: 65vw;
         border-bottom: 1px solid rgba(22, 22, 22, 0.904);
     }
-
 }

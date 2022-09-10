@@ -13,11 +13,11 @@
 <main>
     {{-- Logo do Sistema --}}
     <div class="logo">
-        <h1><img draggable="false" src="/img/logoASR.png"></h1>
+        <img draggable="false" src="/img/logoASR.png">
     </div>
 
     {{-- Formulário de Login --}}
-    <form class="formLogin" name="formLogin" action="#" method="post">
+    <form class="formLogin" name="formLogin" action="/agendar" >
 
         {{-- 1ª etapa => Email --}}
         <div id="emailForm">
@@ -28,18 +28,16 @@
             </span>
 
             <div id="buttonNextForm">Próximo</div>
-            <!-- <button id="buttonNextForm">Próximo</button> -->
-            <!-- <button onclick="nextForm()" id="buttonNextForm">Próximo</button> -->
         </div>
+
 
         {{-- 2ª etapa => Senha --}}
         <div id="passwordForm">
             <label for="password">Insira a senha</label>
             <input type="password" placeholder="Senha" id="password">
-            <img id="eyePassword" src="/tccproject/public/img/eyePassword.svg">
-            <a href="#">Esqueceu a senha?</a>
-            <!-- <input type="submit" value="Entrar" id="submitForm"> -->
-            <button id="submitForm">Entrar</button>
+            <!-- <img id="eyePassword" src="/tccproject/public/img/eyePassword.svg"> -->
+            <!-- <a href="#">Esqueceu a senha?</a> -->
+            <button id="submitForm" >Entrar</button>
         </div>
     </form>
 </main>

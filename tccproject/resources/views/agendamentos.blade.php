@@ -4,7 +4,6 @@
 
 @section('css')
 <link rel="stylesheet" href="/css/styleAgendamentos.css">
-
 @endsection
 
 @section('content')

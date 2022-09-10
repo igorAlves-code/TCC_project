@@ -1,100 +1,93 @@
-main{
-    display:flex; 
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.info{
-    display:flex; 
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 30vw;
-    margin-top: 12vh;
-
-}
-
-.form{
-    display:flex; 
+main {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
 }
 
-.form textarea{
-    background: transparent;
+.inputsContainer {
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+    justify-content: space-between;
+}
+
+.containerField {
+    display: flex;
+    flex-direction: column;
+}
+
+.containerField:nth-child(3) {
+    margin-top: 15px;
+}
+
+.containerField label {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    margin-bottom: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+.form input {
     padding: 3px;
     border: 1px solid rgba(22, 22, 22, 0.418);
+    border-radius: 3px;
     margin-top: 5px;
-    width: 500px;
-    height: 230px;
-     margin: 0;
-     padding: 5px;
-     resize: none;
-     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  
-}
-
-.form textarea:first-child{
-    width: 500px;
+    width: 22vw;
     height: 30px;
-    margin-bottom: 5px;
+    margin: 0;
+    padding: 5px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: rgba(240, 248, 255, 0.486);
+    margin-bottom: 5px;
 }
 
-
-.formInfo{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 3px;
-
+#inputData {
+    width: 13vw;
 }
 
+.form input:focus {
+    outline: 1px solid rgb(0, 3, 51);
+}
 
-.formInfo input{
-    border: none;
-    background-color: rgb(167, 167, 167);
+.form textarea {
+    padding: 3px;
+    border: 1px solid rgba(22, 22, 22, 0.418);
     border-radius: 3px;
+    margin-top: 5px;
+    width: 40vw;
+    height: 240px;
+    margin: 0;
+    padding: 5px;
+    resize: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: rgba(240, 248, 255, 0.486);
 }
 
-.formInfo span{
-    text-transform: uppercase;
-    font-size: 13px;
+.form textarea:focus {
+    outline: 1px solid rgb(0, 3, 51);
 }
 
-.data{
+#Env {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 3px;
-
-}
-
-
-.data input{
-    border: none;
-    padding: 1px;
-    font-size: 12px;
-    background-color: rgb(167, 167, 167);
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-.data span{
-    text-transform: uppercase;
-    font-size: 13px;
-
-}
-
-.form button{
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 15px;
     height: 30px;
     width: 350px;
     padding: 5px;
@@ -102,42 +95,64 @@ main{
     cursor: pointer;
     color: rgb(230, 230, 230);
     background-color: rgb(0, 0, 0);
-    transition: ease .2s;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    transition: ease 0.2s;
+    outline: 0;
+    box-shadow: rgba(0, 0, 0, 0.308) 1.95px 1.95px 2.6px;
 }
 
-.form button:hover{
-    background-color: rgba(0, 0, 0, 0.856);
+#Env:hover {
+    transform: translateY(2px);
 }
 
-
-
-
+.alert {
+    margin-top: -50px;
+}
 
 /**--------------------------------------------MOBILE-----------------------------------------------**/
 
 @media only screen and (max-width: 768px) {
-
-    
-    .info{
-        display:flex; 
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+    .inputsContainer {
+        flex-direction: column;
         width: 95vw;
-        margin-top: 8vh;
     }
 
-    .form{
-        display:flex; 
+    .containerField:nth-child(3) {
+        margin-top: 5px;
+    }
+
+    #inputData {
+        width: 95vw;
+    }
+
+    form {
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 10px;
     }
 
-    .form textarea{
-        background: transparent;
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .form input {
+        padding: 3px;
+        border: 1px solid rgba(22, 22, 22, 0.418);
+        border-radius: 5px;
+        width: 95vw;
+        height: 5vh;
+        margin: 0;
+        padding: 5px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        background-color: rgb(255, 240, 240);
+        margin-bottom: 5px;
+    }
+
+    .form textarea {
         padding: 3px;
         border: 1px solid rgba(22, 22, 22, 0.418);
         border-radius: 5px;
@@ -148,83 +163,21 @@ main{
         padding: 5px;
         resize: none;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    
+        background-color: rgb(255, 240, 240);
     }
 
-    .form textarea:first-child{
+    #Env {
         width: 95vw;
-        height: 5vh;
+    }
+
+    .alert {
+        max-width: 95vw;
+        margin-top: -3vh;
         margin-bottom: 5px;
-        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     }
-
-    .form button{
-        align-items: center;
-        justify-content: center;
-        margin-top: 10px;
-        height: 5vh;
-        width: 90vw;
-        padding: 5px;
-        border-radius: 5px;
-        cursor: pointer;
-        color: rgb(230, 230, 230);
-        background-color: rgb(0, 0, 0);
-        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    }
-
-    .form button:hover{
-        background-color: rgba(0, 0, 0, 0.856);
-    }
-
-
-    .formInfo{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 3px;
-        margin-top: 0;
-    }
-
-
-    .formInfo input{
-        width: 25vw;
-        border: none;
-        background-color: rgb(184, 184, 184);
-    }
-
-    .formInfo span{
-
-        text-transform: uppercase;
-        font-size: 11px;
-    }
-
-
-    .data{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 3px;
-        margin-top: 0;
-        margin-bottom: 0;
-
-    }
-
-    .data input{
-        border: none;
-        padding: 1px;
-        font-size: 11px;
-        background-color: rgb(184, 184, 184);
-        cursor: pointer;
-        border-radius: 3px;
-    }
-
-    .data span{
-        font-size: 11px;
-        text-transform: uppercase;
-
-
-    }
-
 }
+
+.close:focus{
+    outline: 0;
+    }
+    

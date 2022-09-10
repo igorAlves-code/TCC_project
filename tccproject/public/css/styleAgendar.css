@@ -1,27 +1,97 @@
-.agendarMain{
-    display: flex;
-    flex-direction: column;
+.close:focus{
+outline: 0;
+}
+
+#calendar {
+    width: 80vw;
+    height: 78vh;
+    margin: 0px auto;
+    background-color: transparent;
     padding: 10px;
-    margin-top: 5vh;
+    border: none;
+}
+
+#Env {
+    display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 15px;
+    height: 30px;
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(230, 230, 230);
+    background-color: rgb(0, 0, 0);
+    transition: ease 0.2s;
+    outline: 0;
+    box-shadow: rgba(0, 0, 0, 0.308) 1.95px 1.95px 2.6px;
+}
+
+#Env:hover {
+    transform: translateY(1px);
+}
+
+.inputsContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.containerField {
+    display: flex;
+    flex-direction: column;
+}
+.containerField label {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    margin-bottom: 0;
 }
 
 
+.modal-footer{
+    justify-content: center;
+    align-content: center;
+}
 
+.modal-content{
+    width: auto;
+    height: auto;
+    padding: 15px;
+}
+
+.modal-dialog-centered{
+    justify-content: center;
+}
+
+.modal-footer{
+    justify-content: center;
+    align-content: center;
+}
+
+.modal-footer{
+    justify-content: center;
+    align-content: center;
+}
+
+.modal-dialog-centered{
+    justify-content: center;
+}
+
+.modal-content{
+    width: auto;
+    height: auto;
+    padding: 15px;
+}
 /**--------------------------------------------MOBILE-----------------------------------------------**/
 
-
 @media only screen and (max-width: 768px) {
-
-    .agendarMain{
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        margin-top: 10vh;
-        align-items: center;
-        justify-content: center;
+    #calendar {
+        width: 100vw;
+        height: 75vh;
+        padding: 5px;
     }
-
-    
 }

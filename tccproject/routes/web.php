@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,10 +29,4 @@ Route::get('agendamentos', function () {
 });
 
 
-Route::get('ocorrencia', function () {
-    return view('ocorrencia');
-});
-
-// Route::get('/home', function () {
-//     return view('home');
-// });
+Route::resource('ocorrencia', ContactController::class);
