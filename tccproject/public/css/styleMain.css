@@ -157,7 +157,7 @@ footer {
     }
 
     #menuBar {
-        z-index: 2;
+        z-index: 5;
         display: inline-block;
     }
 
@@ -209,7 +209,7 @@ footer {
     }
 
     .menuBg {
-        z-index: 1;
+        z-index: 4;
         width: 0;
         height: 0;
         background: rgb(0, 0, 0);

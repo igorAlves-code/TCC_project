@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="/css/styleAgendar.css">
 
 {{-- fullcalendar--}}
-<link href="/calendar/main.css" rel='stylesheet' />
-<script src="/calendar/main.js"></script>
+<link href="/fullcalendar/main.css" rel='stylesheet' />
+<script src="/fullcalendar/main.js"></script>
 @endsection
 
 @section('content')
@@ -21,9 +21,8 @@
 </main>
 @endsection
 
+
 <!-- Modal -->
-
-
 <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -33,12 +32,6 @@
         </button>
       </div>
       <div class="modal-body">
-      <div class="inputsContainer">
-            <div class="containerField">
-                <label>Nome</label>
-                <input type="text"  autocomplete="off" name="nome" >
-            </div>
-        </div>
         <div class="inputsContainer">
             <div class="containerField">
                 <label>Data</label>
@@ -48,12 +41,25 @@
         <div class="inputsContainer">
             <div class="containerField">
             <label>Horário</label>
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Selecione o horário</option>
-              <option value="1">One</input></option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
+              <div class="hourSelect">
+
+              <!-- <input id="hourSelectInput" type="time" name="" id="">
+              <input id="hourSelectInput" type="time" name="" id=""> -->
+
+                <select id="hourSelectInput" class="form-select" aria-label="Default select example">
+                  <option seelcted>De</option>
+                  <option value="1">One</input></option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+
+                <select id="hourSelectInput" class="form-select" aria-label="Default select example">
+                  <option seelcted>Até</option>
+                  <option value="1">One</input></option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
             </div>
         </div>
 

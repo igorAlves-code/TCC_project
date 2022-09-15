@@ -94,14 +94,14 @@ form {
     border: none;
     cursor: pointer;
     color: rgb(230, 230, 230);
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.904);
     transition: ease 0.2s;
     outline: 0;
     box-shadow: rgba(0, 0, 0, 0.308) 1.95px 1.95px 2.6px;
 }
 
 #Env:hover {
-    transform: translateY(2px);
+    background-color: rgb(0, 0, 0);
 }
 
 .alert {
