@@ -1,19 +1,11 @@
+const home = document.getElementById('home').getAttribute('class');
 
-const currentLocation = location.href;
-const menuItem = document.querySelectorAll('a');
-const home =document.getElementById('home').getAttribute('class');
-const menuLength = menuItem.length;
-
-for ( let i = 0; i< menuLength; i++){
-  if(menuItem[i].href === currentLocation){
-		menuItem[i].className="active"
-}
-}
-
-
-function onClickMenu(){
+function onClickMenu() {
 	document.getElementById("menu").classList.toggle("change");
 	document.getElementById("navigationMobile").classList.toggle("change");
-	document.getElementById("menuBg").classList.toggle("changeBg")
+	document.getElementById("menuBg").classList.toggle("changeBg");
 }
 
+/* Verificação de tipo de login, talvez aqui ou diretamente na tela de login
+-Baseado nessa verificação, será determinada qual aba aparecerá aos professores e coordenadores
+*/

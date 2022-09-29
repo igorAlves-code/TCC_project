@@ -29,4 +29,33 @@ Route::get('agendamentos', function () {
 });
 
 
+Route::get('alterarSenha', function () {
+    return view('alterarSenha');
+});
+
+
+Route::get('coordenacao', function () {
+    return view('coordenacao/index');
+});
+
+
+Route::get('coordenacao/teachers', function () {
+    return view('coordenacao/teachers');
+});
+
+
+Route::get('coordenacao/managements', function () {
+    return view('coordenacao/managements');
+});
+
+
+Route::get('coordenacao/enviroments', function () {
+    return view('coordenacao/enviroments');
+});
+
+
+Route::get('coordenacao/equipments', function () {
+    return view('coordenacao/equipments');
+});
+
 Route::resource('ocorrencia', ContactController::class);

@@ -12,6 +12,7 @@
         "vite": "^3.0.0"
     },
     "dependencies": {
+        "bootstrap": "^5.2.1",
         "fullcalendar": "^5.11.3"
     }
 }

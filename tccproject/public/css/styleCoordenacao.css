@@ -1,0 +1,235 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* CONTAINER PRINCIPAL */
+#containerAdmin {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70vw;
+    height: 70vh;
+    margin-top: 0.5em;
+    background: #DEDEDE;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 1em 0.5em;
+}
+
+/* MENU BAR */
+#menuAdmin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 20%;
+    background: #B7B5B5;
+}
+
+/* OPÇÕES DO MENU */
+.menuOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    line-height: 24px;
+    color: #000000;
+    background-color: #B7B5B5;
+}
+
+.menuOptions:hover {
+    background-color: #A3A1A1;
+    border-radius: 1em;
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+}
+
+#teachers.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #A3A1A1;
+    border-radius: 1em;
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#managements.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #A3A1A1;
+    border-radius: 1em;
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#enviroments.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #A3A1A1;
+    border-radius: 1em;
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#equipments.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #A3A1A1;
+    border-radius: 1em;
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* CONTÂINER TABELA CRUD */
+#containerTable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 80%;
+}
+
+#tableCrud {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 90%;
+    margin: 1em;
+
+    background: #B7B5B5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 1em 0.5em;
+}
+
+.table tr { 
+    width: 100%;
+}
+
+.table thead th {
+    vertical-align: middle;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody td {
+    vertical-align: middle;
+}
+
+.btn-modal {
+    font-size: 0.9em;
+    width: 100%;
+}
+
+.btn-edit {
+    margin-left: 1.3em;
+}
+
+/* ------------------- MOBILE -------------------- */
+
+/* Mobile S */
+@media only screen and (max-width: 374px) {
+    * {
+        font-size: 12px;
+    }
+
+    #containerAdmin {
+        width: 100%;
+        background-color: #DEDEDE;
+        box-shadow: none;
+    }
+
+    #menuAdmin {
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 15%;
+        margin-top: 1em;
+    }
+
+    .menuOptions.active {
+        border-radius: 0em;
+
+    }
+
+    #tableCrud {
+        border-radius: 0em;
+    }
+}
+
+/* Mobile M */
+@media only screen and (min-width: 375px) and (max-width: 424px) {
+    * {
+
+    }
+}
+
+/* Mobile L */
+@media only screen and (min-width: 425px) and (max-width: 575px) {
+    * {
+
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    main {
+
+    }
+
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px)  {
+    main {
+
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    main {
+
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+    main {
+
+    }
+} 
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media only screen and (min-width: 1400px) {
+    main {
+
+    }
+}

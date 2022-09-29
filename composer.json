@@ -1,0 +1,5 @@
+{
+    "require": {
+        "twbs/bootstrap-icons": "^1.9"
+    }
+}
