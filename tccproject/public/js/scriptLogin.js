@@ -1,24 +1,12 @@
-// Ativação da animação do Formulário de Login, transição Email => Senha
-const emailForm = document.querySelector("#emailForm");
-const buttonNextForm = document.querySelector("#buttonNextForm");
-const passwordForm = document.querySelector("#passwordForm");
-const formLogin = document.querySelector("#formLogin");
-
-buttonNextForm.addEventListener("click", () => {
-    // emailForm.style.animation = "";
-    // setTimeout(() => emailForm.style.animation = "hidding 1s;", 1);
-
-    emailForm.classList.add("hidding");
-
-    // passwordForm.style.animation = "";
-    // setTimeout(() => passwordForm.style.animation = "appearing 1s", 1);
-
-    passwordForm.classList.add("appearing");
-
-    formLogin.classList.add("adequating");
+document.querySelectorAll(".text-input").forEach((element) => {
+    element.addEventListener("blur", (event) => {
+        if (event.target.value != "") {
+            event.target.nextElementSibling.classList.add("filled");
+        } else {
+            event.target.nextElementSibling.classList.remove("filled");
+        }
+    });
 });
-
-
 
 /*
 let btn = document.getElementById('olho');
@@ -31,18 +19,3 @@ btn.addEventListener('click', function() {
     }
 });
 */
-
-// Ativação da animação do Formulário de Login, transição Email => Senha
-// const emailForm = document.querySelector('#emailForm');
-// function nextForm() {
-//     emailForm.classList.toggle('.hidding');
-// };
-
-// const buttonNextForm = document.querySelector('#buttonNextForm');
-
-// buttonNextForm.addEventListener('click', () => {
-//     emailForm.style.animation = "";
-//     setTimeout(() => emailForm.style.animation = "hidding 1s", 1);
-//     emailForm.classList.toggle('.hidding');
-
-// });

@@ -15,7 +15,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('ocorrencia');
+        return view('/user/ocorrencia');
     }
     
 

@@ -15,17 +15,17 @@ use App\Http\Controllers\ContactController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('login');
 });
 
 
 Route::get('agendar', function () {
-    return view('agendar');
+    return view('/user/agendar');
 });
 
 
 Route::get('agendamentos', function () {
-    return view('agendamentos');
+    return view('/user/agendamentos');
 });
 
 

@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI';
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI";
     font-size: 20px;
     box-sizing: border-box;
 }
@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
-    background-color: rgba(192, 192, 192, 0.637);
+    background-color: rgb(223, 223, 223);
 }
 
 /* Seção inicial */
@@ -32,7 +32,6 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: scale(0.8);
 }
 
 /* 1ª etapa => Email  */
@@ -40,388 +39,151 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1em;
-    border-radius: .6em;
-    margin-bottom: 1vh;
-
+    z-index: 3;
+    margin-bottom: -7vh;
+    margin-top: 5vh;
+    background-color: rgb(223, 223, 223);
 }
 
-.logo img{
+.logo img {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+}
+
+.loginForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 37vw;
+    height: 40vh;
+    padding: 20px;
+    background: transparent;
+    border-radius: 0.3em;
+    border: 2px solid #000;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+/* INPUTS */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    margin-top: 3vh;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 35vw;
+    height: 50px;
+    position: relative;
+}
+
+.label {
+    position: absolute;
+    left: 45px;
+    top: 13px;
+    transition: all 0.2s;
+    padding: 0 2px;
+    font-size: 15px;
+    z-index: 1;
+    color: #0000006e;
+}
+
+.text-input {
+    padding: 0.8rem;
     justify-content: center;
     align-items: center;
     width: 30vw;
+    height: 6vh;
+    border: 0.2em solid #00000067;
+    background: transparent;
+    border-radius: 0.3em;
+    font-size: 14px;
+    outline: none;
+    padding: 15px;
+    transition: all 0.3s;
+    color: #000000;
 }
 
-.formLogin {
+.label::before {
+    content: "";
+    height: 5px;
+    background: transparent;
+    position: absolute;
+    left: 0px;
+    top: 10px;
+    width: 100%;
+    z-index: -1;
+}
+
+.text-input:focus {
+    border: 2px solid #000000e7;
+}
+
+.text-input:focus + .label,
+.filled {
+    top: -8px;
+    color: #000000e7;
+    background-color: rgb(223, 223, 223);
+    font-size: 14px;
+}
+
+.text-input::placeholder {
+    font-size: 16px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.text-input:focus::placeholder {
+    opacity: 1;
+}
+
+/* butao */
+
+.loginButton {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 45vw;
-    height: auto;
-    padding: .5em 1em;
-    background: #E2E2E2;
-    border-radius: .6em;
-    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-
-}
-
-#emailForm {
-    display: flex;
     justify-content: center;
-    flex-flow: row wrap;
-    width: 45vw;
-}
-
-#emailForm label, input, button {
-    margin: .3em;
-    padding: .3em;
-}
-
-#emailForm label {
-    display: block;
-    width: 95%;
-    font-size: 1.5em;
-    padding: 0em;
-}
-
-#emailForm input {
-    display: inline-block;
-    width: 62%;
-    background: #E2E2E2;
-    border: none;
-    border-bottom: .1em solid #06283D;
-    margin-left: 0em;
-}
-
-#emailForm input:focus {
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: 0;
-    border-bottom: .10em solid #000;
-}
-
-#emailForm span {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 13vw;
-    background: #ccc;
-    border-radius: 5%;
-    margin: auto 0em;
-    padding: 0;
-    font-weight: bold;
-}
-
-#emailForm span p {
-    text-align: start;
-    color: #555;
-    padding: 0.5em;
-}
-
-#emailForm.hidding {
-    animation: hidding 1s;
-    animation-fill-mode: forwards;
-}
-
-#buttonNextForm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40vw;
     height: 5vh;
-    border: none;
-    border-radius: .2em;
-    cursor: pointer;
-    transition: ease .5s;
-    margin-top: 2vh;
-    background-color: #000;
-    color: #FFFFFF;
+    width: 23vw;
     padding: 3px;
-}
-
-#buttonNextForm:hover {
-    background-color: rgba(0, 0, 0, 0.884); 
-    /* transform: translateY(-0.5px) scale(1.01); */
-}
-
-
-
-
-
-/* 2ª etapa => Senha  */
-#passwordForm {
-    display: none;
-    transform: translateX(30em);
-    margin-left: -35vw;
-
-}
-
-#passwordForm label, input {
-    margin: .3em;
-    padding: .3em;
-}
-
-#passwordForm label {
-    display: block;
-    width: 45vw;
-    font-size: 1.5em;
-    padding: 0em;
-}
-
-#passwordForm input {
-    display: inline-block;
-    width: 40vw;
-    background: #E2E2E2;
-    border: none;
-    border-bottom: .1em solid #000000;
-}
-
-
-#passwordForm input:focus {
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: 0;
-    border-bottom: .10em solid #000;
-}
-
-
-#passwordForm button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2vh;
-    height: 5vh;
-    width: 40vw;
-    padding: 5px;
-    border-radius: .2em;
+    font-size: 15px;
+    border-radius: 0.2em;
     cursor: pointer;
     color: #ffff;
     background-color: rgb(0, 0, 0);
-    transition: ease .2s;
+    transition: ease-in 0.2s;
 }
 
-#passwordForm.appearing {
-    display: flex;
-    flex-direction: column;
-    animation: appearing 1s;
-    animation-fill-mode: forwards;
+.loginButton:hover {
+    width: 21vw;
 }
- 
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(223, 223, 223);
+    margin-top: 39vh;
+    padding: 10px;
+    z-index: 2;
+}
+
 /* Seção final  */
 footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    font-size: 0.65em;
+    font-size: 11px;
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;
-}
-
-@keyframes hidding {
-    10% {
-        transform: translateX(-1.5em);
-        opacity: 0.9;
-    }
-
-    20% {
-        transform: translateX(-3em);
-        opacity: 0.8;
-    }
-
-    30% {
-        transform: translateX(-4.5em);
-        opacity: 0.7;
-    }
-
-    40% {
-        transform: translateX(-6em);
-        opacity: 0.6;
-    }
-
-    50% {
-        transform: translateX(-7.5em);
-        opacity: 0.5;
-    }
-
-    60% {
-        transform: translateX(-9em);
-        opacity: 0.4;
-    }
-
-    70% {
-        transform: translateX(-10.5em);
-        opacity: 0.3;
-    }
-
-    80% {
-        transform: translateX(-12em);
-        opacity: 0.2;
-    }
-
-    90% {
-        transform: translateX(-15em);
-        opacity: 0.1;
-    }
-
-    100% {
-        transform: translateX(-300em);
-        opacity: 0;
-        display: none;
-    }
-}
-
-@keyframes appearing {
-    10% {
-        opacity: 0.1;
-        transform: translateX(15em);
-    }
-    
-    20% {
-        opacity: 0.2;
-        transform: translateX(12em);
-    }
-
-    30% {
-        opacity: 0.3;
-        transform: translateX(10.5em);
-    }
-
-    40% {
-        opacity: 0.4;
-        transform: translateX(9em);
-    }
-
-    50% {
-        opacity: 0.5;
-        transform: translateX(7.5em);
-    }
-    
-    60% {
-        opacity: 0.6;
-        transform: translateX(6em);
-    }
-
-    70% {
-        opacity: 0.7;
-        transform: translateX(4.5em);
-    }
-
-    80% {
-        opacity: 0.8;
-        transform: translateX(3em);
-    }
-    
-    90% {
-        opacity: 0.9;
-        transform: translateX(1.5em);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0em);
-    }
-}
-
-/* Mobile S */
-@media (max-width: 374px) {
-    * {
-        font-size: 10px;
-    }
-
-    main {
-        transform: scale(1);
-        margin-top: 10em;
-    }
-
-    .logo img {
-        width: 100%;
-    }
-
-    #emailForm span p {
-        font-size: 0.8em;
-    }
-}
-
-/* Mobile M */
-@media (min-width: 375px) and (max-width: 424px) {
-    * {
-        font-size: 14px;
-    }
-
-    .logo img {
-        width: 100%;
-        transform: scale(1.4);
-    }
-
-    #emailForm span p {
-        font-size: 0.7em;
-    }
-}
-
-/* Mobile L */
-@media (min-width: 425px) and (max-width: 575px) {
-    * {
-        font-size: 14px;
-    }
-
-    .logo img {
-        width: 100%;
-        transform: scale(1.2);
-    }
-
-    #emailForm span p {
-        font-size: 0.8em;
-    }
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767px) {
-    main {
-        transform: scale(0.7);
-        margin-top: -3em;
-    }
-
-    .logo img {
-        width: 100%;
-        transform: scale(1.2);
-    }
-
-    #emailForm span p {
-        font-size: 0.8em;
-    }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991px)  {
-    main {
-        transform: scale(0.7);
-        margin-top: -3em;
-    }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199px) {
-    main {
-        transform: scale(0.7);
-    }
-
-    .formLogin {
-        width: 60%;
-    }
-}
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) and (max-width: 1399px) {
-    main {
-        transform: scale(0.8);
-    }
-} 
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-    main {
-        transform: scale(0.9);
-    }
 }

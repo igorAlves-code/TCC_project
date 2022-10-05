@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.mainUser')
 
 @section('title', 'A.S.R - Agendamento de Salas e Recursos')
 
@@ -32,6 +32,7 @@
         </button>
       </div>
       <div class="modal-body">
+      <form>
         <div class="inputsContainer">
             <div class="containerField">
                 <label>Data</label>
@@ -43,18 +44,15 @@
             <label>Horário</label>
               <div class="hourSelect">
 
-              <!-- <input id="hourSelectInput" type="time" name="" id="">
-              <input id="hourSelectInput" type="time" name="" id=""> -->
-
                 <select id="hourSelectInput" class="form-select" aria-label="Default select example">
-                  <option seelcted>De</option>
+                  <option selected="true" disabled="disabled">De</option>
                   <option value="1">One</input></option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
                 </select>
 
                 <select id="hourSelectInput" class="form-select" aria-label="Default select example">
-                  <option seelcted>Até</option>
+                  <option selected="true" disabled="disabled">Até</option>
                   <option value="1">One</input></option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
@@ -67,11 +65,17 @@
             <div class="containerField">
             <label>Ambiente</label>
             <select class="form-select" aria-label="Default select example">
-              <option selected>Selecione o Ambiente</option>
+              <option selected="true" disabled="disabled">Selecione o Ambiente</option>
               <option value="1">Auditório</option>
-              <option value="3">Nivonei</option>
+              <option value="3">Sala Nivonei</option>
               <option value="2">Mini auditório </option>
-              <option value="3">Laboratório</option>
+              <option value="3">Lab. Informática</option>
+          
+              <option value="3">Lab. Química</option>
+            
+              <option value="3">Lab. Meio Ambiente</option>
+             
+              
               
             </select>
             </div>
@@ -81,10 +85,10 @@
             <div class="containerField">
             <label>Recurso</label>
             <select class="form-select" aria-label="Default select example">
-              <option selected>Selecione o recurso</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option selected="true" disabled="disabled">Selecione o recurso</option>
+              <option value="1">Datashow #1</option>
+              <option value="2">Datashow #2</option>
+              <option value="3">Datashow #3</option>
             </select>
             </div>
         </div>
@@ -93,6 +97,7 @@
       <div class="modal-footer">
       <button id="Env">Agendar</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
