@@ -119,10 +119,47 @@
 
 /**--------------------------------------------MOBILE-----------------------------------------------**/
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 820px) {
     #calendar {
         width: 100vw;
         height: 75vh;
         padding: 5px;
+    }
+
+    .modal-body{
+        width: 73vw;
+        height: 95vw;
+        display: flex;
+        align-items: center;
+    }
+
+    form{
+        font-size: medium;
+        margin: auto;
+    }
+
+    .containerField input, .containerField select{
+        height: 10vw;
+        width: 45vw;
+        margin-bottom: 5px;
+        font-size: 20px;
+    }
+
+    .containerField label {
+        font-size: 20px;
+    }
+
+    .hourSelect{
+        height: 10vw;
+        width: 45vw;
+    }
+
+    #hourSelectInput {
+        width: 20vw;
+    }
+
+    #Env{
+        width: 30vw;
+        height: 13vw;
     }
 }

@@ -23,7 +23,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="max-width: 100%;width: auto;display: table;">
 <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -70,13 +70,13 @@
               <option value="3">Sala Nivonei</option>
               <option value="2">Mini auditório </option>
               <option value="3">Lab. Informática</option>
-          
+
               <option value="3">Lab. Química</option>
-            
+
               <option value="3">Lab. Meio Ambiente</option>
-             
-              
-              
+
+
+
             </select>
             </div>
         </div>
