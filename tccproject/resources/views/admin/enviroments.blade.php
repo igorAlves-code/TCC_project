@@ -1,4 +1,4 @@
-@extends('coordenacao.index')
+@extends('admin.index')
 
 @section('tableCrud')
 <div id="containerTable">

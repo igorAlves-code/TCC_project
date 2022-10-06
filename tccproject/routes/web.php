@@ -35,27 +35,27 @@ Route::get('alterarSenha', function () {
 
 
 Route::get('coordenacao', function () {
-    return view('coordenacao/index');
+    return view('admin/index');
 });
 
 
 Route::get('coordenacao/teachers', function () {
-    return view('coordenacao/teachers');
+    return view('admin/teachers');
 });
 
 
 Route::get('coordenacao/managements', function () {
-    return view('coordenacao/managements');
+    return view('admin/managements');
 });
 
 
 Route::get('coordenacao/enviroments', function () {
-    return view('coordenacao/enviroments');
+    return view('admin/enviroments');
 });
 
 
 Route::get('coordenacao/equipments', function () {
-    return view('coordenacao/equipments');
+    return view('admin/equipments');
 });
 
 Route::resource('ocorrencia', ContactController::class);
