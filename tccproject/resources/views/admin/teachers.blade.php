@@ -84,8 +84,8 @@
                     --}}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-outline-primary">Cadastrar</button>
+                    <button type="button" id="btn-cancel" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" id="btn-submit" class="btn btn-outline-primary">Cadastrar</button>
                 </div>
             </form>
         </div>

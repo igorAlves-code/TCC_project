@@ -130,7 +130,7 @@ main {
     border-radius: 1em 0.5em;
 }
 
-.table tr { 
+.table tr {
     width: 100%;
 }
 
@@ -154,10 +154,30 @@ main {
 
 /* ------------------- MOBILE -------------------- */
 
+@media only screen and (max-width: 215px){
+    .modal-footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #btn-cancel, #btn-submit {
+        margin-bottom: 10px;
+        width: 150vw;
+    }
+
+}
+
 /* Mobile S */
-@media only screen and (max-width: 374px) {
-    * {
-        font-size: 12px;
+@media only screen and (max-width: 275px) {
+
+    *{
+        font-size: 50px;
+    }
+
+    .modal-content{
+        font-size: 50px;
+        height: 100%;
+        margin-top: 50%
     }
 
     #containerAdmin {
@@ -183,53 +203,47 @@ main {
     }
 }
 
-/* Mobile M */
-@media only screen and (min-width: 375px) and (max-width: 424px) {
-    * {
+@media only screen and (max-width: 300px){
 
+    *{
+        font-size: 50px;
+    }
+
+    .modal-content{
+        margin-top: 50%;
+        font-size: 30px;
     }
 }
 
-/* Mobile L */
-@media only screen and (min-width: 425px) and (max-width: 575px) {
-    * {
 
+@media only screen and (max-width: 575px){
+    *{
+        font-size: 50px;
+    }
+
+    .modal-content{
+        margin-top: 100vw;
+        font-size: 30px;
     }
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-    main {
-
+@media only screen and (min-width: 576) and (max-width: 620px){
+    *{
+        font-size: 50px;
     }
 
+    .modal-content{
+        margin-top: 100vw;
+        font-size: 30px;
+        width: 250vw;
+        margin-left: -81vw;
+    }
 
 }
 
-/* Medium devices (tablets, 768px and up) */
-@media only screen and (min-width: 768px) and (max-width: 991px)  {
-    main {
 
-    }
-}
 
-/* Large devices (desktops, 992px and up) */
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-    main {
 
-    }
-}
 
-/* X-Large devices (large desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) and (max-width: 1399px) {
-    main {
 
-    }
-} 
 
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media only screen and (min-width: 1400px) {
-    main {
-
-    }
-}
