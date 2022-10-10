@@ -177,7 +177,7 @@ main {
     .modal-content{
         font-size: 50px;
         height: 100%;
-        margin-top: 50%
+        margin-top: 50%;
     }
 
     #containerAdmin {
@@ -215,7 +215,6 @@ main {
     }
 }
 
-
 @media only screen and (max-width: 575px){
     *{
         font-size: 50px;
@@ -238,7 +237,12 @@ main {
         width: 250vw;
         margin-left: -81vw;
     }
+}
+@media only screen  and (max-width: 920px){
 
+    .modal-dialog {
+        margin-top: 30%;
+    }
 }
 
 

@@ -119,6 +119,13 @@
 
 /**--------------------------------------------MOBILE-----------------------------------------------**/
 
+@media only screen and (max-width: 280px) {
+    .modal-content{
+        margin-top: -30px;
+        height: 180vw;
+    }
+}
+
 @media only screen and (max-width: 820px) {
     #calendar {
         width: 100vw;
@@ -161,5 +168,6 @@
     #Env{
         width: 30vw;
         height: 13vw;
+        font-size: 3vw;
     }
 }
