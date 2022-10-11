@@ -11,4 +11,9 @@ Esse projeto se justifica através da criação de um sistema que ajude de forma
 
 * Metodologia:
 
-* Protótipo:
+* Linguagens utilizadas no desenvolvimento do sistema:
+   * PHP;
+   * JavaScript;
+   * Framework PHP - Laravel;
+   * Framework CSS - Bootstrap,
+   * ++ HTML e CSS.
