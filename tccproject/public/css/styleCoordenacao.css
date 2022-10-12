@@ -9,12 +9,11 @@ main {
 #containerAdmin {
     display: flex;
     justify-content: center;
-    flex-direction: column;
     flex-wrap: wrap;
     width: 70vw;
     height: 70vh;
     margin-top: 0.5em;
-    background: #DEDEDE;
+    background: #dedede;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 1em 0.5em;
 }
@@ -27,7 +26,7 @@ main {
     flex-direction: row;
     width: 100%;
     height: 20%;
-    background: #B7B5B5;
+    background: #b7b5b5;
 }
 
 /* OPÇÕES DO MENU */
@@ -39,11 +38,11 @@ main {
     height: 100%;
     line-height: 24px;
     color: #000000;
-    background-color: #B7B5B5;
+    background-color: #b7b5b5;
 }
 
 .menuOptions:hover {
-    background-color: #A3A1A1;
+    background-color: #a3a1a1;
     border-radius: 1em;
     cursor: pointer;
     color: #000000;
@@ -56,7 +55,7 @@ main {
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: #A3A1A1;
+    background-color: #a3a1a1;
     border-radius: 1em;
     cursor: pointer;
     color: #000000;
@@ -70,7 +69,7 @@ main {
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: #A3A1A1;
+    background-color: #a3a1a1;
     border-radius: 1em;
     cursor: pointer;
     color: #000000;
@@ -84,7 +83,7 @@ main {
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: #A3A1A1;
+    background-color: #a3a1a1;
     border-radius: 1em;
     cursor: pointer;
     color: #000000;
@@ -98,7 +97,7 @@ main {
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: #A3A1A1;
+    background-color: #a3a1a1;
     border-radius: 1em;
     cursor: pointer;
     color: #000000;
@@ -125,7 +124,7 @@ main {
     height: 90%;
     margin: 1em;
 
-    background: #B7B5B5;
+    background: #b7b5b5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 1em 0.5em;
 }
@@ -152,7 +151,7 @@ main {
     margin-left: 1.3em;
 }
 
-.checkbtn{
+.checkbtn {
     display: none;
 }
 
@@ -164,34 +163,32 @@ main {
     text-decoration: none;
 }
 
-#check{
-    display:none;
+#check {
+    display: none;
 }
-
 
 /* ------------------- MOBILE -------------------- */
 
-@media only screen and (max-width: 215px){
-    .modal-footer{
+@media only screen and (max-width: 215px) {
+    .modal-footer {
         display: flex;
         flex-direction: column;
     }
 
-    #btn-cancel, #btn-submit {
+    #btn-cancel,
+    #btn-submit {
         margin-bottom: 10px;
         width: 150vw;
     }
-
 }
 
 /* Mobile S */
 @media only screen and (max-width: 275px) {
-
-    *{
+    * {
         font-size: 50px;
     }
 
-    .modal-content{
+    .modal-content {
         font-size: 50px;
         height: 100%;
         margin-top: 50%;
@@ -199,7 +196,7 @@ main {
 
     #containerAdmin {
         width: 100%;
-        background-color: #DEDEDE;
+        background-color: #dedede;
         box-shadow: none;
     }
 
@@ -212,7 +209,6 @@ main {
 
     .menuOptions.active {
         border-radius: 0em;
-
     }
 
     #tableCrud {
@@ -220,43 +216,41 @@ main {
     }
 }
 
-@media only screen and (max-width: 300px){
-
-    *{
+@media only screen and (max-width: 300px) {
+    * {
         font-size: 50px;
     }
 
-    .modal-content{
+    .modal-content {
         margin-top: 50%;
         font-size: 30px;
     }
 }
 
-@media only screen and (max-width: 575px){
-    *{
+@media only screen and (max-width: 575px) {
+    * {
         font-size: 15px;
     }
 
-    .modal-content{
+    .modal-content {
         margin-top: 100vw;
         font-size: 30px;
     }
 }
 
-@media only screen and (min-width: 576) and (max-width: 620px){
-    *{
+@media only screen and (min-width: 576) and (max-width: 620px) {
+    * {
         font-size: 50px;
     }
 
-    .modal-content{
+    .modal-content {
         margin-top: 100vw;
         font-size: 30px;
         width: 250vw;
         margin-left: -81vw;
     }
 }
-@media only screen  and (max-width: 920px){
-
+@media only screen and (max-width: 920px) {
     .modal-dialog {
         margin-top: 30%;
     }
@@ -264,7 +258,7 @@ main {
     #menuAdmin {
         visibility: hidden;
         opacity: 0;
-        transform: translate3d(0px,-50px,0px);
+        transform: translate3d(0px, -50px, 0px);
         background-color: lavender;
         margin-top: 0px;
         flex-direction: row;
@@ -273,12 +267,12 @@ main {
         margin-top: 0px;
         margin-bottom: 450px;
         font-size: 15px;
-    }    
+    }
 
-    .checkbtn{
+    .checkbtn {
         background-color: black;
         text-transform: uppercase;
-        color:antiquewhite;
+        color: antiquewhite;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -286,12 +280,12 @@ main {
         height: 10%;
         margin-top: 10px;
         line-height: 24px;
-        font-size:15px;
-        cursor:pointer;
+        font-size: 15px;
+        cursor: pointer;
     }
 
     .menuOptions {
-        top:0pt;
+        top: 0pt;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -302,17 +296,10 @@ main {
         background-color: #242424;
     }
 
-    #check:checked ~ #menuAdmin{
-        transform: translate3d(0px,0px,0px);
-        transition: .5s;
-        opacity:1;
+    #check:checked ~ #menuAdmin {
+        transform: translate3d(0px, 0px, 0px);
+        transition: 0.5s;
+        opacity: 1;
         visibility: visible;
     }
 }
-
-
-
-
-
-
-

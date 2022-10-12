@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\userControl;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,8 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
+Route::get('/', [userControl::class, 'login'])->name("login.page");
+Route::post('/', [userControl::class, 'auth'])->name("auth.user");
 
 
 Route::get('agendar', function () {
@@ -32,7 +32,6 @@ Route::get('agendamentos', function () {
 Route::get('alterarSenha', function () {
     return view('alterarSenha');
 });
-
 
 Route::get('coordenacao', function () {
     return view('admin/index');

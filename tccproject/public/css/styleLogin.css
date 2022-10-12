@@ -5,6 +5,22 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI";
     font-size: 20px;
     box-sizing: border-box;
+    outline: 0;
+}
+
+button.close {
+    outline: 0;
+    border: none;
+}
+
+.alert {
+    margin-top: 2rem;
+}
+
+.alert li,
+ul {
+    font-size: 15px;
+    margin-bottom: 0;
 }
 
 body {
