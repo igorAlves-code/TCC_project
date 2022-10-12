@@ -14,6 +14,8 @@
     </div>
 
     <div id="containerAdmin">
+        <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">Opções</label>  
         <div id="menuAdmin">
             <a href="/coordenacao/teachers" id="teachers" class="menuOptions" onclick="hideEffect()">PROFESSORES</a>
             <a href="/coordenacao/managements" id="managements" class="menuOptions" onclick="hideEffect()">COORDENADORES</a>

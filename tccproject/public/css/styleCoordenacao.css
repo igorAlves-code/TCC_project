@@ -152,6 +152,23 @@ main {
     margin-left: 1.3em;
 }
 
+.checkbtn{
+    display: none;
+}
+
+.checkbtn:hover {
+    background-color: rgb(10, 10, 10);
+    border-radius: 1em;
+    cursor: pointer;
+    color: rgb(168, 160, 148);
+    text-decoration: none;
+}
+
+#check{
+    display:none;
+}
+
+
 /* ------------------- MOBILE -------------------- */
 
 @media only screen and (max-width: 215px){
@@ -217,7 +234,7 @@ main {
 
 @media only screen and (max-width: 575px){
     *{
-        font-size: 50px;
+        font-size: 15px;
     }
 
     .modal-content{
@@ -242,6 +259,54 @@ main {
 
     .modal-dialog {
         margin-top: 30%;
+    }
+
+    #menuAdmin {
+        visibility: hidden;
+        opacity: 0;
+        transform: translate3d(0px,-50px,0px);
+        background-color: lavender;
+        margin-top: 0px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 15%;
+        margin-top: 0px;
+        margin-bottom: 450px;
+        font-size: 15px;
+    }    
+
+    .checkbtn{
+        background-color: black;
+        text-transform: uppercase;
+        color:antiquewhite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        margin-top: 10px;
+        line-height: 24px;
+        font-size:15px;
+        cursor:pointer;
+    }
+
+    .menuOptions {
+        top:0pt;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        line-height: 30px;
+        color: lavender;
+        background-color: #242424;
+    }
+
+    #check:checked ~ #menuAdmin{
+        transform: translate3d(0px,0px,0px);
+        transition: .5s;
+        opacity:1;
+        visibility: visible;
     }
 }
 
