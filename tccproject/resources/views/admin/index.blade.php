@@ -1,10 +1,12 @@
-@extends('layouts.mainUser')
+@extends('layouts.mainAdm')
 
 @section('title', 'A.S.R - Agendamento de Salas e Recursos')
 
 @section('css')
 <link rel="stylesheet" href="/css/styleCoordenacao.css">
 @endsection
+
+@yield('css2')
 
 @section('content')
 <main>
@@ -29,9 +31,9 @@
                 <div id="bar1" class="bar"></div>
             </div>
             <ul class="navigationMobile" id="navigationMobile">
-                <li><a href="/agendar">AGENDAR</a></li>
-                <li><a href="/agendamentos">AGENDAMENTOS</a></li>
-                {{--
+                <li><a href="/coordenacao/agendar">AGENDAR</a></li>
+                <li><a href="/coordenacao/agendamentos">AGENDAMENTOS</a></li>
+            {{--
                 <li><a href="/ocorrencia">OCORRÊNCIA</a></li>
                 <li><a href="/alterarSenha">ALTERAR SENHA</a></li>
             --}}

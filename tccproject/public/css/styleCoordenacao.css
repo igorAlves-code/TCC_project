@@ -183,39 +183,6 @@ main {
 }
 
 /* Mobile S */
-@media only screen and (max-width: 275px) {
-    * {
-        font-size: 50px;
-    }
-
-    .modal-content {
-        font-size: 50px;
-        height: 100%;
-        margin-top: 50%;
-    }
-
-    #containerAdmin {
-        width: 100%;
-        background-color: #dedede;
-        box-shadow: none;
-    }
-
-    #menuAdmin {
-        flex-direction: column;
-        flex-wrap: wrap;
-        height: 15%;
-        margin-top: 1em;
-    }
-
-    .menuOptions.active {
-        border-radius: 0em;
-    }
-
-    #tableCrud {
-        border-radius: 0em;
-    }
-}
-
 @media only screen and (max-width: 300px) {
     * {
         font-size: 50px;
@@ -233,7 +200,7 @@ main {
     }
 
     .modal-content {
-        margin-top: 100vw;
+        margin-top: 50%;
         font-size: 30px;
     }
 }
@@ -244,15 +211,15 @@ main {
     }
 
     .modal-content {
-        margin-top: 100vw;
+        margin-top: 50%;
         font-size: 30px;
         width: 250vw;
         margin-left: -81vw;
     }
 }
 @media only screen and (max-width: 920px) {
-    .modal-dialog {
-        margin-top: 30%;
+    .modal-content {
+        margin-top: 25%;
     }
 
     #menuAdmin {
@@ -260,12 +227,11 @@ main {
         opacity: 0;
         transform: translate3d(0px, -50px, 0px);
         background-color: lavender;
-        margin-top: 0px;
         flex-direction: row;
         flex-wrap: wrap;
-        height: 15%;
-        margin-top: 0px;
-        margin-bottom: 450px;
+        height: 10%;
+        /* margin: 0px 0px 500px 0px; */
+        z-index: 2;
         font-size: 15px;
     }
 
@@ -279,7 +245,6 @@ main {
         width: 100%;
         height: 10%;
         margin-top: 10px;
-        line-height: 24px;
         font-size: 15px;
         cursor: pointer;
     }
@@ -290,16 +255,29 @@ main {
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 100%;
-        line-height: 30px;
+        height: 150%;
+        /* line-height: 30px; */
         color: lavender;
         background-color: #242424;
     }
 
     #check:checked ~ #menuAdmin {
+        animation: hidden 1s ease forwards;
+    }
+
+    #containerTable {
+        height: 70%;
+    }
+
+}
+
+@keyframes hidden{
+    100%{
         transform: translate3d(0px, 0px, 0px);
         transition: 0.5s;
         opacity: 1;
         visibility: visible;
+        margin: 0px 0px 450px 0px;
     }
+
 }

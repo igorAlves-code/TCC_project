@@ -21,3 +21,4 @@ for (let i = 0; i < menuOptionsLength; i++) {
 	}
 }
 
+const menuAdmin = document.querySelector("#check")

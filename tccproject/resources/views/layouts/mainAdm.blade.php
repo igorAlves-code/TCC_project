@@ -31,15 +31,15 @@
     <header>
         <div class="header">
             <div class="navigation">
-                <div><a id="home" href="agendar">Agendar</a></div>
+                <div><a id="home" href="/coordenacao/agendar">Agendar</a></div>
             </div>
 
             <div class="navigation">
-                <div><a href="/agendamentos">Agendamentos</a></div>
+                <div><a href="/coordenacao/agendamentos">Agendamentos</a></div>
             </div>
 
             <div class="navigation">
-                <div><a href="#">administração</a></div>
+                <div><a href="/coordenacao">Coordenação</a></div>
             </div>
 
             <div class="exitButton">
@@ -71,8 +71,8 @@
             <div id="bar3" class="bar"></div>
         </div>
         <ul class="navigationMobile" id="navigationMobile">
-            <li><a href="/agendar">AGENDAR</a></li>
-            <li><a href="/agendamentos">AGENDAMENTOS</a></li>
+            <li><a href="/coordenacao/agendar">AGENDAR</a></li>
+            <li><a href="/coordenacao/agendamentos">AGENDAMENTOS</a></li>
             {{--
                 <li><a href="/ocorrencia">OCORRÊNCIA</a></li>
                 <li><a href="/alterarSenha">ALTERAR SENHA</a></li>

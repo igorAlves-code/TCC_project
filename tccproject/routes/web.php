@@ -38,6 +38,15 @@ Route::get('coordenacao', function () {
 });
 
 
+Route::get('coordenacao/agendar', function () {
+    return view('admin/agendar');
+});
+
+
+Route::get('coordenacao/agendamentos', function () {
+    return view('admin/agendamentos');
+});
+
 Route::get('coordenacao/teachers', function () {
     return view('admin/teachers');
 });

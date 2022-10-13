@@ -73,11 +73,10 @@
         <ul class="navigationMobile" id="navigationMobile">
             <li><a href="/agendar">AGENDAR</a></li>
             <li><a href="/agendamentos">AGENDAMENTOS</a></li>
+            <li><a href="/ocorrencia">OCORRÊNCIA</a></li>
             {{--
-                <li><a href="/ocorrencia">OCORRÊNCIA</a></li>
                 <li><a href="/alterarSenha">ALTERAR SENHA</a></li>
             --}}
-            <li><a href="/coordenacao">COORDENAÇÃO</a></li>
             <li><a href="#">SAIR</a></li>
         </ul>
     </div>
