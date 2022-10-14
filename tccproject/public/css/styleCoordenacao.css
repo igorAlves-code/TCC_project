@@ -127,6 +127,9 @@ main {
     background: #b7b5b5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 1em 0.5em;
+
+    overflow-x: auto;
+
 }
 
 .table tr {
@@ -169,19 +172,6 @@ main {
 
 /* ------------------- MOBILE -------------------- */
 
-@media only screen and (max-width: 215px) {
-    .modal-footer {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #btn-cancel,
-    #btn-submit {
-        margin-bottom: 10px;
-        width: 150vw;
-    }
-}
-
 /* Mobile S */
 @media only screen and (max-width: 300px) {
     * {
@@ -189,7 +179,6 @@ main {
     }
 
     .modal-content {
-        margin-top: 50%;
         font-size: 30px;
     }
 }
@@ -200,9 +189,10 @@ main {
     }
 
     .modal-content {
-        margin-top: 50%;
         font-size: 30px;
     }
+
+    
 }
 
 @media only screen and (min-width: 576) and (max-width: 620px) {
@@ -211,15 +201,16 @@ main {
     }
 
     .modal-content {
-        margin-top: 50%;
+        margin-top: 7%;
         font-size: 30px;
         width: 250vw;
         margin-left: -81vw;
     }
+    
 }
 @media only screen and (max-width: 920px) {
     .modal-content {
-        margin-top: 25%;
+        margin-top: 7%;
     }
 
     #menuAdmin {
@@ -269,6 +260,24 @@ main {
         height: 70%;
     }
 
+    #tableCrud {
+        overflow-x: auto;
+    }
+    
+    .table{
+        display: block;
+        padding-left: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .table thead {
+        width: 50%;
+    }
+
+    #containerTable {
+        width: 107%;
+    }
 }
 
 @keyframes hidden{

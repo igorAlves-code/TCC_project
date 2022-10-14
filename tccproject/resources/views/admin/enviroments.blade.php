@@ -7,7 +7,7 @@
             <thead>
                 <tr>
                     <td scope="col" colspan="2">
-                        <button type="button" class="btn btn-primary btn-modal" data-toggle="modal" data-target="#newEnviroment">Novo</button>
+                        <button type="button" class="btn btn-primary btn-modal" data-toggle="modal" data-target="#newEnviroment">Cadastrar</button>
                     </td>
                     <td scope="col" colspan="3" hidden>
                         <button type="button" class="btn btn-info btn-modal">Visualização Geral</button>

@@ -39,6 +39,45 @@
                         <button type="button" class="btn btn-danger btn-modal" data-toggle="modal" data-target="#deleteTeacher">Excluir</button>
                     </td>
                 </tr>
+                <tr>
+                    <td>Regina</td>
+                    <td>Maria Zuffo</td>
+                    <td>regina.maria33@etec.sp.gov.br</td>
+                    <td>LPLCP</td>
+                    <td>Liberado</td>
+                    <td>
+                        <button type="button" class="btn btn-warning btn-modal btn-edit" data-toggle="modal" data-target="#editTeacher">Editar</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-modal" data-toggle="modal" data-target="#deleteTeacher">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Regina</td>
+                    <td>Maria Zuffo</td>
+                    <td>regina.maria33@etec.sp.gov.br</td>
+                    <td>LPLCP</td>
+                    <td>Liberado</td>
+                    <td>
+                        <button type="button" class="btn btn-warning btn-modal btn-edit" data-toggle="modal" data-target="#editTeacher">Editar</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-modal" data-toggle="modal" data-target="#deleteTeacher">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Regina</td>
+                    <td>Maria Zuffo</td>
+                    <td>regina.maria33@etec.sp.gov.br</td>
+                    <td>LPLCP</td>
+                    <td>Liberado</td>
+                    <td>
+                        <button type="button" class="btn btn-warning btn-modal btn-edit" data-toggle="modal" data-target="#editTeacher">Editar</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-modal" data-toggle="modal" data-target="#deleteTeacher">Excluir</button>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
