@@ -65,7 +65,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-outline-primary">Cadastrar</button>
+                    <button type="submit" class="btn btn-outline-primary" id="env">Cadastrar</button>
                 </div>
             </form>
         </div>
@@ -89,7 +89,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
+                    <button type="submit" class="btn btn-outline-primary" id="env">Pesquisar</button>
                 </div>
             </form>
         </div>
@@ -122,7 +122,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-outline-primary">Editar</button>
+                    <button type="submit" class="btn btn-outline-primary" id="env">Editar</button>
                 </div>
             </form>
         </div>
@@ -154,7 +154,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger l-flex" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-outline-secondary">Excluir</button>
+                    <button type="submit" class="btn btn-outline-secondary" id="env">Excluir</button>
                 </div>
             </form>
         </div>

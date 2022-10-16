@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         selectable: true,
         selectHelper: true,
         select: function (start) {
-            $("#bookingModal").modal("toggle");
+            $("#newScheduling").modal("toggle");
         },
     });
     calendar.render();

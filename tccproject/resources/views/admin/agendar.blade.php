@@ -11,96 +11,75 @@
 
 @section('content')
 <main>
-        <div class="title">
-            <h1>Selecione uma data e horário</h1>
-            <div class="separatorTitle"></div>
-        </div>
-        <div id="calendar"></div>
+  <div class="title">
+    <h1>Selecione uma data e horário</h1>
+    <div class="separatorTitle"></div>
+  </div>
+  <div id="calendar"></div>
 
 </main>
 @endsection
 
 
-<!-- Modal -->
-<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="max-width: 100%;width: auto;display: table;">
-<div class="modal-dialog modal-dialog-centered" role="document">
+<!-- Modal Agendamento -->
+<div class="modal fade" id="newScheduling" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5 class="modal-title" id="newSchedulingLabel">Realizar Agendamento</h5>
+        <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
       </div>
-      <div class="modal-body">
-      <form>
-        <div class="inputsContainer">
-            <div class="containerField">
-                <label>Data</label>
-                <input type="text"  autocomplete="off" name="nome" >
-            </div>
-        </div>
-        <div class="inputsContainer">
-            <div class="containerField">
-            <label>Horário</label>
-              <div class="hourSelect">
-
-                <select id="hourSelectInput" class="form-select" aria-label="Default select example">
-                  <option selected="true" disabled="disabled">De</option>
-                  <option value="1">One</input></option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-
-                <select id="hourSelectInput" class="form-select" aria-label="Default select example">
-                  <option selected="true" disabled="disabled">Até</option>
-                  <option value="1">One</input></option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-              </div>
-            </div>
-        </div>
-
-        <div class="inputsContainer">
-            <div class="containerField">
-            <label>Ambiente</label>
-            <select class="form-select" aria-label="Default select example">
-              <option selected="true" disabled="disabled">Selecione o Ambiente</option>
-              <option value="1">Auditório</option>
-              <option value="3">Sala Nivonei</option>
-              <option value="2">Mini auditório </option>
-              <option value="3">Lab. Informática</option>
-
-              <option value="3">Lab. Química</option>
-
-              <option value="3">Lab. Meio Ambiente</option>
-
-
-
-            </select>
-            </div>
-        </div>
-
-        <div class="inputsContainer">
-            <div class="containerField">
-            <label>Recurso</label>
-            <select class="form-select" aria-label="Default select example">
+      <form action="" method="POST">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="equipmentScheduling" class="form-label">Recurso/Dispositivo</label>
+            <select class="form-select form-control" id="equipmentScheduling" aria-label="Default select example">
               <option selected="true" disabled="disabled">Selecione o recurso</option>
-              <option value="1">Datashow #1</option>
-              <option value="2">Datashow #2</option>
-              <option value="3">Datashow #3</option>
+              <option value="Datashow #1">Datashow #1</option>
+              <option value="Datashow #2">Datashow #2</option>
+              <option value="Datashow #3">Datashow #3</option>
             </select>
+          </div>
+          <div class="mb-3">
+            <label for="enviromentScheduling" class="form-label">Ambiente</label>
+            <select class="form-select form-control" id="enviromentScheduling" aria-label="Default select example">
+              <option selected="true" disabled="disabled">Selecione o Ambiente</option>
+              <option value="Auditório">Auditório</option>
+              <option value="Sala Nivonei">Sala Nivonei</option>
+              <option value="Mini auditório">Mini auditório</option>
+              <option value="Lab. Informática">Lab. Informática</option>
+              <option value="Lab. Química">Lab. Química</option>
+              <option value="Lab. Meio Ambiente">Lab. Meio Ambiente</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="dateWithdrawalScheduling" class="form-label">Data de Retirada</label>
+            <input type="date" class="form-control" id="dateWithdrawalScheduling" aria-describedby="emailHelp" required>
+          </div>
+          <div class="mb-3">
+            <label for="dateReturnScheduling" class="form-label">Data de Entrega</label>
+            <input type="date" class="form-control" id="dateReturnScheduling" aria-describedby="emailHelp" required>
+          </div>
+          <label for="" class="form-label">Horário:</label>
+          <div class="mb-3" id="containerHour">
+            <div>
+              <label for="timeStartScheduling" class="form-label">De</label>
+              <input type="time" class="form-control" id="dateStartScheduling" aria-describedby="emailHelp" required">
             </div>
+            <div>
+              <label for="timeEndScheduling" class="form-label">Até</label>
+              <input type="time" class="form-control" id="dateEndScheduling" aria-describedby="emailHelp" required">
+            </div>
+          </div>
         </div>
-
-      </div>
-      <div class="modal-footer">
-      <button id="Env">Agendar</button>
-      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-outline-primary" id="env">Agendar</button>
+        </div>
       </form>
     </div>
   </div>
 </div>
-
 
 @section('js')
 <script src="/js/scriptAgendar.js" defer></script>
