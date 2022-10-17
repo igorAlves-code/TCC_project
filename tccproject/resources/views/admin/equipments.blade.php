@@ -42,7 +42,7 @@
 
 <!-- Modal Cadastro Equipamento -->
 <div class="modal fade" id="newEquipment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="newEquipmentLabel">Cadastrar Equipamento</h5>
@@ -74,7 +74,7 @@
 
 <!-- Modal Pesquisa Equipamento -->
 <div class="modal fade" id="selectTypeEquipment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="selectTypeEquipmentLabel">Filtrar por Tipo</h5>
@@ -97,7 +97,7 @@
 
 <!-- Modal Edição Equipamento -->
 <div class="modal fade" id="editEquipment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="editEquipmentLabel">Dados do Equipamento</h5>
@@ -129,7 +129,7 @@
 
 <!-- Modal Exclusão Equipamento -->
 <div class="modal fade" id="deleteEquipment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="deleteEquipmentLabel">Excluir Equipamento</h5>

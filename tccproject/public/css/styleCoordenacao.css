@@ -43,7 +43,6 @@ main {
 
 .menuOptions:hover {
     background-color: #a3a1a1;
-    border-radius: 1em;
     cursor: pointer;
     color: #000000;
     text-decoration: none;
@@ -56,7 +55,6 @@ main {
     width: 100%;
     height: 100%;
     background-color: #a3a1a1;
-    border-radius: 1em;
     cursor: pointer;
     color: #000000;
     text-decoration: none;
@@ -70,7 +68,6 @@ main {
     width: 100%;
     height: 100%;
     background-color: #a3a1a1;
-    border-radius: 1em;
     cursor: pointer;
     color: #000000;
     text-decoration: none;
@@ -84,7 +81,6 @@ main {
     width: 100%;
     height: 100%;
     background-color: #a3a1a1;
-    border-radius: 1em;
     cursor: pointer;
     color: #000000;
     text-decoration: none;
@@ -98,7 +94,6 @@ main {
     width: 100%;
     height: 100%;
     background-color: #a3a1a1;
-    border-radius: 1em;
     cursor: pointer;
     color: #000000;
     text-decoration: none;
@@ -129,7 +124,6 @@ main {
     border-radius: 1em 0.5em;
 
     overflow-x: auto;
-
 }
 
 .table tr {
@@ -190,7 +184,7 @@ main {
 
 #env:hover {
     background-color: rgb(0, 0, 0);
-} 
+}
 
 /* ------------------- MOBILE -------------------- */
 
@@ -213,8 +207,6 @@ main {
     .modal-content {
         font-size: 30px;
     }
-
-    
 }
 
 @media only screen and (min-width: 576) and (max-width: 620px) {
@@ -228,7 +220,6 @@ main {
         width: 250vw;
         margin-left: -81vw;
     }
-    
 }
 @media only screen and (max-width: 920px) {
     .modal-content {
@@ -285,8 +276,8 @@ main {
     #tableCrud {
         overflow-x: auto;
     }
-    
-    .table{
+
+    .table {
         display: block;
         padding-left: 10px;
         text-align: center;
@@ -302,13 +293,12 @@ main {
     }
 }
 
-@keyframes hidden{
-    100%{
+@keyframes hidden {
+    100% {
         transform: translate3d(0px, 0px, 0px);
         transition: 0.5s;
         opacity: 1;
         visibility: visible;
         margin: 0px 0px 450px 0px;
     }
-
 }

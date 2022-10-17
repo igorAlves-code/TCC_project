@@ -85,7 +85,7 @@
 
 <!-- Modal Cadastro Professor -->
 <div class="modal fade" id="newTeacher" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="newTeacherLabel">Cadastrar Professor</h5>
@@ -133,7 +133,7 @@
 
 <!-- Modal Pesquisa Professor -->
 <div class="modal fade" id="selectSubjectTeacher" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="selectSubjectTeacherLabel">Filtrar por Disciplina</h5>
@@ -156,7 +156,7 @@
 
 <!-- Modal Edição Professor -->
 <div class="modal fade" id="editTeacher" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="editTeacherLabel">Dados do Professor</h5>
@@ -199,7 +199,7 @@
 
 <!-- Modal Exclusão Professor -->
 <div class="modal fade" id="deleteTeacher" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="deleteTeacherLabel">Excluir Professor</h5>

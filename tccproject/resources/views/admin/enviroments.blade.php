@@ -42,7 +42,7 @@
 
 <!-- Modal Cadastro Ambiente -->
 <div class="modal fade" id="newEnviroment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="newEnviromentLabel">Cadastrar Ambiente</h5>
@@ -74,7 +74,7 @@
 
 <!-- Modal Pesquisa Ambiente -->
 <div class="modal fade" id="selectTypeEnviroment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="selectTypeEnviromentLabel">Filtrar por Tipo</h5>
@@ -97,7 +97,7 @@
 
 <!-- Modal Edição Ambiente -->
 <div class="modal fade" id="editEnviroment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="editEnviromentLabel">Dados do Ambiente</h5>
@@ -129,7 +129,7 @@
 
 <!-- Modal Exclusão Ambiente -->
 <div class="modal fade" id="deleteEnviroment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="deleteEnviromentLabel">Excluir Ambiente</h5>

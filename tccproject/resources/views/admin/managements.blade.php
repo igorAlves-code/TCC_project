@@ -36,7 +36,7 @@
 
 <!-- Modal Cadastro Coordenador -->
 <div class="modal fade" id="newManagement" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="newManagementLabel">Cadastrar Coordenador</h5>
@@ -75,7 +75,7 @@
 {{--
 <!-- Modal Pesquisa Coordenador -->
 <div class="modal fade" id="selectSubjectManagement" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="selectSubjectManagementLabel">Filtrar por Disciplina</h5>
@@ -99,7 +99,7 @@
 
 <!-- Modal Edição Coordenador -->
 <div class="modal fade" id="editManagement" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="editManagementLabel">Dados do Coordenador</h5>
@@ -131,7 +131,7 @@
 
 <!-- Modal Exclusão Coordenador -->
 <div class="modal fade" id="deleteManagement" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="deleteManagementLabel">Excluir Coordenador</h5>
