@@ -57,10 +57,11 @@ Route::get('coordenacao/managements', function () {
 });
 
 
-Route::get('coordenacao/enviroments', function () {
-    return view('admin/enviroments');
-});
+// Route::get('coordenacao/enviroments', function () {
+//     return view('admin/enviroments');
+// });
 
+Route::get('coordenacao/enviroments', 'App\Http\Controllers\enviromentsController@index');
 
 Route::get('coordenacao/equipments', function () {
     return view('admin/equipments');

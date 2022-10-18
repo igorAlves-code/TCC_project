@@ -24,17 +24,23 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Laboratório de Química 1</td>
-                    <td>Laboratório de Química</td>
-                    <td>1</td>
-                    <td>
-                        <button type="button" class="btn btn-warning btn-modal btn-edit" data-toggle="modal" data-target="#editEnviroment">Editar</button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger btn-modal" data-toggle="modal" data-target="#deleteEnviroment">Excluir</button>
-                    </td>
-                </tr>
+
+                @foreach($enviroment as $enviroments)
+                    <tr>
+                        <td>{{$enviroments->nomeAmbiente}}</td>
+                        <td>{{$enviroments->tipoAmbiente}}</td>
+                        <td>{{$enviroments->quantidadeAmbiente}}</td>
+                        <td>
+                            <a href="{{url("coordenacao/enviroments/$enviroments->idAmbiente")}}">
+                                <button type="button" class="btn btn-warning btn-modal btn-edit" data-toggle="modal" data-target="#editEnviroment">Editar</button>
+                            </a>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger btn-modal" data-toggle="modal" data-target="#deleteEnviroment">Excluir</button>
+                        </td>
+                    </tr>
+                @endforeach
+
             </tbody>
         </table>
     </div>
@@ -105,7 +111,7 @@
             </div>
             <form action="" method="POST">
                 <div class="modal-body">
-                <div class="mb-3">
+                    <div class="mb-3">
                         <label for="nameEnviroment" class="form-label">Nome</label>
                         <input type="text" class="form-control" id="nameEnviroment" aria-describedby="emailHelp" required>
                     </div>
@@ -137,7 +143,7 @@
             </div>
             <form action="" method="POST">
                 <div class="modal-body">
-                <div class="mb-3">
+                    <div class="mb-3">
                         <label for="nameEnviroment" class="form-label">Nome</label>
                         <input type="text" class="form-control" id="nameEnviroment" aria-describedby="emailHelp" readonly>
                     </div>

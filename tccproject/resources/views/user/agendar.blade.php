@@ -53,22 +53,40 @@
             </select>
           </div>
           <div class="mb-3">
-            <label for="dateWithdrawalScheduling" class="form-label">Data de Retirada</label>
+            <label for="dateWithdrawalScheduling" class="form-label">Data do Agendamento</label>
             <input type="date" class="form-control" id="dateWithdrawalScheduling" aria-describedby="emailHelp" required>
-          </div>
-          <div class="mb-3">
-            <label for="dateReturnScheduling" class="form-label">Data de Entrega</label>
-            <input type="date" class="form-control" id="dateReturnScheduling" aria-describedby="emailHelp" required>
           </div>
           <label for="" class="form-label">Horário:</label>
           <div class="mb-3" id="containerHour">
-            <div>
-              <label for="timeStartScheduling" class="form-label">De</label>
-              <input type="time" class="form-control" id="dateStartScheduling" aria-describedby="emailHelp" required">
+          <div>
+              <label for="classStartScheduling" class="form-label">De</label>
+              <!-- <input type="time" class="form-control" id="dateStartScheduling" aria-describedby="emailHelp" required"> -->
+              <select name="classStartScheduling" id="classStartScheduling" class="form-control">
+                <option value="1ªaula">1ªaula</option>
+                <option value="2ªaula">2ªaula</option>
+                <option value="3ªaula">3ªaula</option>
+                <option value="4ªaula">4ªaula</option>
+                <option value="5ªaula">5ªaula</option>
+                <option value="6ªaula">6ªaula</option>
+                <option value="7ªaula">7ªaula</option>
+                <option value="8ªaula">8ªaula</option>
+                <option value="9ªaula">9ªaula</option>
+              </select>
             </div>
             <div>
-              <label for="timeEndScheduling" class="form-label">Até</label>
-              <input type="time" class="form-control" id="dateEndScheduling" aria-describedby="emailHelp" required">
+              <label for="classEndScheduling" class="form-label">Até</label>
+              <!-- <input type="time" class="form-control" id="dateEndScheduling" aria-describedby="emailHelp" required"> -->
+              <select name="classEndScheduling" id="classEndScheduling" class="form-control">
+                <option value="1ªaula">1ªaula</option>
+                <option value="2ªaula">2ªaula</option>
+                <option value="3ªaula">3ªaula</option>
+                <option value="4ªaula">4ªaula</option>
+                <option value="5ªaula">5ªaula</option>
+                <option value="6ªaula">6ªaula</option>
+                <option value="7ªaula">7ªaula</option>
+                <option value="8ªaula">8ªaula</option>
+                <option value="9ªaula">9ªaula</option>
+              </select>
             </div>
           </div>
         </div>
