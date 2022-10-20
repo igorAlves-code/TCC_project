@@ -24,9 +24,49 @@ class storeUpdateEnviromentsEquipmentsFormResquest extends FormRequest
     public function rules()
     {
         return [
-            'nomeAmbiente' => 'required|string|unique:ambiente|max:191', 
-            'tipoAmbiente' => 'required|string|max:191', 
-            'quantidadeAmbiente' => 'required|int'
+            'nomeAmbiente' => [
+                'required',
+                'string',
+                'unique:ambiente',
+                'max:191'
+            ], 
+            'tipoAmbiente' => [
+                'required',
+                'string',
+                'max:191'
+            ], 
+            'quantidadeAmbiente' => [
+                'required',
+                'int'
+            ],
         ];
     }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, mixed>
+     */
+    public function messages()
+    {
+        return [
+            'nomeAmbiente.required' => 'O campo é obrigatório',
+            'nomeAmbiente.unique' => 'Um recurso com esse nome já está cadastrado!',
+            [
+                'required',
+                'string',
+                'unique:ambiente',
+                'max:191'
+            ], 
+            'tipoAmbiente' => [
+                'required',
+                'string',
+                'max:191'
+            ], 
+            'quantidadeAmbiente' => [
+                'required',
+                'int'
+            ],
+        ];
+    }                
 }

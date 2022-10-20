@@ -34,8 +34,15 @@ class enviromentsController extends Controller
      */
     public function store(storeUpdateEnviromentsEquipmentsFormResquest $request)
     {
-        enviroments::create($request->all());
-
+        $create = enviroments::create($request->all());
+        $st = 0;
+        if ($create == true) {
+            $st->status = true;
+            $st->message = "Apartamento ativado com sucesso";
+            return redirect()
+                   ->back()
+                   ->with('st', $st);
+        }
         /* Redirecionamento */
         return redirect()->route('admin.enviroments.index');
     }

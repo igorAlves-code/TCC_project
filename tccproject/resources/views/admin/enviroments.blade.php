@@ -1,19 +1,12 @@
 @extends('admin.index')
 
 @section('tableCrud')
-    {{-- @if ($errors->any())
-        <div class="alert alert-warning alert-dismissible fade show" role="alert" style="">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-
-        </div>
-    @endif --}}
+    @if (Session::has('errors'))
+        @include('layouts.modais.enviroments.errors')
+        <script type="text/javascript">
+            $('#error').modal('show');
+        </script>
+    @endif
 
     @include('layouts.modais.enviroments.new')
     <div id="containerTable">
