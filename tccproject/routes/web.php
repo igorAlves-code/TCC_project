@@ -18,6 +18,13 @@ use App\Http\Controllers\userControl;
 
 Route::get('/', [userControl::class, 'login'])->name("login.page");
 Route::post('/', [userControl::class, 'auth'])->name("auth.user");
+Route::get('/logout', [userControl::class, 'logout'])->name("auth.log");
+
+
+
+ Route::get('coordenacao/agendar', function () {
+        return view('admin/agendar');
+    });
 
 
 Route::get('agendar', function () {

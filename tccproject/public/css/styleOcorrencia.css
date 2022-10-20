@@ -28,7 +28,7 @@ main {
     margin-bottom: 0;
 }
 
-form {
+.envForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -108,12 +108,16 @@ form {
     margin-top: -50px;
 }
 
+.close:focus {
+    outline: 0;
+}
+
 /**--------------------------------------------MOBILE-----------------------------------------------**/
 
 @media only screen and (max-width: 768px) {
     .inputsContainer {
         flex-direction: column;
-        width: 95vw;
+        width: 90vw;
     }
 
     .containerField:nth-child(3) {
@@ -121,14 +125,7 @@ form {
     }
 
     #inputData {
-        width: 95vw;
-    }
-
-    form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        width: 90vw;
     }
 
     .form {
@@ -143,7 +140,7 @@ form {
         padding: 3px;
         border: 1px solid rgba(22, 22, 22, 0.418);
         border-radius: 5px;
-        width: 95vw;
+        width: 90vw;
         height: 5vh;
         margin: 0;
         padding: 5px;
@@ -157,7 +154,7 @@ form {
         border: 1px solid rgba(22, 22, 22, 0.418);
         border-radius: 5px;
         margin-top: 5px;
-        width: 95vw;
+        width: 90vw;
         height: 35vh;
         margin: 0;
         padding: 5px;
@@ -167,16 +164,12 @@ form {
     }
 
     #Env {
-        width: 95vw;
+        width: 90vw;
     }
 
     .alert {
         max-width: 95vw;
-        margin-top: -3vh;
+        margin-top: -2vh;
         margin-bottom: 5px;
     }
-}
-
-.close:focus {
-    outline: 0;
 }

@@ -43,11 +43,15 @@
             </div>
 
             <div class="exitButton">
+                <form
+                 method="GET" 
+                 action="{{route('auth.log')}}">
                 <button>
                     Sair
                 </button>
-            </div>
-
+                </form>
+    </div>
+       
 {{--
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -71,13 +75,22 @@
             <div id="bar3" class="bar"></div>
         </div>
         <ul class="navigationMobile" id="navigationMobile">
-            <li><a href="/agendar">AGENDAR</a></li>
-            <li><a href="/agendamentos">AGENDAMENTOS</a></li>
-            <li><a href="/ocorrencia">OCORRÊNCIA</a></li>
+            <li><a href="/agendar">Agendar</a></li>
+            <li><a href="/agendamentos">Agendamentos</a></li>
+            <li><a href="/ocorrencia">Ocorrência</a></li>
             {{--
                 <li><a href="/alterarSenha">ALTERAR SENHA</a></li>
             --}}
-            <li><a href="#">SAIR</a></li>
+            <li>
+            <form
+                 method="GET" 
+                 action="{{route('auth.log')}}">
+                 <button>
+                    Sair
+                </button>
+            </form>  
+            </li>
+               
         </ul>
     </div>
     <div class="menuBg" id="menuBg"></div>
