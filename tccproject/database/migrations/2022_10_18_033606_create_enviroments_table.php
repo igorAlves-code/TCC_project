@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('ambiente', function (Blueprint $table) {
-            $table->increments('idAmbiente');
-            $table->string('nomeAmbiente');
+            $table->id();
+            $table->string('nomeAmbiente')->unique();
             $table->string('tipoAmbiente');
             $table->integer('quantidadeAmbiente');
             $table->timestamps();

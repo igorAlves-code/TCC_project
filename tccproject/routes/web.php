@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\enviromentsController;
 use App\Http\Controllers\userControl;
 
 /*
@@ -57,11 +58,12 @@ Route::get('coordenacao/managements', function () {
 });
 
 
-// Route::get('coordenacao/enviroments', function () {
-//     return view('admin/enviroments');
-// });
+/* CRUD AMBIENTES */
+Route::get('coordenacao/enviroments', [enviromentsController::class, 'index'])->name('admin.enviroments.index');
+Route::post('coordenacao/enviroments/store', [enviromentsController::class, 'store'])->name('admin.enviroments.store');
+Route::patch('coordenacao/enviroments/{id}/update/', [enviromentsController::class, 'update'])->name('admin.enviroments.update');
+Route::delete('coordenacao/enviroments/{id}', [enviromentsController::class, 'destroy'])->name('admin.enviroments.destroy');
 
-Route::get('coordenacao/enviroments', 'App\Http\Controllers\EnviromentsController@index');
 
 Route::get('coordenacao/equipments', function () {
     return view('admin/equipments');

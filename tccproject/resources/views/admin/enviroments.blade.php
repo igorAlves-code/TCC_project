@@ -1,168 +1,68 @@
 @extends('admin.index')
 
 @section('tableCrud')
-<div id="containerTable">
-    <div id="tableCrud">
-        <table class="table">
-            <thead>
-                <tr>
-                    <td scope="col" colspan="2">
-                        <button type="button" class="btn btn-primary btn-modal" data-toggle="modal" data-target="#newEnviroment">Cadastrar</button>
-                    </td>
-                    <td scope="col" colspan="3" hidden>
-                        <button type="button" class="btn btn-info btn-modal">Visualização Geral</button>
-                    </td>
-                    <td scope="col" colspan="3">
-                        <button type="button" class="btn btn-info btn-modal" data-toggle="modal" data-target="#selectTypeEnviroment">Filtrar por tipo</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Tipo de Ambiente</th>
-                    <th scope="col">Quantidade</th>
-                    <th scope="col" colspan="2">Ações</th>
-                </tr>
-            </thead>
-            <tbody>
+    {{-- @if ($errors->any())
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" style="">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
 
-                @foreach($enviroment as $enviroments)
+        </div>
+    @endif --}}
+
+    @include('layouts.modais.enviroments.new')
+    <div id="containerTable">
+        <div id="tableCrud">
+            <table class="table">
+                <thead>
                     <tr>
-                        <td>{{$enviroments->nomeAmbiente}}</td>
-                        <td>{{$enviroments->tipoAmbiente}}</td>
-                        <td>{{$enviroments->quantidadeAmbiente}}</td>
-                        <td>
-                            <a href="{{url("coordenacao/enviroments/$enviroments->idAmbiente")}}">
-                                <button type="button" class="btn btn-warning btn-modal btn-edit" data-toggle="modal" data-target="#editEnviroment">Editar</button>
-                            </a>
+                        <td scope="col" colspan="2">
+                            <button type="button" class="btn btn-primary btn-modal" data-toggle="modal"
+                                data-target="#newEnviroment">Cadastrar</button>
                         </td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-modal" data-toggle="modal" data-target="#deleteEnviroment">Excluir</button>
+                        <td scope="col" colspan="3" hidden>
+                            <button type="button" class="btn btn-info btn-modal">Visualização Geral</button>
+                        </td>
+                        <td scope="col" colspan="3">
+                            <button type="button" class="btn btn-info btn-modal" data-toggle="modal"
+                                data-target="#selectTypeEnviroment">Filtrar por tipo</button>
                         </td>
                     </tr>
-                @endforeach
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Tipo de Ambiente</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col" colspan="2">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-            </tbody>
-        </table>
-    </div>
-</div>
+                    @foreach ($enviroment as $enviroments)
+                        <tr>
+                            @include('layouts.modais.enviroments.search')
+                            <td>{{ $enviroments->nomeAmbiente }}</td>
+                            <td>{{ $enviroments->tipoAmbiente }}</td>
+                            <td>{{ $enviroments->quantidadeAmbiente }}</td>
+                            <td>
+                                <a href="#editEnviroment{{ $enviroments->id }}" class="btn btn-warning btn-modal btn-edit"
+                                    data-toggle="modal">Editar</a>
+                            </td>
+                            <td>
+                                <a href="#destroyEnviroment{{ $enviroments->id }}"
+                                    class="btn btn-warning btn-modal btn-danger" data-toggle="modal">Excluir</a>
+                            </td>
+                            @include('layouts.modais.enviroments.edit')
+                            @include('layouts.modais.enviroments.delete')
+                        </tr>
+                    @endforeach
 
-<!-- Modal Cadastro Ambiente -->
-<div class="modal fade" id="newEnviroment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="newEnviromentLabel">Cadastrar Ambiente</h5>
-                <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
-            </div>
-            <form action="" method="POST">
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="nameEnviroment" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nameEnviroment" aria-describedby="emailHelp" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="typeEnviroment" class="form-label">Tipo</label>
-                        <input type="text" class="form-control" id="typeEnviroment" aria-describedby="typeHelp" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="numberEnviroment" class="form-label">Quantidade</label>
-                        <input type="number" class="form-control" id="numberEnviroment" aria-describedby="numberHelp" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-outline-primary" id="env">Cadastrar</button>
-                </div>
-            </form>
+                </tbody>
+            </table>
         </div>
     </div>
-</div>
-
-<!-- Modal Pesquisa Ambiente -->
-<div class="modal fade" id="selectTypeEnviroment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="selectTypeEnviromentLabel">Filtrar por Tipo</h5>
-                <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
-            </div>
-            <form action="" method="POST">
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <input class="form-control me-2" type="search" placeholder="Tipo de Ambiente" aria-label="Search">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-outline-primary" id="env">Pesquisar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Modal Edição Ambiente -->
-<div class="modal fade" id="editEnviroment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editEnviromentLabel">Dados do Ambiente</h5>
-                <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
-            </div>
-            <form action="" method="POST">
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="nameEnviroment" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nameEnviroment" aria-describedby="emailHelp" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="typeEnviroment" class="form-label">Tipo</label>
-                        <input type="text" class="form-control" id="typeEnviroment" aria-describedby="typeHelp" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="numberEnviroment" class="form-label">Quantidade</label>
-                        <input type="number" class="form-control" id="numberEnviroment" aria-describedby="numberHelp" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-outline-primary" id="env">Editar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Modal Exclusão Ambiente -->
-<div class="modal fade" id="deleteEnviroment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteEnviromentLabel">Excluir Ambiente</h5>
-                <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
-            </div>
-            <form action="" method="POST">
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="nameEnviroment" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nameEnviroment" aria-describedby="emailHelp" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label for="typeEnviroment" class="form-label">Tipo</label>
-                        <input type="text" class="form-control" id="typeEnviroment" aria-describedby="typeHelp" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label for="numberEnviroment" class="form-label">Quantidade</label>
-                        <input type="number" class="form-control" id="numberEnviroment" aria-describedby="numberHelp" readonly>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger l-flex" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-outline-secondary" id="env">Excluir</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
 @endsection

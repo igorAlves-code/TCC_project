@@ -9,4 +9,9 @@ class enviroments extends Model
 {
     use HasFactory;
     protected $table='ambiente';
+    protected $fillable=[
+        'nomeAmbiente', 
+        'tipoAmbiente', 
+        'quantidadeAmbiente'
+    ];
 }
