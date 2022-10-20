@@ -183,17 +183,23 @@ footer {
     }
     .navigationMobile li a {
         font-size: 15px;
+        text-transform: uppercase;
         color: rgb(255, 255, 255);
         text-decoration: none;
     }
-    .navigationMobile li:nth-child(4) a {
+    .navigationMobile button {
         color: red;
+        font-size: 15px;
+        background-color: transparent;
+        outline: 0;
+        border: none;
+        text-transform: uppercase;
     }
     .navigationMobile li a:hover {
         color: #bebebe;
     }
 
-    .navigationMobile li:nth-child(4) a:hover {
+    .navigationMobile button:hover {
         color: #af0000;
     }
     .navigationMobile li {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Session\Middleware\AuthenticateSession;
 
 class userControl extends Controller
 {
@@ -14,7 +15,7 @@ class userControl extends Controller
 
     public function auth(Request $request)
     {
-
+        
         $this->validate($request,[
             'email' => 'required',
             'password' => 'required'
@@ -26,10 +27,22 @@ class userControl extends Controller
         ]);
 
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-            dd('logou');
+            return redirect('/agendar');
         }
         else{
          return redirect()->back()->with('danger', 'E-mail ou senha inválida');
         }
     }
+
+
+    public function logout(Request $request)
+{
+    Auth::logout();
+ 
+    $request->session()->invalidate();
+ 
+    $request->session()->regenerateToken();
+ 
+    return redirect('/');
+}
 }

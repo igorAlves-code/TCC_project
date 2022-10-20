@@ -23,7 +23,6 @@
     width: 48%;
 }
 
-
 #env {
     color: rgb(230, 230, 230);
     background-color: rgba(0, 0, 0, 0.911);
@@ -34,4 +33,10 @@
 
 #env:hover {
     background-color: rgb(0, 0, 0);
-} 
+}
+
+@media only screen and (max-width: 768px) {
+    #calendar {
+        width: 95vw;
+    }
+}

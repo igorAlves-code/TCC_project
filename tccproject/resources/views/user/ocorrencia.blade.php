@@ -14,7 +14,10 @@
     </div>
 
     <div class="form">
-        <form action="{{ url('ocorrencia') }}" method="POST">
+        <form
+         action="{{ url('ocorrencia') }}"
+         method="POST"
+         class="envForm">
         @csrf
 
         {{-- Tratamento de erros --}}
