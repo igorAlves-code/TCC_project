@@ -16,17 +16,18 @@ class userControl extends Controller
     public function auth(Request $request)
     {
         
-        $this->validate($request,[
-            'email' => 'required',
-            'password' => 'required'
+        $credenciais = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
         ], 
         [
-
-            'email.required' => 'E-mail é obrigatório',
+            'email.required' => 'Email é obrigatório',
+            'email.email' => 'O Email não é válido',
             'password.required' => 'Senha é obrigatório',
         ]);
 
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+        if(Auth::attempt( $credenciais, $request->remember)){
+            $request->session()->regenerate();
             return redirect('/agendar');
         }
         else{
