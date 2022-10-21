@@ -1,10 +1,10 @@
     <!-- Modal Pesquisa Ambiente -->
-    <div class="modal fade" id="selectTypeEnviroment" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="searchTypeEnviroment" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog  modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="selectTypeEnviromentLabel">Filtrar por Tipo</h5>
+                    <h5 class="modal-title" id="searchTypeEnviromentLabel">Filtrar por Tipo</h5>
                     <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
                 </div>
                 <form action=" {{ route('enviroments.index') }} " method="get">

@@ -13,30 +13,7 @@
         <script type="text/javascript">
             $('#success').modal('show');
         </script>
-        {{-- <div class="alert alert-success">
-            <p>{{ session('mensagem') }}</p>
-        </div> --}}
     @endif
-    {{-- 
-    @foreach ($status as $statu)
-        <div>{{ $statu }}</div>
-    @endforeach --}}
-
-    {{-- @if (Session::has('delete') == 1)
-        @include('layouts.modais.enviroments.success')
-        <script type="text/javascript">
-            $('#success').modal('show');
-        </script>
-    @else 
-    @endif --}}
-
-    {{-- @if ($status === 'true')
-        @include('layouts.modais.enviroments.success')
-        <script type="text/javascript">
-            $('#success').modal('show');
-        </script>
-    @else
-    @endif --}}
 
     @include('layouts.modais.enviroments.new')
     <div id="containerTable">
@@ -48,12 +25,9 @@
                             <button type="button" class="btn btn-primary btn-modal" data-toggle="modal"
                                 data-target="#newEnviroment">Cadastrar <i class="bi bi-person-plus"></i></button>
                         </td>
-                        <td scope="col" colspan="3" hidden>
-                            <button type="button" class="btn btn-info btn-modal">Visualização Geral</button>
-                        </td>
                         <td scope="col" colspan="3">
                             <button type="button" class="btn btn-info btn-modal" data-toggle="modal"
-                                data-target="#selectTypeEnviroment">Filtrar por tipo <i class="bi bi-search"></i></button>
+                                data-target="#searchTypeEnviroment">Filtrar por tipo <i class="bi bi-search"></i></button>
                         </td>
                     </tr>
                     <tr>
@@ -64,7 +38,6 @@
                     </tr>
                 </thead>
                 <tbody>
-
                     @foreach ($enviroments as $enviroment)
                         <tr>
                             @include('layouts.modais.enviroments.searchType')

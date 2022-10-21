@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\enviromentsController;
+use App\Http\Controllers\equipmentsController;
+use App\Http\Controllers\managementsController;
+use App\Http\Controllers\teachersController;
 use App\Http\Controllers\userControl;
 
 /*
@@ -20,25 +23,12 @@ Route::get('/', [userControl::class, 'login'])->name("login.page");
 Route::post('/', [userControl::class, 'auth'])->name("auth.user");
 Route::get('/logout', [userControl::class, 'logout'])->name("auth.log");
 
-
-
-Route::get('coordenacao/agendar', function () {
-    return view('admin/agendar');
-});
-
-
 Route::get('agendar', function () {
     return view('/user/agendar');
 });
 
-
 Route::get('agendamentos', function () {
     return view('/user/agendamentos');
-});
-
-
-Route::get('alterarSenha', function () {
-    return view('alterarSenha');
 });
 
 /* GRUPO DE ROTAS COORDENAÇÃO */
@@ -48,11 +38,9 @@ Route::prefix('coordenacao')->group(function () {
         return view('admin/index');
     });
 
-
     Route::get('/agendar', function () {
         return view('admin/agendar');
     });
-
 
     Route::get('/agendamentos', function () {
         return view('admin/agendamentos');
@@ -60,16 +48,18 @@ Route::prefix('coordenacao')->group(function () {
 
     /* CRUD PROFESSORES */
     Route::prefix('teachers')->group(function () {
-        Route::get('/', function () {
-            return view('admin/teachers');
-        });
+        Route::get('/', [teachersController::class, 'index'])->name('teachers.index');
+        Route::post('/store', [teachersController::class, 'store'])->name('teachers.store');
+        Route::patch('/{id}/update/', [teachersController::class, 'update'])->name('teachers.update');
+        Route::delete('/{id}', [teachersController::class, 'destroy'])->name('teachers.destroy');
     });
 
     /* CRUD COORDENAÇÃO */
     Route::prefix('managements')->group(function () {
-        Route::get('/', function () {
-            return view('admin/managements');
-        });
+        Route::get('/', [managementsController::class, 'index'])->name('managements.index');
+        Route::post('/store', [managementsController::class, 'store'])->name('managements.store');
+        Route::patch('/{id}/update/', [managementsController::class, 'update'])->name('managements.update');
+        Route::delete('/{id}', [managementsController::class, 'destroy'])->name('managements.destroy');
     });
 
     /* CRUD AMBIENTES */
@@ -82,10 +72,16 @@ Route::prefix('coordenacao')->group(function () {
 
     /* CRUD EQUIPAMENTOS */
     Route::prefix('equipments')->group(function () {
-        Route::get('/', function () {
-            return view('admin/equipments');
-        });
+        Route::get('/', [equipmentsController::class, 'index'])->name('equipments.index');
+        Route::post('/store', [equipmentsController::class, 'store'])->name('equipments.store');
+        Route::patch('/{id}/update/', [equipmentsController::class, 'update'])->name('equipments.update');
+        Route::delete('/{id}', [equipmentsController::class, 'destroy'])->name('equipments.destroy');
     });
+
 });
 
 Route::resource('ocorrencia', ContactController::class);
+
+Route::get('alterarSenha', function () {
+    return view('alterarSenha');
+});

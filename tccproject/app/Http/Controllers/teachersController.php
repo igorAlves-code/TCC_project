@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\managements;
 
 use Illuminate\Http\Request;
+use App\Models\teachers;
 
-class managementsController extends Controller
+class teachersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,11 @@ class managementsController extends Controller
     public function index(Request $request)
     {
         $search = $request->search;
-        $managements = managements::where(function ($query) use ($search){
+        $teachers = teachers::where(function ($query) use ($search){
             if($search) {
                 $query->where('nome', 'LIKE', "%{$search}%");
             }
         })->get();
-        return view('admin.managements', compact('managements'));
+        return view('admin.teachers', compact('teachers'));
     }
 }

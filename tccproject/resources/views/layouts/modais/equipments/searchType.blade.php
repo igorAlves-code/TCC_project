@@ -1,10 +1,10 @@
     <!-- Modal Pesquisa Equipamento -->
-    <div class="modal fade" id="selectTypeEquipment" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="searchTypeEquipment" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog  modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="selectTypeEquipmentLabel">Filtrar por Tipo</h5>
+                    <h5 class="modal-title" id="searchTypeEquipmentLabel">Filtrar por Tipo</h5>
                     <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
                 </div>
                 <form action=" {{ route('equipments.index') }} " method="get">
