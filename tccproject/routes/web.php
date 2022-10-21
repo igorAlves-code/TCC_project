@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\enviromentsController;
+use App\Http\Controllers\equipmentsController;
+use App\Http\Controllers\managementsController;
+use App\Http\Controllers\teachersController;
 use App\Http\Controllers\userControl;
 
 /*
@@ -75,5 +78,25 @@ Route::delete('coordenacao/enviroments/{id}', [enviromentsController::class, 'de
 Route::get('coordenacao/equipments', function () {
     return view('admin/equipments');
 });
+
+/* CRUD PROFESSORES*/
+Route::get('coordenacao/teachers', [teachersController::class, 'index'])->name('admin.teachers.index');
+Route::post('coordenacao/teachers/store', [teachersController::class, 'store'])->name('admin.teachers.store');
+Route::patch('coordenacao/teachers/{id}/update/', [teachersController::class, 'update'])->name('admin.teachers.update');
+Route::delete('coordenacao/teachers/{id}', [teachersController::class, 'destroy'])->name('admin.teachers.destroy');
+
+
+/* CRUD COORDENACAO*/
+Route::get('coordenacao/managements', [managementsController::class, 'index'])->name('admin.managements.index');
+Route::post('coordenacao/managements/store', [managementsController::class, 'store'])->name('admin.managements.store');
+Route::patch('coordenacao/managements/{id}/update/', [managementsController::class, 'update'])->name('admin.managements.update');
+Route::delete('coordenacao/managements/{id}', [managementsController::class, 'destroy'])->name('admin.managements.destroy');
+
+/* CRUD EQUIPAMENTOS*/
+Route::get('coordenacao/equipments', [equipmentsController::class, 'index'])->name('admin.equipments.index');
+Route::post('coordenacao/equipments/store', [equipmentsController::class, 'store'])->name('admin.equipments.store');
+Route::patch('coordenacao/equipments/{id}/update/', [equipmentsController::class, 'update'])->name('admin.equipments.update');
+Route::delete('coordenacao/equipments/{id}', [equipmentsController::class, 'destroy'])->name('admin.equipments.destroy');
+
 
 Route::resource('ocorrencia', ContactController::class);

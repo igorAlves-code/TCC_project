@@ -1,6 +1,14 @@
 @extends('admin.index')
 
 @section('tableCrud')
+    @if (Session::has('errors'))
+        @include('layouts.modais.equipments.errors')
+        <script type="text/javascript">
+            $('#error').modal('show');
+        </script>
+    @endif
+
+    @include('layouts.modais.equipments.new')
 <div id="containerTable">
     <div id="tableCrud">
         <table class="table">
@@ -24,53 +32,29 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Notebook Asus</td>
-                    <td>Notebook</td>
-                    <td>5</td>
-                    <td>
-                        <button type="button" class="btn btn-warning btn-modal btn-edit" data-toggle="modal" data-target="#editEquipment">Editar</button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger btn-modal" data-toggle="modal" data-target="#deleteEquipment">Excluir</button>
-                    </td>
-                </tr>
+            @foreach ($equipments as $equipments)
+                        <tr>
+                            @include('layouts.modais.equipments.search')
+                            <td>{{ $equipments->nomeEquipamento }}</td>
+                            <td>{{ $equipments->tipoEquipamento }}</td>
+                            <td>{{ $equipments->quantidadeEquipamento }}</td>
+                            <td>
+                                <a href="#editEquipment{{ $equipments->id }}" class="btn btn-warning btn-modal btn-edit"
+                                    data-toggle="modal">Editar</a>
+                            </td>
+                            <td>
+                                <a href="#destroyEquipment{{ $equipments->id }}"
+                                    class="btn btn-warning btn-modal btn-danger" data-toggle="modal">Excluir</a>
+                            </td>
+                            @include('layouts.modais.equipments.edit')
+                            @include('layouts.modais.equipments.delete')
+                        </tr>
+                    @endforeach
             </tbody>
         </table>
     </div>
 </div>
 
-<!-- Modal Cadastro Equipamento -->
-<div class="modal fade" id="newEquipment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="newEquipmentLabel">Cadastrar Equipamento</h5>
-                <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
-            </div>
-            <form action="" method="POST">
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="nameEquipment" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nameEquipment" aria-describedby="emailHelp" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="typeEquipment" class="form-label">Tipo</label>
-                        <input type="text" class="form-control" id="typeEquipment" aria-describedby="typeHelp" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="numberEquipment" class="form-label">Quantidade</label>
-                        <input type="number" class="form-control" id="numberEquipment" aria-describedby="numberHelp" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-outline-primary" id="env">Cadastrar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 
 <!-- Modal Pesquisa Equipamento -->
 <div class="modal fade" id="selectTypeEquipment" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
