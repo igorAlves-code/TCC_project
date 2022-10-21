@@ -17,13 +17,14 @@ class enviromentsController extends Controller
      */
     public function index(Request $request)
     {
+        $status = false;
         $search = $request->search;
-        $enviroment = enviroments::where(function ($query) use ($search){
-            if($search) {
+        $enviroments = enviroments::where(function ($query) use ($search) {
+            if ($search) {
                 $query->where('tipoAmbiente', 'LIKE', "%{$search}%");
             }
         })->get();
-        return view('admin.enviroments', compact('enviroment'));
+        return view('admin.enviroments', compact('enviroments', 'status'));
     }
 
     /**
@@ -34,17 +35,11 @@ class enviromentsController extends Controller
      */
     public function store(storeUpdateEnviromentsEquipmentsFormResquest $request)
     {
-        $create = enviroments::create($request->all());
-        $st = 0;
-        if ($create == true) {
-            $st->status = true;
-            $st->message = "Apartamento ativado com sucesso";
-            return redirect()
-                   ->back()
-                   ->with('st', $st);
+        $enviroments = enviroments::create($request->all());
+        if ($enviroments) {
+            return redirect()->route('enviroments.index'/*, compact('post')*/)
+                ->with(['success' => 'Cadastro realizada com sucesso!']);
         }
-        /* Redirecionamento */
-        return redirect()->route('admin.enviroments.index');
     }
 
     /**
@@ -56,12 +51,13 @@ class enviromentsController extends Controller
      */
     public function update(storeUpdateEnviromentsEquipmentsFormResquest $request, $id)
     {
-        $enviroment = enviroments::find($id);
+        $enviroments = enviroments::find($id);
         $data = $request->all();
-        $enviroment->fill($data)->update();
-        // $enviroment->update($data);
-
-        return redirect()->route('admin.enviroments.index');
+        $enviroments->fill($data)->update();
+        if ($enviroments) {
+            return redirect()->route('enviroments.index'/*, compact('post')*/)
+                ->with(['success' => 'Edição realizada com sucesso!']);
+        }
     }
 
     /**
@@ -72,9 +68,11 @@ class enviromentsController extends Controller
      */
     public function destroy($id)
     {
-        $enviroment = enviroments::find($id);
-        $enviroment->delete();
-
-        return redirect()->route('admin.enviroments.index');
+        $enviroments = enviroments::find($id);
+        $enviroments->delete();
+        if ($enviroments) {
+            return redirect()->route('enviroments.index'/*, compact('post')*/)
+                ->with(['success' => 'Exclusão realizada com sucesso!']);
+        }
     }
 }
