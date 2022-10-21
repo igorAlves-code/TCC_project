@@ -39,18 +39,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($equipments as $equipamento)
+                    @foreach ($equipments as $equipament)
                         <tr>
                             @include('layouts.modais.equipments.searchType')
-                            <td>{{ $equipamento->nomeEquipamento }}</td>
-                            <td>{{ $equipamento->tipoEquipamento }}</td>
-                            <td>{{ $equipamento->quantidadeEquipamento }}</td>
+                            <td>{{ $equipament->nomeEquipamento }}</td>
+                            <td>{{ $equipament->tipoEquipamento }}</td>
+                            <td>{{ $equipament->quantidadeEquipamento }}</td>
                             <td>
-                                <a href="#editEquipment{{ $equipamento->id }}" class="btn btn-warning btn-modal btn-edit"
+                                <a href="#editEquipment{{ $equipament->id }}" class="btn btn-warning btn-modal btn-edit"
                                     data-toggle="modal"><i class="bi bi-pencil-square"></i> Editar</a>
                             </td>
                             <td>
-                                <a href="#destroyEquipment{{ $equipamento->id }}" class="btn btn-warning btn-modal btn-danger"
+                                <a href="#destroyEquipment{{ $equipament->id }}" class="btn btn-warning btn-modal btn-danger"
                                     data-toggle="modal"><i class="bi bi-trash2-fill"></i> Excluir</a>
                             </td>
                             @include('layouts.modais.equipments.edit')

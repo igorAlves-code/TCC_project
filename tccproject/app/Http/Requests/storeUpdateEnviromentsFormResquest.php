@@ -52,21 +52,6 @@ class storeUpdateEnviromentsEquipmentsFormResquest extends FormRequest
         return [
             'nomeAmbiente.required' => 'O campo é obrigatório',
             'nomeAmbiente.unique' => 'Um recurso com esse nome já está cadastrado!',
-            [
-                'required',
-                'string',
-                'unique:ambiente',
-                'max:191'
-            ], 
-            'tipoAmbiente' => [
-                'required',
-                'string',
-                'max:191'
-            ], 
-            'quantidadeAmbiente' => [
-                'required',
-                'int'
-            ],
         ];
     }                
 }
