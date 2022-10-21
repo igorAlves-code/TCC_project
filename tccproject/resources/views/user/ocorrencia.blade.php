@@ -54,7 +54,7 @@
         <div class="inputsContainer">
             <div class="containerField">
                 <label>Nome</label>
-                <input type="text"  autocomplete="off" name="nome" >
+                <input type="text" value="{{auth()->User()->name}}" autocomplete="off" name="nome" >
             </div>
 
 

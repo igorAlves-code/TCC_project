@@ -14,9 +14,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
     <link rel="stylesheet" href="css/styleLogin.css" />
-
-  
-
   </head>
 
   <body>
@@ -55,6 +52,8 @@
             />
             <label class="label" for="Senha">Senha</label>
            </div>
+           <div class="remember">
+             <input type="checkbox" name="remember" class="rememberInput"> Lembrar-me
            </div>
         </div>
 
