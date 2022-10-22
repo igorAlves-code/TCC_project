@@ -11,15 +11,15 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="nomeAmbiente" class="form-label">Nome</label>
-                        <input type="text" class="form-control" name="nomeAmbiente" aria-describedby="nameHelp" required>
+                        <input type="text" class="form-control" name="nomeAmbiente" aria-describedby="nameHelp" value="{{ old('nomeAmbiente') }}">
                     </div>
                     <div class="mb-3">
                         <label for="tipoAmbiente" class="form-label">Tipo</label>
-                        <input type="text" class="form-control" name="tipoAmbiente" aria-describedby="typeHelp" required>
+                        <input type="text" class="form-control" name="tipoAmbiente" aria-describedby="typeHelp" value="{{ old('tipoAmbiente') }}">
                     </div>
                     <div class="mb-3">
                         <label for="quantidadeAmbiente" class="form-label">Quantidade</label>
-                        <input type="number" class="form-control" name="quantidadeAmbiente" aria-describedby="numberHelp" required>
+                        <input type="number" class="form-control" name="quantidadeAmbiente" aria-describedby="numberHelp" value="{{ old('quantidadeAmbiente') }}">
                     </div>
                 </div>
                 <div class="modal-footer">

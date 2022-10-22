@@ -3,8 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
-class storeUpdateEnviromentsEquipmentsFormResquest extends FormRequest
+class storeUpdateEnviromentsFormResquest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,12 +25,12 @@ class storeUpdateEnviromentsEquipmentsFormResquest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $rules = [
             'nomeAmbiente' => [
                 'required',
                 'string',
                 'unique:ambiente',
-                'max:191'
+                'max:191'.$this->route('id')
             ], 
             'tipoAmbiente' => [
                 'required',
@@ -40,6 +42,25 @@ class storeUpdateEnviromentsEquipmentsFormResquest extends FormRequest
                 'int'
             ],
         ];
+
+        return $rules;
+
+        // $rules = [];
+        // foreach($enviroments->rules as $key=>$rule){
+        // if(request()->route()->getActionMethod() == "update" && strpos($rule, "unique") !== FALSE)
+        //     $rule = "{$rule},{$model->id}";
+
+        // $rules[ $key ] = $rule;
+        // }
+
+        // $this->validate($request, $rules); // Mas esse é o correto
+     
+        // Validator::make($data, [
+        //     'nomeAmbiente' => [
+        //         'required',
+        //         Rule::unique('ambiente')->ignore($enviroments->id),
+        //     ],
+        // ]);
     }
 
     /**

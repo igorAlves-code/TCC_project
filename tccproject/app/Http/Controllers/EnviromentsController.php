@@ -6,6 +6,8 @@ use App\Http\Requests\storeUpdateEnviromentsFormResquest;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Http\Request;
 use App\Models\enviroments;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class enviromentsController extends Controller
 {
@@ -36,7 +38,7 @@ class enviromentsController extends Controller
     {
         $enviroments = enviroments::create($request->all());
         if ($enviroments) {
-            return redirect()->route('enviroments.index')
+            return redirect()->route('enviroments.index', compact($request->id))
                 ->with(['success' => 'Cadastro realizada com sucesso!']);
         }
     }

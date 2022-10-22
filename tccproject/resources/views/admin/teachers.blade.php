@@ -8,6 +8,14 @@
         </script>
     @endif
 
+    @if (session('success'))
+        @include('layouts.modais.success')
+        <script type="text/javascript">
+            $('#success').modal('show');
+        </script>
+    @else
+    @endif
+    
     @include('layouts.modais.teachers.new')
 <div id="containerTable">
     <div id="tableCrud">
@@ -33,7 +41,7 @@
             <tbody>
             @foreach ($teachers as $teachers)
                         <tr>
-                            @include('layouts.modais.teachers.search')
+                            @include('layouts.modais.teachers.searchType')
                             <td>{{ $teachers->nome }}</td>
                             <td>{{ $teachers->sobrenome }}</td>
                             <td>{{ $teachers->email }}</td>
