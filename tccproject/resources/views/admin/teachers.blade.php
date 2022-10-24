@@ -8,6 +8,14 @@
         </script>
     @endif
 
+    @if (session('success'))
+        @include('layouts.modais.success')
+        <script type="text/javascript">
+            $('#success').modal('show');
+        </script>
+    @else
+    @endif
+    
     @include('layouts.modais.teachers.new')
 <div id="containerTable">
     <div id="tableCrud">
@@ -16,9 +24,6 @@
                 <tr>
                     <td scope="col" colspan="3">
                         <button type="button" class="btn btn-primary btn-modal" data-toggle="modal" data-target="#newTeacher">Cadastrar</button>
-                    </td>
-                    <td scope="col" colspan="4" hidden>
-                        <button type="button" class="btn btn-info btn-modal">Visualização Geral</button>
                     </td>
                     <td scope="col" colspan="4">
                         <button type="button" class="btn btn-info btn-modal" data-toggle="modal" data-target="#selectSubjectTeacher">Filtrar por disciplina</button>
@@ -36,7 +41,7 @@
             <tbody>
             @foreach ($teachers as $teachers)
                         <tr>
-                            @include('layouts.modais.teachers.search')
+                            @include('layouts.modais.teachers.searchType')
                             <td>{{ $teachers->nome }}</td>
                             <td>{{ $teachers->sobrenome }}</td>
                             <td>{{ $teachers->email }}</td>

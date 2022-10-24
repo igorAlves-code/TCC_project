@@ -8,6 +8,14 @@
         </script>
     @endif
 
+    @if (session('success'))
+        @include('layouts.modais.success')
+        <script type="text/javascript">
+            $('#success').modal('show');
+        </script>
+    @else
+    @endif
+    
     @include('layouts.modais.managements.new')
 <div id="containerTable">
     <div id="tableCrud">

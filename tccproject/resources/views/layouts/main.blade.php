@@ -38,9 +38,20 @@
                 <div><a href="/agendamentos">Agendamentos</a></div>
             </div>
 
+
+            @can('admin')
+
+            <div class="navigation">
+                <div><a href="/coordenacao">Coordenação</a></div>
+            </div>
+
+            @else
+
             <div class="navigation">
                 <div><a href="ocorrencia">Ocorrência</a></div>
             </div>
+
+            @endcan
 
             <div class="exitButton">
                 <form
@@ -77,10 +88,12 @@
         <ul class="navigationMobile" id="navigationMobile">
             <li><a href="/agendar">Agendar</a></li>
             <li><a href="/agendamentos">Agendamentos</a></li>
-            <li><a href="/ocorrencia">Ocorrência</a></li>
-            {{--
-                <li><a href="/alterarSenha">ALTERAR SENHA</a></li>
-            --}}
+            @can('admin')
+                <li><a href="/coordenacao">Coordenação</a></li>
+            @else
+                <li><a href="/ocorrencia">Ocorrência</a></li>
+            @endcan
+           
             <li>
             <form
                  method="GET" 

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\storeUpdateEnviromentsEquipmentsFormResquest;
+use App\Http\Requests\storeUpdateEnviromentsFormResquest;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Http\Request;
 use App\Models\enviroments;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class enviromentsController extends Controller
 {
@@ -18,12 +20,12 @@ class enviromentsController extends Controller
     public function index(Request $request)
     {
         $search = $request->search;
-        $enviroment = enviroments::where(function ($query) use ($search){
-            if($search) {
+        $enviroments = enviroments::where(function ($query) use ($search) {
+            if ($search) {
                 $query->where('tipoAmbiente', 'LIKE', "%{$search}%");
             }
         })->get();
-        return view('admin.enviroments', compact('enviroment'));
+        return view('admin.enviroments', compact('enviroments'));
     }
 
     /**
@@ -32,19 +34,13 @@ class enviromentsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(storeUpdateEnviromentsEquipmentsFormResquest $request)
+    public function store(storeUpdateEnviromentsFormResquest $request)
     {
-        $create = enviroments::create($request->all());
-        $st = 0;
-        if ($create == true) {
-            $st->status = true;
-            $st->message = "Apartamento ativado com sucesso";
-            return redirect()
-                   ->back()
-                   ->with('st', $st);
+        $enviroments = enviroments::create($request->all());
+        if ($enviroments) {
+            return redirect()->route('enviroments.index', compact($request->id))
+                ->with(['success' => 'Cadastro realizada com sucesso!']);
         }
-        /* Redirecionamento */
-        return redirect()->route('admin.enviroments.index');
     }
 
     /**
@@ -54,14 +50,15 @@ class enviromentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(storeUpdateEnviromentsEquipmentsFormResquest $request, $id)
+    public function update(storeUpdateEnviromentsFormResquest $request, $id)
     {
-        $enviroment = enviroments::find($id);
+        $enviroments = enviroments::find($id);
         $data = $request->all();
-        $enviroment->fill($data)->update();
-        // $enviroment->update($data);
-
-        return redirect()->route('admin.enviroments.index');
+        $enviroments->fill($data)->update();
+        if ($enviroments) {
+            return redirect()->route('enviroments.index')
+                ->with(['success' => 'Edição realizada com sucesso!']);
+        }
     }
 
     /**
@@ -72,9 +69,11 @@ class enviromentsController extends Controller
      */
     public function destroy($id)
     {
-        $enviroment = enviroments::find($id);
-        $enviroment->delete();
-
-        return redirect()->route('admin.enviroments.index');
+        $enviroments = enviroments::find($id);
+        $enviroments->delete();
+        if ($enviroments) {
+            return redirect()->route('enviroments.index')
+                ->with(['success' => 'Exclusão realizada com sucesso!']);
+        }
     }
 }

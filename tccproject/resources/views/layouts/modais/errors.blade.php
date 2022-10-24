@@ -4,15 +4,15 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="newEnviromentLabel">Oops...</h5>
+                <h5 class="modal-title" id="errorLabel">Oops...</h5>
                 <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
             </div>
             {{-- <div class="alert alert-warning alert-dismissible" role="alert" style="">
                 <ul class="p-1"> --}}
             <div class="modal-body">
-                <div class="mb-3">
+                <div class="mb-3 mb-3 p-3 alert-warning">
                     @foreach ($errors->all() as $error)
-                        <div>{{ $error }}</div>
+                        <div><i class="bi bi-exclamation-triangle"> </i>{{ $error }}</div>
                     @endforeach
                 </div>
             </div>

@@ -14,7 +14,7 @@ main {
     height: 70vh;
     margin-top: 0.5em;
     background: #dedede;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /**box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);**/
     border-radius: 1em 0.5em;
 }
 
@@ -126,6 +126,22 @@ main {
     overflow-x: auto;
 }
 
+#tableCrud::-webkit-scrollbar {
+    width: 15px;
+}
+
+#tableCrud::-webkit-scrollbar-track {
+    background-color: rgb(223, 223, 223);
+    border-radius: 20px; /* roundness of the scroll thumb */
+    /* color of the tracking area */
+}
+
+#tableCrud::-webkit-scrollbar-thumb {
+    background-color: #a3a1a1; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid rgb(223, 223, 223); /* creates padding around scroll thumb */
+}
+
 .table tr {
     width: 100%;
 }
@@ -165,16 +181,6 @@ main {
 }
 
 #env {
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15px;
-    height: 25px;
-    width: 10vw;
-    padding: 3px;
-    border-radius: 3px;
-    font-size: 14px;
-    cursor: pointer; */
     color: rgb(230, 230, 230);
     background-color: rgba(0, 0, 0, 0.911);
     transition: ease 0.2s;

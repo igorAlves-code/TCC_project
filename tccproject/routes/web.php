@@ -7,6 +7,9 @@ use App\Http\Controllers\equipmentsController;
 use App\Http\Controllers\managementsController;
 use App\Http\Controllers\teachersController;
 use App\Http\Controllers\userControl;
+use App\Http\Controllers\siteController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,69 +22,62 @@ use App\Http\Controllers\userControl;
 |
 */
 
-/* Autenticação */
+/* AUTENTICAÇÃO */
 Route::get('/', [userControl::class, 'login'])->name("login.page");
 Route::post('/', [userControl::class, 'auth'])->name("auth.user");
 Route::get('/logout', [userControl::class, 'logout'])->name("auth.log");
 
 
+/* MIDDLEWARE DE AUTENTICAÇÃO */
+Route::middleware(['auth'])->group(function () {
 
- Route::get('coordenacao/agendar', function () {
-        return view('admin/agendar');
-    });
+Route::get('agendar', [siteController::class, 'agendar'])->name('Home');;
 
+Route::get('agendamentos', [siteController::class, 'agendamentos']);
 
 Route::resource('ocorrencia', ContactController::class);
 
 
-Route::get('agendar', function () {
-    return view('/user/agendar');
-})->middleware('auth');
+/* CONTROLE DE ACESSO */
 
 
-Route::get('agendamentos', function () {
-    return view('/user/agendamentos');
-});
+/* GRUPO DE ROTAS COORDENAÇÃO */
+Route::prefix('coordenacao')->group(function () {
 
+    Route::get('/', [siteController::class, 'coordenacao']);
+   
 
-Route::get('alterarSenha', function () {
-    return view('alterarSenha');
-});
+    /* CRUD PROFESSORES */
+    Route::prefix('teachers')->group(function () {
+        Route::get('/', [teachersController::class, 'index'])->name('teachers.index');
+        Route::post('/store', [teachersController::class, 'store'])->name('teachers.store');
+        Route::patch('/{id}/update/', [teachersController::class, 'update'])->name('teachers.update');
+        Route::delete('/{id}', [teachersController::class, 'destroy'])->name('teachers.destroy');
+    });
 
-Route::get('coordenacao', function () {
-    return view('admin/index');
-});
+    /* CRUD COORDENAÇÃO */
+    Route::prefix('managements')->group(function () {
+        Route::get('/', [managementsController::class, 'index'])->name('managements.index');
+        Route::post('/store', [managementsController::class, 'store'])->name('managements.store');
+        Route::patch('/{id}/update/', [managementsController::class, 'update'])->name('managements.update');
+        Route::delete('/{id}', [managementsController::class, 'destroy'])->name('managements.destroy');
+    });
 
+    /* CRUD AMBIENTES */
+    Route::prefix('enviroments')->group(function () {
+        Route::get('/', [enviromentsController::class, 'index'])->name('enviroments.index');
+        Route::post('/store', [enviromentsController::class, 'store'])->name('enviroments.store');
+        Route::patch('/{id}/update/', [enviromentsController::class, 'update'])->name('enviroments.update');
+        Route::delete('/{id}', [enviromentsController::class, 'destroy'])->name('enviroments.destroy');
+    });
 
-Route::get('coordenacao/agendar', function () {
-    return view('admin/agendar');
-});
-
-
-Route::get('coordenacao/agendamentos', function () {
-    return view('admin/agendamentos');
-});
-
-Route::get('coordenacao/teachers', function () {
-    return view('admin/teachers');
-});
-
-
-Route::get('coordenacao/managements', function () {
-    return view('admin/managements');
-});
-
-
-/* CRUD AMBIENTES */
-Route::get('coordenacao/enviroments', [enviromentsController::class, 'index'])->name('admin.enviroments.index');
-Route::post('coordenacao/enviroments/store', [enviromentsController::class, 'store'])->name('admin.enviroments.store');
-Route::patch('coordenacao/enviroments/{id}/update/', [enviromentsController::class, 'update'])->name('admin.enviroments.update');
-Route::delete('coordenacao/enviroments/{id}', [enviromentsController::class, 'destroy'])->name('admin.enviroments.destroy');
-
-
-Route::get('coordenacao/equipments', function () {
-    return view('admin/equipments');
-});
+    /* CRUD EQUIPAMENTOS */
+    Route::prefix('equipments')->group(function () {
+        Route::get('/', [equipmentsController::class, 'index'])->name('equipments.index');
+        Route::post('/store', [equipmentsController::class, 'store'])->name('equipments.store');
+        Route::patch('/{id}/update/', [equipmentsController::class, 'update'])->name('equipments.update');
+        Route::delete('/{id}', [equipmentsController::class, 'destroy'])->name('equipments.destroy');
+    });
 
 /* CRUD PROFESSORES*/
 Route::get('coordenacao/teachers', [teachersController::class, 'index'])->name('admin.teachers.index');
@@ -101,3 +97,6 @@ Route::get('coordenacao/equipments', [equipmentsController::class, 'index'])->na
 Route::post('coordenacao/equipments/store', [equipmentsController::class, 'store'])->name('admin.equipments.store');
 Route::patch('coordenacao/equipments/{id}/update/', [equipmentsController::class, 'update'])->name('admin.equipments.update');
 Route::delete('coordenacao/equipments/{id}', [equipmentsController::class, 'destroy'])->name('admin.equipments.destroy');
+
+});
+});

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class storeUpdateEnviromentsEquipmentsFormResquest extends FormRequest
+class storeUpdateEquipmentsFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,24 +24,24 @@ class storeUpdateEnviromentsEquipmentsFormResquest extends FormRequest
     public function rules()
     {
         return [
-            'nomeAmbiente' => [
+            'nomeEquipamento' => [
                 'required',
                 'string',
-                'unique:ambiente',
+                'unique:equipamento',
                 'max:191'
             ], 
-            'tipoAmbiente' => [
+            'tipoEquipamento' => [
                 'required',
                 'string',
                 'max:191'
             ], 
-            'quantidadeAmbiente' => [
+            'quantidadeEquipamento' => [
                 'required',
                 'int'
-            ],
+            ],'id'
         ];
     }
-
+    
     /**
      * Get the validation rules that apply to the request.
      *
@@ -50,23 +50,8 @@ class storeUpdateEnviromentsEquipmentsFormResquest extends FormRequest
     public function messages()
     {
         return [
-            'nomeAmbiente.required' => 'O campo é obrigatório',
-            'nomeAmbiente.unique' => 'Um recurso com esse nome já está cadastrado!',
-            [
-                'required',
-                'string',
-                'unique:ambiente',
-                'max:191'
-            ], 
-            'tipoAmbiente' => [
-                'required',
-                'string',
-                'max:191'
-            ], 
-            'quantidadeAmbiente' => [
-                'required',
-                'int'
-            ],
+            'nomeEquipamento.required' => 'O campo é obrigatório',
+            'nomeEquipamento.unique' => 'Um recurso com esse nome já está cadastrado!',
         ];
-    }                
+    }   
 }

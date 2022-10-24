@@ -1,4 +1,4 @@
-@extends('layouts.mainUser')
+@extends('layouts.main')
 
 @section('title', 'A.S.R - Agendamento de Salas e Recursos')
 

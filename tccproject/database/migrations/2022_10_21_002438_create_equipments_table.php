@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('tipoEquipamento');
             $table->integer('quantidadeEquipamento');
             $table->timestamps();
-            });
+        });
     }
 
     /**
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('equipments');
+        Schema::dropIfExists('equipamento');
     }
 };

@@ -6,19 +6,20 @@
                 <h5 class="modal-title" id="newEquipmentLabel">Cadastrar Equipamento</h5>
                 <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
             </div>
-            <form action="" method="POST">
+            <form action="{{ route('equipments.store') }}" method="post">
+            @csrf
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="nameEquipment" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nameEquipment" aria-describedby="emailHelp" required>
+                        <label for="nomeEquipamento" class="form-label">Nome</label>
+                        <input type="text" class="form-control" name="nomeEquipamento" aria-describedby="nameHelp" required>
                     </div>
                     <div class="mb-3">
-                        <label for="typeEquipment" class="form-label">Tipo</label>
-                        <input type="text" class="form-control" id="typeEquipment" aria-describedby="typeHelp" required>
+                        <label for="tipoEquipamento" class="form-label">Tipo</label>
+                        <input type="text" class="form-control" name="tipoEquipamento" aria-describedby="typeHelp" required>
                     </div>
                     <div class="mb-3">
-                        <label for="numberEquipment" class="form-label">Quantidade</label>
-                        <input type="number" class="form-control" id="numberEquipment" aria-describedby="numberHelp" required>
+                        <label for="quantidadeEquipamento" class="form-label">Quantidade</label>
+                        <input type="number" class="form-control" name="quantidadeEquipamento" aria-describedby="numberHelp" required>
                     </div>
                 </div>
                 <div class="modal-footer">
