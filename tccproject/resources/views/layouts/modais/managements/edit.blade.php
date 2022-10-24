@@ -7,7 +7,7 @@
                 <h5 class="modal-title" id="editEnviromentLabel">Dados do Ambiente</h5>
                 <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
             </div>
-            <form action="{{ route('enviroments.update', $enviroments->id) }}" method="post">
+            <form action="{{ route('managements.update', $enviroments->id) }}" method="post">
                 @method('patch')
                 @csrf
                 <div class="modal-body">

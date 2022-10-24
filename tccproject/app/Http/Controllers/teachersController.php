@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\storeUpdateTeachersFormResquest;
 use App\Models\teachers;
 
 class teachersController extends Controller
@@ -23,6 +24,21 @@ class teachersController extends Controller
         })->get();
         // return redirect()->route('teachers.index', compact('teachers'));
         return view('admin.teachers', compact('teachers'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(storeUpdateTeachersFormResquest $request)
+    {
+        $teachers = teachers::create($request->all());
+        if ($teachers) {
+            return redirect()->route('teachers.index', compact($request->id))
+                ->with(['success' => 'Professor cadastrado com sucesso!']);
+        }
     }
 
     /**
