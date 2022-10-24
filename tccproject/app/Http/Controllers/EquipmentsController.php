@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class equipmentsController extends Controller
 {
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -36,7 +36,7 @@ class equipmentsController extends Controller
         $equipments = equipments::create($request->all());
         if ($equipments) {
             return redirect()->route('equipments.index')
-                ->with(['success' => 'Cadastro realizada com sucesso!']);
+                ->with(['success' => 'Cadastro realizado com sucesso!']);
         }
     }
 
