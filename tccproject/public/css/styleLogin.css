@@ -90,13 +90,14 @@ main {
     justify-content: center;
     align-items: center;
     position: fixed;
+    margin-top:3vh;
 }
 
 .input-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     width: 35vw;
     height: 50px;
     position: relative;
@@ -220,7 +221,7 @@ footer {
 
     .loginForm {
         width: 80vw;
-        height: 40vh;
+        height: 35vh;
         margin-top: 10px;
     }
 
@@ -261,5 +262,9 @@ footer {
 
     .text-input {
         width: 70vw;
+    }
+
+    .buttonContainer{
+        margin-top: 34vh;
     }
 }

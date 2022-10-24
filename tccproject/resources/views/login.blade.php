@@ -52,9 +52,13 @@
             />
             <label class="label" for="Senha">Senha</label>
            </div>
+
+           {{--
            <div class="remember">
              <input type="checkbox" name="remember" class="rememberInput"> Lembrar-me
            </div>
+          --}}
+          
         </div>
 
           <div class="buttonContainer">

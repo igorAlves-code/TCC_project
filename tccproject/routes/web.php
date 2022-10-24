@@ -19,6 +19,7 @@ use App\Http\Controllers\userControl;
 |
 */
 
+/* Autenticação */
 Route::get('/', [userControl::class, 'login'])->name("login.page");
 Route::post('/', [userControl::class, 'auth'])->name("auth.user");
 Route::get('/logout', [userControl::class, 'logout'])->name("auth.log");
@@ -30,9 +31,12 @@ Route::get('/logout', [userControl::class, 'logout'])->name("auth.log");
     });
 
 
+Route::resource('ocorrencia', ContactController::class);
+
+
 Route::get('agendar', function () {
     return view('/user/agendar');
-});
+})->middleware('auth');
 
 
 Route::get('agendamentos', function () {
@@ -97,6 +101,3 @@ Route::get('coordenacao/equipments', [equipmentsController::class, 'index'])->na
 Route::post('coordenacao/equipments/store', [equipmentsController::class, 'store'])->name('admin.equipments.store');
 Route::patch('coordenacao/equipments/{id}/update/', [equipmentsController::class, 'update'])->name('admin.equipments.update');
 Route::delete('coordenacao/equipments/{id}', [equipmentsController::class, 'destroy'])->name('admin.equipments.destroy');
-
-
-Route::resource('ocorrencia', ContactController::class);
