@@ -29,8 +29,8 @@ class storeUpdateEnviromentsFormResquest extends FormRequest
             'nomeAmbiente' => [
                 'required',
                 'string',
-                'unique:ambiente',
-                'max:191'.$this->route('id')
+                Rule::unique('ambiente')->ignore($this->id),
+                'max:191'
             ], 
             'tipoAmbiente' => [
                 'required',
@@ -44,23 +44,6 @@ class storeUpdateEnviromentsFormResquest extends FormRequest
         ];
 
         return $rules;
-
-        // $rules = [];
-        // foreach($enviroments->rules as $key=>$rule){
-        // if(request()->route()->getActionMethod() == "update" && strpos($rule, "unique") !== FALSE)
-        //     $rule = "{$rule},{$model->id}";
-
-        // $rules[ $key ] = $rule;
-        // }
-
-        // $this->validate($request, $rules); // Mas esse é o correto
-     
-        // Validator::make($data, [
-        //     'nomeAmbiente' => [
-        //         'required',
-        //         Rule::unique('ambiente')->ignore($enviroments->id),
-        //     ],
-        // ]);
     }
 
     /**
@@ -71,8 +54,12 @@ class storeUpdateEnviromentsFormResquest extends FormRequest
     public function messages()
     {
         return [
-            'nomeAmbiente.required' => 'O campo é obrigatório',
-            'nomeAmbiente.unique' => 'Um recurso com esse nome já está cadastrado!',
+            'nomeAmbiente.required' => 'O nome do ambiente é obrigatório!',
+            'nomeAmbiente.unique' => 'Um ambiente com esse nome já está cadastrado!',
+            'nomeAmbiente.max' => 'O limite é de 191 caracteres para o nome do ambiente!',
+            'tipoAmbiente.required' => 'O tipo do ambiente é obrigatório!',
+            'tipoAmbiente.max' => 'O limite é de 191 caracteres para o tipo do ambiente!',
+            'quantidadeAmbiente.required' => 'A quantidade de ambientes é obrigatória!',
         ];
     }                
 }

@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Requests;
+
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class storeUpdateEquipmentsFormRequest extends FormRequest
+class storeUpdateManagementsFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,26 +25,26 @@ class storeUpdateEquipmentsFormRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'nomeEquipamento' => [
-                'required',
-                'string',
-                Rule::unique('equipamento')->ignore($this->id),
-                'max:191'
-            ], 
-            'tipoEquipamento' => [
+            'nome' => [
                 'required',
                 'string',
                 'max:191'
             ], 
-            'quantidadeEquipamento' => [
+            'sobrenome' => [
                 'required',
-                'int'
-            ]
+                'string',
+                'max:191'
+            ], 
+            'email' => [
+                'required',
+                Rule::unique('coordenador')->ignore($this->id),
+                'max:191',
+            ],
         ];
 
         return $rules;
     }
-    
+      
     /**
      * Get the validation rules that apply to the request.
      *
@@ -52,12 +53,13 @@ class storeUpdateEquipmentsFormRequest extends FormRequest
     public function messages()
     {
         return [
-            'nomeEquipamento.required' => 'O nome do equipamento é obrigatório!',
-            'nomeEquipamento.unique' => 'Um equipamento com esse nome já está cadastrado!',
-            'nomeEquipamento.max' => 'O limite é de 191 caracteres para o nome do equipamento!',
-            'tipoEquipamento.required' => 'O tipo do equipamento é obrigatório!',
-            'tipoEquipamento.max' => 'O limite é de 191 caracteres para o tipo do equipamento!',
-            'quantidadeEquipamento.required' => 'A quantidade de equipamentos é obrigatória!',
+            'nome.required' => 'O nome do coordenador é obrigatório!',
+            'nome.max' => 'O limite é de 191 caracteres para o nome do coordenador!',
+            'sobrenome.required' => 'O sobrenome do coordenador é obrigatório!',
+            'sobrenome.max' => 'O limite é de 191 caracteres para o sobrenome do coordenador!',
+            'email.required' => 'O email do coordenador é obrigatório!',
+            'email.unique' => 'Um coordenador com esse email já está cadastrado!',
+            'email.max' => 'O limite é de 191 caracteres para o email do coordenador!',
         ];
     }   
 }

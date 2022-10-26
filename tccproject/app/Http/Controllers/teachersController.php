@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\storeUpdateTeachersFormResquest;
+use App\Http\Requests\storeUpdateTeachersFormRequest;
 use App\Models\teachers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class teachersController extends Controller
 {
@@ -15,16 +17,16 @@ class teachersController extends Controller
      */
     public function index(Request $request)
     {
-        // $teachers = teachers::$request->get();
         $search = $request->search;
         $teachers = teachers::where(function ($query) use ($search){
             if($search) {
-                $query->where('nome', 'LIKE', "%{$search}%");
+                $query->where('disciplina', 'LIKE', "%{$search}%");
             }
-        })->get();
-        // return redirect()->route('teachers.index', compact('teachers'));
+        })->paginate();
         return view('admin.teachers', compact('teachers'));
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -32,11 +34,15 @@ class teachersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(storeUpdateTeachersFormResquest $request)
+    public function store(storeUpdateTeachersFormRequest $request)
     {
-        $teachers = teachers::create($request->all());
+        
+
+        $data = $request->all();
+        $data['senha'] = Hash::make(Str::random(8));
+        $teachers = teachers::create($data);
         if ($teachers) {
-            return redirect()->route('teachers.index', compact($request->id))
+            return redirect()->route('teachers.index')
                 ->with(['success' => 'Professor cadastrado com sucesso!']);
         }
     }
@@ -48,14 +54,30 @@ class teachersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function update(storeUpdateTeachersFormResquest $request, $id)
-    // {
-    //     $teachers = teachers::find($id);
-    //     $data = $request->all();
-    //     $teachers->fill($data)->update();
-    //     if ($teachers) {
-    //         return redirect()->route('teachers.index')
-    //             ->with(['success' => 'Edição realizada com sucesso!']);
-    //     }
-    // }
+    public function update(storeUpdateTeachersFormRequest $request, $id)
+    {
+        $teachers = teachers::find($id);
+        $data = $request->all();
+        $teachers->fill($data)->update();
+        if ($teachers) {
+            return redirect()->route('teachers.index')
+                ->with(['success' => 'Professor editado com sucesso!']);
+        }
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $teachers = teachers::find($id);
+        $teachers->delete();
+        if ($teachers) {
+            return redirect()->route('teachers.index')
+                ->with(['success' => 'Professor deletado com sucesso!']);
+        }
+    }
 }

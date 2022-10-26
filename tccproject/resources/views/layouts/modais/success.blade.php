@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <div class="mb-3 p-3 alert-success">Operação realizada com sucesso!</div>
+                    <div class="mb-3 p-3 alert-success">{{ session('success', 'message') }}</div>
                 </div>
             </div>
             <div class="modal-footer">

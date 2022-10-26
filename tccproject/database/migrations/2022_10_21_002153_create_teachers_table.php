@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('sobrenome');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('senha');
             $table->string('disciplina');
             $table->integer('acesso');
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teachers');
+        Schema::dropIfExists('professor');
     }
 };

@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\storeUpdateEnviromentsFormResquest;
-use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Http\Request;
 use App\Models\enviroments;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
 
 class enviromentsController extends Controller
 {
@@ -24,7 +21,7 @@ class enviromentsController extends Controller
             if ($search) {
                 $query->where('tipoAmbiente', 'LIKE', "%{$search}%");
             }
-        })->get();
+        })->paginate();
         return view('admin.enviroments', compact('enviroments'));
     }
 
@@ -38,8 +35,8 @@ class enviromentsController extends Controller
     {
         $enviroments = enviroments::create($request->all());
         if ($enviroments) {
-            return redirect()->route('enviroments.index', compact($request->id))
-                ->with(['success' => 'Cadastro realizada com sucesso!']);
+            return redirect()->route('enviroments.index')
+                ->with(['success' => 'Ambiente cadastrado com sucesso!']);
         }
     }
 
@@ -57,7 +54,7 @@ class enviromentsController extends Controller
         $enviroments->fill($data)->update();
         if ($enviroments) {
             return redirect()->route('enviroments.index')
-                ->with(['success' => 'Edição realizada com sucesso!']);
+                ->with(['success' => 'Ambiente editado com sucesso!']);
         }
     }
 
@@ -73,7 +70,7 @@ class enviromentsController extends Controller
         $enviroments->delete();
         if ($enviroments) {
             return redirect()->route('enviroments.index')
-                ->with(['success' => 'Exclusão realizada com sucesso!']);
+                ->with(['success' => 'Ambiente deletado com sucesso!']);
         }
     }
 }

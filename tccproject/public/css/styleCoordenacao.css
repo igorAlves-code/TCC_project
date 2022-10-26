@@ -132,14 +132,18 @@ main {
 
 #tableCrud::-webkit-scrollbar-track {
     background-color: rgb(223, 223, 223);
-    border-radius: 20px; /* roundness of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
     /* color of the tracking area */
 }
 
 #tableCrud::-webkit-scrollbar-thumb {
-    background-color: #a3a1a1; /* color of the scroll thumb */
-    border-radius: 20px; /* roundness of the scroll thumb */
-    border: 3px solid rgb(223, 223, 223); /* creates padding around scroll thumb */
+    background-color: #a3a1a1;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid rgb(223, 223, 223);
+    /* creates padding around scroll thumb */
 }
 
 .table tr {
@@ -192,6 +196,75 @@ main {
     background-color: rgb(0, 0, 0);
 }
 
+#pagination nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* NÃO MEXER, EM HIPPÓTESE ALGUMA */
+#btnCad{color:#fff;background-color:#007bff;border-color:#007bff}#btnCad:hover{color:#fff;background-color:#0069d9;border-color:#0062cc}#btnCad.focus,#btnCad:focus{box-shadow:0 0 0 .2rem rgba(0,123,255,.5)}#btnCad.disabled,#btnCad:disabled{color:#fff;background-color:#007bff;border-color:#007bff}#btnCad:not(:disabled):not(.disabled).active,#btnCad:not(:disabled):not(.disabled):active,.show>#btnCad.dropdown-toggle{color:#fff;background-color:#0062cc;border-color:#005cbf}#btnCad:not(:disabled):not(.disabled).active:focus,#btnCad:not(:disabled):not(.disabled):active:focus,.show>#btnCad.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(0,123,255,.5)}
+
+/* NÃO MEXER, EM HIPPÓTESE ALGUMA */
+#btnFiltro{color:#fff;background-color:#17a2b8;border-color:#17a2b8}#btnFiltro:hover{color:#fff;background-color:#138496;border-color:#117a8b}#btnFiltro.focus,#btnFiltro:focus{box-shadow:0 0 0 .2rem rgba(23,162,184,.5)}#btnFiltro.disabled,#btnFiltro:disabled{color:#fff;background-color:#17a2b8;border-color:#17a2b8}#btnFiltro:not(:disabled):not(.disabled).active,#btnFiltro:not(:disabled):not(.disabled):active,.show>#btnFiltro.dropdown-toggle{color:#fff;background-color:#117a8b;border-color:#10707f}#btnFiltro:not(:disabled):not(.disabled).active:focus,#btnFiltro:not(:disabled):not(.disabled):active:focus,.show>#btnFiltro.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(23,162,184,.5)}
+
+/* NÃO MEXER, EM HIPPÓTESE ALGUMA */
+#btnDanger{color:#fff;background-color:#dc3545;border-color:#dc3545}#btnDanger:hover{color:#fff;background-color:#c82333;border-color:#bd2130}#btnDanger.focus,#btnDanger:focus{box-shadow:0 0 0 .2rem rgba(220,53,69,.5)}#btnDanger.disabled,#btnDanger:disabled{color:#fff;background-color:#dc3545;border-color:#dc3545}#btnDanger:not(:disabled):not(.disabled).active,#btnDanger:not(:disabled):not(.disabled):active,.show>#btnDanger.dropdown-toggle{color:#fff;background-color:#bd2130;border-color:#b21f2d}#btnDanger:not(:disabled):not(.disabled).active:focus,#btnDanger:not(:disabled):not(.disabled):active:focus,.show>#btnDanger.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(220,53,69,.5)}
+
+/* #pagination {
+    display: flex;
+    /* justify-content: space-evenly; 
+    width: 100%;
+    height: 10%;
+}
+
+#pagination nav {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: row-reverse; 
+    width: 100%;
+    height: 100%;
+}
+
+#pagination nav div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#pagination nav div a {
+    color: rgb(230, 230, 230);
+    background-color: rgba(0, 0, 0, 0.911) !important;
+    transition: ease 0.2s;
+    outline: 0;
+    border: none !important;
+    border-radius: 50%;
+    width: 5px;
+
+    /* padding: 0!important; */
+    /* margin: 0!important; 
+}
+
+#pagination nav div a:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+#pagination nav div span.relative.z-0 {
+    border: 0!important;
+    border-radius: 50%;
+    padding: 0.1em!important;
+}
+
+#pagination svg {
+    display: flex;
+    width: 2em;
+    margin: 0!important;
+}
+
+#pagination div.flex {
+    display: none;
+} */
+
 /* ------------------- MOBILE -------------------- */
 
 /* Mobile S */
@@ -227,6 +300,7 @@ main {
         margin-left: -81vw;
     }
 }
+
 @media only screen and (max-width: 920px) {
     .modal-content {
         margin-top: 7%;
@@ -271,7 +345,7 @@ main {
         background-color: #242424;
     }
 
-    #check:checked ~ #menuAdmin {
+    #check:checked~#menuAdmin {
         animation: hidden 1s ease forwards;
     }
 

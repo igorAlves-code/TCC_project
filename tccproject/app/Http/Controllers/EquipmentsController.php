@@ -21,7 +21,7 @@ class equipmentsController extends Controller
             if ($search) {
                 $query->where('tipoEquipamento', 'LIKE', "%{$search}%");
             }
-        })->get();
+        })->paginate(15);
         return view('admin.equipments', compact('equipments'));
     }
 
@@ -36,7 +36,7 @@ class equipmentsController extends Controller
         $equipments = equipments::create($request->all());
         if ($equipments) {
             return redirect()->route('equipments.index')
-                ->with(['success' => 'Cadastro realizado com sucesso!']);
+                ->with(['success' => 'Equipamento cadastrado com sucesso!']);
         }
     }
 
@@ -54,7 +54,7 @@ class equipmentsController extends Controller
         $equipments->fill($data)->update();
         if ($equipments) {
             return redirect()->route('equipments.index')
-                ->with(['success' => 'Edição realizada com sucesso!']);
+                ->with(['success' => 'Equipamento editado com sucesso!']);
         }
     }
 
@@ -70,7 +70,7 @@ class equipmentsController extends Controller
         $equipments->delete();
         if ($equipments) {
             return redirect()->route('equipments.index')
-                ->with(['success' => 'Exclusão realizada com sucesso!']);
+                ->with(['success' => 'Equipamento deletado com sucesso!']);
         }
     }
 }

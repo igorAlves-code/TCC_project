@@ -1,5 +1,5 @@
     <!-- Modal Pesquisa Ambiente -->
-    <div class="modal fade" id="selectTypeEnviroment" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="selectSubjectTeacher" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog  modal-dialog-centered">
             <div class="modal-content">
@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        <button type="button" id="btnDanger" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn btn-outline-primary" id="env">Pesquisar</button>
                     </div>
                 </form>

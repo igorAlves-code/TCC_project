@@ -13,22 +13,20 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="nomeAmbiente" class="form-label">Nome</label>
-                        <input type="text" class="form-control" name="nomeAmbiente" aria-describedby="nameHelp"
-                            required value="{{ $enviroment->nomeAmbiente }}">
+                        <input type="text" class="form-control" name="nomeAmbiente" aria-describedby="nameHelp" value="{{ $enviroment->nomeAmbiente }}">
                     </div>
                     <div class="mb-3">
                         <label for="tipoAmbiente" class="form-label">Tipo</label>
-                        <input type="text" class="form-control" name="tipoAmbiente" aria-describedby="typeHelp"
-                            required value="{{ $enviroment->tipoAmbiente }}">
+                        <input type="text" class="form-control" name="tipoAmbiente" aria-describedby="typeHelp" value="{{ $enviroment->tipoAmbiente }}">
                     </div>
                     <div class="mb-3">
                         <label for="quantidadeAmbiente" class="form-label">Quantidade</label>
                         <input type="number" class="form-control" name="quantidadeAmbiente"
-                            aria-describedby="numberHelp" required value="{{ $enviroment->quantidadeAmbiente }}">
+                            aria-describedby="numberHelp" value="{{ $enviroment->quantidadeAmbiente }}">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="btnDanger" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-outline-primary" id="env">Editar</button>
                 </div>
             </form>

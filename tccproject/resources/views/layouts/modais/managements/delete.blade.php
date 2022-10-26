@@ -4,7 +4,7 @@
     <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="destroyManagementLabel">Excluir Ambiente</h5>
+                <h5 class="modal-title" id="destroyManagementLabel">Excluir Coordenador</h5>
                 <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
             </div>
             <form action="{{ route('managements.destroy', $managements->id) }}" method="post">
@@ -15,23 +15,23 @@
                         <i class="bi bi-exclamation-triangle"></i> Deseja realmente excluir esse registro?
                     </div>
                     <div class="mb-3">
-                        <label for="nameManagement" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nameManagement" aria-describedby="emailHelp"
-                            readonly value="{{ $managements->nomeAmbiente }}">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" name="nome" aria-describedby="nameHelp" readonly
+                            value="{{ $managements->nome }}">
                     </div>
                     <div class="mb-3">
-                        <label for="typeEnviroment" class="form-label">Tipo</label>
-                        <input type="text" class="form-control" id="typeEnviroment" aria-describedby="typeHelp"
-                            readonly value="{{ $managements->tipoAmbiente }}">
+                        <label for="sobrenome" class="form-label">Sobrenome</label>
+                        <input type="text" class="form-control" name="sobrenome" aria-describedby="middlenameHelp"
+                            readonly value="{{ $managements->sobrenome }}">
                     </div>
                     <div class="mb-3">
-                        <label for="numberEnviroment" class="form-label">Quantidade</label>
-                        <input type="number" class="form-control" id="numberEnviroment" aria-describedby="numberHelp"
-                            readonly value="{{ $managements->quantidadeAmbiente }}">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control" name="email" aria-describedby="emailHelp" readonly
+                            value="{{ $managements->email }}">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger l-flex" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="btnDanger" class="btn btn-danger l-flex" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-outline-secondary" id="env">Excluir</button>
                 </div>
             </form>

@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger l-flex" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="btnDanger" class="btn btn-danger l-flex" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-outline-secondary" id="env">Excluir</button>
                 </div>
             </form>

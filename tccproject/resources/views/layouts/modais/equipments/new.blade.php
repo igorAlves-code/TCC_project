@@ -11,19 +11,19 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="nomeEquipamento" class="form-label">Nome</label>
-                        <input type="text" class="form-control" name="nomeEquipamento" aria-describedby="nameHelp" required>
+                        <input type="text" class="form-control" name="nomeEquipamento" aria-describedby="nameHelp" value="{{ old('nomeEquipamento') }}">
                     </div>
                     <div class="mb-3">
                         <label for="tipoEquipamento" class="form-label">Tipo</label>
-                        <input type="text" class="form-control" name="tipoEquipamento" aria-describedby="typeHelp" required>
+                        <input type="text" class="form-control" name="tipoEquipamento" aria-describedby="typeHelp" value="{{ old('tipoEquipamento') }}">
                     </div>
                     <div class="mb-3">
                         <label for="quantidadeEquipamento" class="form-label">Quantidade</label>
-                        <input type="number" class="form-control" name="quantidadeEquipamento" aria-describedby="numberHelp" required>
+                        <input type="number" class="form-control" name="quantidadeEquipamento" aria-describedby="numberHelp" value="{{ old('quantidadeEquipamento') }}">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="btnDanger" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-outline-primary" id="env">Cadastrar</button>
                 </div>
             </form>
