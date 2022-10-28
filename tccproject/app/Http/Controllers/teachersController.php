@@ -22,7 +22,7 @@ class teachersController extends Controller
             if($search) {
                 $query->where('disciplina', 'LIKE', "%{$search}%");
             }
-        })->paginate();
+        })->paginate(3);
         return view('admin.teachers', compact('teachers'));
     }
 

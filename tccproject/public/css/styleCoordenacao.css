@@ -211,59 +211,11 @@ main {
 /* NÃO MEXER, EM HIPPÓTESE ALGUMA */
 #btnDanger{color:#fff;background-color:#dc3545;border-color:#dc3545}#btnDanger:hover{color:#fff;background-color:#c82333;border-color:#bd2130}#btnDanger.focus,#btnDanger:focus{box-shadow:0 0 0 .2rem rgba(220,53,69,.5)}#btnDanger.disabled,#btnDanger:disabled{color:#fff;background-color:#dc3545;border-color:#dc3545}#btnDanger:not(:disabled):not(.disabled).active,#btnDanger:not(:disabled):not(.disabled):active,.show>#btnDanger.dropdown-toggle{color:#fff;background-color:#bd2130;border-color:#b21f2d}#btnDanger:not(:disabled):not(.disabled).active:focus,#btnDanger:not(:disabled):not(.disabled):active:focus,.show>#btnDanger.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(220,53,69,.5)}
 
-/* #pagination {
-    display: flex;
-    /* justify-content: space-evenly; 
-    width: 100%;
-    height: 10%;
-}
+h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}
 
-#pagination nav {
-    display: flex;
-    justify-content: center;
-    /* flex-direction: row-reverse; 
-    width: 100%;
-    height: 100%;
-}
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{margin-bottom:.5rem;font-family:inherit;font-weight:500;line-height:1.2;color:inherit}
 
-#pagination nav div {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-}
-
-#pagination nav div a {
-    color: rgb(230, 230, 230);
-    background-color: rgba(0, 0, 0, 0.911) !important;
-    transition: ease 0.2s;
-    outline: 0;
-    border: none !important;
-    border-radius: 50%;
-    width: 5px;
-
-    /* padding: 0!important; */
-    /* margin: 0!important; 
-}
-
-#pagination nav div a:hover {
-    background-color: rgb(0, 0, 0);
-}
-
-#pagination nav div span.relative.z-0 {
-    border: 0!important;
-    border-radius: 50%;
-    padding: 0.1em!important;
-}
-
-#pagination svg {
-    display: flex;
-    width: 2em;
-    margin: 0!important;
-}
-
-#pagination div.flex {
-    display: none;
-} */
+.h5,h5{font-size:1.25rem}
 
 /* ------------------- MOBILE -------------------- */
 
