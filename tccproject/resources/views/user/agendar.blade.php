@@ -30,8 +30,9 @@
         <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
       </div>
       <form action="" method="POST">
+        @csrf
         <div class="modal-body">
-          <div class="mb-3">
+          <div class="mb-3"> 
             <label for="equipmentScheduling" class="form-label">Recurso/Dispositivo</label>
             <select class="form-select form-control" id="equipmentScheduling" aria-label="Default select example">
               <option selected="true" disabled="disabled">Selecione o recurso</option>

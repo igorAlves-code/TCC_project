@@ -31,13 +31,12 @@
     <header>
         <div class="header">
             <div class="navigation">
-                <div><a id="home" href="agendar">Agendar</a></div>
+                <div><a id="home" href="/agendar">Agendar</a></div>
             </div>
 
             <div class="navigation">
                 <div><a href="/agendamentos">Agendamentos</a></div>
             </div>
-
 
             @can('admin')
 
@@ -48,7 +47,7 @@
             @else
 
             <div class="navigation">
-                <div><a href="ocorrencia">Ocorrência</a></div>
+                <div><a href="/ocorrencia">Ocorrência</a></div>
             </div>
 
             @endcan
