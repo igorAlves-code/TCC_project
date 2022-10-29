@@ -32,7 +32,8 @@ Route::get('/logout', [userControl::class, 'logout'])->name("auth.log");
 /* MIDDLEWARE DE AUTENTICAÇÃO */
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('agendar', [siteController::class, 'agendar'])->name('Home');;
+    Route::get('agendar', [siteController::class, 'agendar'])->name('Home');
+    Route::post('agendar/enviar', [siteController::class, 'store']);
 
     Route::get('agendamentos', [siteController::class, 'agendamentos']);
 
@@ -43,7 +44,6 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('coordenacao')->group(function () {
 
         Route::get('/', [siteController::class, 'coordenacao']);
-
 
         /* CRUD PROFESSORES */
         Route::prefix('teachers')->group(function () {

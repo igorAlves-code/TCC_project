@@ -10,6 +10,15 @@
 @endsection
 
 @section('content')
+
+    @if (session('success'))
+        @include('layouts.modais.success')
+        <script type="text/javascript">
+            $('#success').modal('show');
+        </script>
+    @else
+    @endif
+
 <main>
   <div class="title">
     <h1>Selecione uma data e horário</h1>
@@ -29,40 +38,42 @@
         <h5 class="modal-title" id="newSchedulingLabel">Realizar Agendamento</h5>
         <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
       </div>
-      <form action="" method="POST">
+      <form action="{{ url('agendar/enviar') }}" method="POST">
         @csrf
         <div class="modal-body">
+        <div class="mb-3">
+            <label for="titlelScheduling" class="form-label">Nome</label>
+            <input value="{{auth()->User()->name}}" class="form-control" name="title" aria-describedby="emailHelp" required>
+          </div>
+
           <div class="mb-3"> 
             <label for="equipmentScheduling" class="form-label">Recurso/Dispositivo</label>
-            <select class="form-select form-control" id="equipmentScheduling" aria-label="Default select example">
+            <select class="form-select form-control" name="recurso" id="equipmentScheduling" aria-label="Default select example">
               <option selected="true" disabled="disabled">Selecione o recurso</option>
-              <option value="Datashow #1">Datashow #1</option>
-              <option value="Datashow #2">Datashow #2</option>
-              <option value="Datashow #3">Datashow #3</option>
+              @foreach ($equipments as $equipments)
+              <option value="{{ $equipments->nomeEquipamento }}">{{ $equipments->nomeEquipamento }}</option>
+              @endforeach
             </select>
           </div>
           <div class="mb-3">
             <label for="enviromentScheduling" class="form-label">Ambiente</label>
-            <select class="form-select form-control" id="enviromentScheduling" aria-label="Default select example">
-              <option selected="true" disabled="disabled">Selecione o Ambiente</option>
-              <option value="Auditório">Auditório</option>
-              <option value="Sala Nivonei">Sala Nivonei</option>
-              <option value="Mini auditório">Mini auditório</option>
-              <option value="Lab. Informática">Lab. Informática</option>
-              <option value="Lab. Química">Lab. Química</option>
-              <option value="Lab. Meio Ambiente">Lab. Meio Ambiente</option>
+            <select class="form-select form-control" name="ambiente" id="enviromentScheduling" aria-label="Default select example">
+            <option selected="true" disabled="disabled">Selecione o Ambiente</option>
+            @foreach ($enviroments as $enviroment)
+              <option value="{{ $enviroment->nomeAmbiente }}">{{ $enviroment->nomeAmbiente }}</option>
+            @endforeach
             </select>
           </div>
           <div class="mb-3">
             <label for="dateWithdrawalScheduling" class="form-label">Data do Agendamento</label>
-            <input type="date" class="form-control" id="dateWithdrawalScheduling" aria-describedby="emailHelp" required>
+            <input type="date" class="form-control" name="start" id="dateWithdrawalScheduling" aria-describedby="emailHelp" required>
           </div>
           <label for="" class="form-label">Horário:</label>
           <div class="mb-3" id="containerHour">
           <div>
               <label for="classStartScheduling" class="form-label">De</label>
               <!-- <input type="time" class="form-control" id="dateStartScheduling" aria-describedby="emailHelp" required"> -->
-              <select name="classStartScheduling" id="classStartScheduling" class="form-control">
+              <select name="retirada" id="classStartScheduling" class="form-control"  required>
                 <option value="1ªaula">1ªaula</option>
                 <option value="2ªaula">2ªaula</option>
                 <option value="3ªaula">3ªaula</option>
@@ -77,7 +88,7 @@
             <div>
               <label for="classEndScheduling" class="form-label">Até</label>
               <!-- <input type="time" class="form-control" id="dateEndScheduling" aria-describedby="emailHelp" required"> -->
-              <select name="classEndScheduling" id="classEndScheduling" class="form-control">
+              <select name="devolução" id="classEndScheduling" class="form-control"  required>
                 <option value="1ªaula">1ªaula</option>
                 <option value="2ªaula">2ªaula</option>
                 <option value="3ªaula">3ªaula</option>

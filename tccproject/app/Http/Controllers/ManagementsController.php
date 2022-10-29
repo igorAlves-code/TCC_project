@@ -22,7 +22,7 @@ class managementsController extends Controller
             if ($search) {
                 $query->where('', 'LIKE', "%{$search}%");
             }
-        })->paginate();
+        })->paginate(3);
         return view('admin.managements', compact('managements'));
     }
 

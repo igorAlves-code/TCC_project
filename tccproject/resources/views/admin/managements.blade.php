@@ -35,17 +35,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($managements as $managements)
+                    @foreach ($managements as $management)
                         <tr>
-                            <td>{{ $managements->nome }}</td>
-                            <td>{{ $managements->sobrenome }}</td>
-                            <td>{{ $managements->email }}</td>
+                            <td>{{ $management->nome }}</td>
+                            <td>{{ $management->sobrenome }}</td>
+                            <td>{{ $management->email }}</td>
                             <td>
-                                <a href="#editManagement{{ $managements->id }}" class="btn btn-warning btn-modal btn-edit"
+                                <a href="#editManagement{{ $management->id }}" class="btn btn-warning btn-modal btn-edit"
                                     data-toggle="modal"><i class="bi bi-pencil-square"></i> Editar</a>
                             </td>
                             <td>
-                                <a href="#destroyManagement{{ $managements->id }}"
+                                <a href="#destroyManagement{{ $management->id }}"
                                     class="btn btn-warning btn-modal btn-danger" data-toggle="modal"><i
                                         class="bi bi-trash2-fill"></i> Excluir</a>
                             </td>

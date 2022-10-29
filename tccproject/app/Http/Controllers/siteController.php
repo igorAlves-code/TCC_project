@@ -4,14 +4,34 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use App\Models\agendamento;
+use App\Models\enviroments;
+use App\Models\equipments;
 
 class siteController extends Controller
 {
-    public function agendar()
+
+     /**Agendar controller**/
+
+    public function agendar(request $request)
     {
-     return view('/user/agendar');
+        $agendamento = agendamento::all(); 
+        $enviroments = enviroments::all();
+        $equipments = equipments::all();
+        return view('/user/agendar', compact('enviroments', 'equipments'));
     }
 
+    public function store(Request $request)
+    {
+    request()->validate(agendamento::$rules);
+    $agendamento = agendamento::create($request->all());
+
+    return back()
+        ->with('success', 'Seu agendamento foi salvo!');
+    }
+
+
+    /**Geral controller**/
 
     public function agendamentos()
     {

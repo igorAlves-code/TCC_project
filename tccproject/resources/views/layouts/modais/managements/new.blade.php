@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/css/styleCoordenacao.css">
+
 <!-- Modal Cadastro Ambiente -->
 <div class="modal fade" id="newManagement" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -24,7 +26,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="btnDanger" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="btnDanger" class="btn btn-danger" data-dismiss="modal" style="background-color: #dc3545;">Cancelar</button>
                     <button type="submit" class="btn btn-outline-primary" id="env">Cadastrar</button>
                 </div>
             </form>

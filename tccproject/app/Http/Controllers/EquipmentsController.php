@@ -21,7 +21,7 @@ class equipmentsController extends Controller
             if ($search) {
                 $query->where('tipoEquipamento', 'LIKE', "%{$search}%");
             }
-        })->paginate(15);
+        })->paginate(3);
         return view('admin.equipments', compact('equipments'));
     }
 

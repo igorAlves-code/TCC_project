@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/css/styleCoordenacao.css">
+
 {{-- Modal Erros --}}
 <div id="error" class="modal fade show" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -15,7 +17,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                <button type="button" id="#btnDanger" class="btn btn-danger" data-dismiss="modal" style="background-color: #dc3545;">Fechar</button>
             </div>
         </div>
     </div>

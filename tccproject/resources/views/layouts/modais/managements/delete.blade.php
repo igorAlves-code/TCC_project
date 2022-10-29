@@ -1,5 +1,7 @@
+<link rel="stylesheet" href="/css/styleCoordenacao.css">
+
 <!-- Modal Exclusão Ambiente -->
-<div class="modal fade" id="destroyManagement{{ $managements->id }}" data-backdrop="static" data-keyboard="false"
+<div class="modal fade" id="destroyManagement{{ $management->id }}" data-backdrop="static" data-keyboard="false"
     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content">
@@ -7,7 +9,7 @@
                 <h5 class="modal-title" id="destroyManagementLabel">Excluir Coordenador</h5>
                 <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
             </div>
-            <form action="{{ route('managements.destroy', $managements->id) }}" method="post">
+            <form action="{{ route('managements.destroy', $management->id) }}" method="post">
                 @method('DELETE')
                 @csrf
                 <div class="modal-body">
@@ -17,21 +19,21 @@
                     <div class="mb-3">
                         <label for="nome" class="form-label">Nome</label>
                         <input type="text" class="form-control" name="nome" aria-describedby="nameHelp" readonly
-                            value="{{ $managements->nome }}">
+                            value="{{ $management->nome }}">
                     </div>
                     <div class="mb-3">
                         <label for="sobrenome" class="form-label">Sobrenome</label>
                         <input type="text" class="form-control" name="sobrenome" aria-describedby="middlenameHelp"
-                            readonly value="{{ $managements->sobrenome }}">
+                            readonly value="{{ $management->sobrenome }}">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="text" class="form-control" name="email" aria-describedby="emailHelp" readonly
-                            value="{{ $managements->email }}">
+                            value="{{ $management->email }}">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="btnDanger" class="btn btn-danger l-flex" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="btnDanger" class="btn btn-danger l-flex" data-dismiss="modal" style="background-color: #dc3545;">Cancelar</button>
                     <button type="submit" class="btn btn-outline-secondary" id="env">Excluir</button>
                 </div>
             </form>

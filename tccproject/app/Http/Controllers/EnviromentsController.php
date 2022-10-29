@@ -21,7 +21,7 @@ class enviromentsController extends Controller
             if ($search) {
                 $query->where('tipoAmbiente', 'LIKE', "%{$search}%");
             }
-        })->paginate();
+        })->paginate(3);
         return view('admin.enviroments', compact('enviroments'));
     }
 
