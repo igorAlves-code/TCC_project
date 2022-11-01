@@ -13,7 +13,7 @@ class teachers extends Model
         'nome',
         'sobrenome',
         'email',
-        'senha',
+        'password',
         'disciplina',
         'acesso'
     ];

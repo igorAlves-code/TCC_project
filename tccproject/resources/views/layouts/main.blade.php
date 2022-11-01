@@ -22,7 +22,6 @@
 
     {{-- Favicon do Site --}}
     <link rel="shortcut icon" href="/img/faviconASR.ico" type="image/x-icon">
-
 </head>
 
 <body>
@@ -60,19 +59,7 @@
                     Sair
                 </button>
                 </form>
-    </div>
-       
-{{--
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Opções
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Alterar Senha</a>
-                    <a class="dropdown-item" href="#">Sair</a>
-                </div>
             </div>
---}}
         </div>
     </header>
 

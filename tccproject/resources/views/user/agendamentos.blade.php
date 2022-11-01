@@ -13,11 +13,13 @@
         <div class="separatorTitle"></div>
     </div>
 
+    <div class="Container">
     <div class="empty">
-        <div class="text">
-            <span>Não há agendamentos</span>
-        </div>
+      <img src="\img\empty.png"
+       width="35px" 
+       draggable="false">
+      <h1>Nenhum agendamento!</h1>
     </div>
-</main>
-
+  </div>
+ 
 @endsection

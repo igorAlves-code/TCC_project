@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\storeUpdateTeachersFormRequest;
 use App\Models\teachers;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -17,13 +18,15 @@ class teachersController extends Controller
      */
     public function index(Request $request)
     {
+
+        // $prof = User::where('admin', '=', 0)->get();    Seleciona o professor
         $search = $request->search;
         $teachers = teachers::where(function ($query) use ($search){
             if($search) {
                 $query->where('disciplina', 'LIKE', "%{$search}%");
             }
         })->paginate(3);
-        return view('admin.teachers', compact('teachers'));
+        return view('admin.teachers', compact('teachers', 'prof'));
     }
 
 

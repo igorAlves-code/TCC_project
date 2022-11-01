@@ -20,15 +20,31 @@
     @endif
 
 <main>
+
   <div class="title">
-    <h1>Selecione uma data e horário</h1>
+   <h1>Selecione uma data e horário</h1>
     <div class="separatorTitle"></div>
   </div>
-  <div id="calendar"></div>
+
+  @can('bloqueado')
+
+ <div class="Container">
+    <div class="block">
+      <img src="\img\block-user.png"
+       width="50px"
+       draggable="false">
+      <h1>Você está <strong>bloqueado!</strong></h1>
+    </div>
+  </div>
+
+  @else
+
+   <div id="calendar"></div>
+
+  @endcan
 
 </main>
 @endsection
-
 
 <!-- Modal Agendamento -->
 <div class="modal fade" id="newScheduling" role="dialog" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -39,13 +55,10 @@
         <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
       </div>
       <form action="{{ url('agendar/enviar') }}" method="POST">
-        @csrf
+        @csrf 
+        <input value="{{auth()->User()->name}}" name="title" aria-describedby="emailHelp" type="hidden" required>
+        <input  value="{{auth()->User()->id}}" name="userId" aria-describedby="emailHelp" type="hidden" required>
         <div class="modal-body">
-        <div class="mb-3">
-            <label for="titlelScheduling" class="form-label">Nome</label>
-            <input value="{{auth()->User()->name}}" class="form-control" name="title" aria-describedby="emailHelp" required>
-          </div>
-
           <div class="mb-3"> 
             <label for="equipmentScheduling" class="form-label">Recurso/Dispositivo</label>
             <select class="form-select form-control" name="recurso" id="equipmentScheduling" aria-label="Default select example">
@@ -72,7 +85,6 @@
           <div class="mb-3" id="containerHour">
           <div>
               <label for="classStartScheduling" class="form-label">De</label>
-              <!-- <input type="time" class="form-control" id="dateStartScheduling" aria-describedby="emailHelp" required"> -->
               <select name="retirada" id="classStartScheduling" class="form-control"  required>
                 <option value="1ªaula">1ªaula</option>
                 <option value="2ªaula">2ªaula</option>
@@ -87,7 +99,6 @@
             </div>
             <div>
               <label for="classEndScheduling" class="form-label">Até</label>
-              <!-- <input type="time" class="form-control" id="dateEndScheduling" aria-describedby="emailHelp" required"> -->
               <select name="devolução" id="classEndScheduling" class="form-control"  required>
                 <option value="1ªaula">1ªaula</option>
                 <option value="2ªaula">2ªaula</option>

@@ -11,9 +11,10 @@ class agendamento extends Model
 
    static $rules=[
     'title',
+    'userId',
+    'data',
     'recurso',
     'ambiente',
-    'data',
     'retirada',
     'devolução',
     'start',
@@ -22,9 +23,10 @@ class agendamento extends Model
 
     protected $fillable=[
         'title',
+        'userId',
+        'data',
         'recurso',
         'ambiente',
-        'data',
         'retirada',
         'devolução',
         'start',

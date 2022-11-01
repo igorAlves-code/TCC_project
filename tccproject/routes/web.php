@@ -24,24 +24,24 @@ use App\Http\Controllers\siteController;
 
 /* AUTENTICAÇÃO */
 
-Route::get('/', [userControl::class, 'login'])->name("login.page");
-Route::post('/', [userControl::class, 'auth'])->name("auth.user");
-Route::get('/logout', [userControl::class, 'logout'])->name("auth.log");
+    Route::get('/', [userControl::class, 'login'])->name("login.page");
+    Route::post('/', [userControl::class, 'auth'])->name("auth.user");
+    Route::get('/logout', [userControl::class, 'logout'])->name("auth.log");
 
 
 /* MIDDLEWARE DE AUTENTICAÇÃO */
-Route::middleware(['auth'])->group(function () {
+    Route::middleware(['auth'])->group(function () {    
 
-    Route::get('agendar', [siteController::class, 'agendar'])->name('Home');
-    Route::post('agendar/enviar', [siteController::class, 'store']);
+        Route::get('agendar', [siteController::class, 'agendar'])->name('Home');
+        Route::post('agendar/enviar', [siteController::class, 'store']);
 
-    Route::get('agendamentos', [siteController::class, 'agendamentos']);
+        Route::get('agendamentos', [siteController::class, 'agendamentos']);
 
-    Route::resource('ocorrencia', ContactController::class);
+        Route::resource('ocorrencia', ContactController::class);
 
 
-    /* GRUPO DE ROTAS COORDENAÇÃO */
-    Route::prefix('coordenacao')->group(function () {
+        /* GRUPO DE ROTAS COORDENAÇÃO */
+        Route::prefix('coordenacao')->group(function () {
 
         Route::get('/', [siteController::class, 'coordenacao']);
 

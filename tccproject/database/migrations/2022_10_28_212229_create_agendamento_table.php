@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('agendamentos', function (Blueprint $table) {
             $table->id();
+            $table->string("userId");
             $table->string("title");
             $table->string("recurso")->nullable();
             $table->string("ambiente")->nullable();
