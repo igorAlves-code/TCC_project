@@ -16,7 +16,7 @@ class agendamento extends Model
     'recurso',
     'ambiente',
     'retirada',
-    'devolução',
+    'devolucao',
     'start',
     'end'
    ];
@@ -28,7 +28,7 @@ class agendamento extends Model
         'recurso',
         'ambiente',
         'retirada',
-        'devolução',
+        'devolucao',
         'start',
         'end'
     ];

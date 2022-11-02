@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('agendamentos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string("userId");
             $table->string("title");
             $table->string("recurso")->nullable();
             $table->string("ambiente")->nullable();
             $table->dateTime("start");
-            $table->string("retirada");
-            $table->string("devolução");
+            $table->integer("retirada");
+            $table->integer("devolucao");
             $table->timestamps();
         });
     }

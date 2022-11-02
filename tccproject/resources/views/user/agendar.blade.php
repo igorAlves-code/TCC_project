@@ -86,29 +86,29 @@
           <div>
               <label for="classStartScheduling" class="form-label">De</label>
               <select name="retirada" id="classStartScheduling" class="form-control"  required>
-                <option value="1ªaula">1ªaula</option>
-                <option value="2ªaula">2ªaula</option>
-                <option value="3ªaula">3ªaula</option>
-                <option value="4ªaula">4ªaula</option>
-                <option value="5ªaula">5ªaula</option>
-                <option value="6ªaula">6ªaula</option>
-                <option value="7ªaula">7ªaula</option>
-                <option value="8ªaula">8ªaula</option>
-                <option value="9ªaula">9ªaula</option>
+                <option value="1">1ªaula</option>
+                <option value="2">2ªaula</option>
+                <option value="3">3ªaula</option>
+                <option value="4">4ªaula</option>
+                <option value="5">5ªaula</option>
+                <option value="6">6ªaula</option>
+                <option value="7">7ªaula</option>
+                <option value="8">8ªaula</option>
+                <option value="9">9ªaula</option>
               </select>
             </div>
             <div>
               <label for="classEndScheduling" class="form-label">Até</label>
-              <select name="devolução" id="classEndScheduling" class="form-control"  required>
-                <option value="1ªaula">1ªaula</option>
-                <option value="2ªaula">2ªaula</option>
-                <option value="3ªaula">3ªaula</option>
-                <option value="4ªaula">4ªaula</option>
-                <option value="5ªaula">5ªaula</option>
-                <option value="6ªaula">6ªaula</option>
-                <option value="7ªaula">7ªaula</option>
-                <option value="8ªaula">8ªaula</option>
-                <option value="9ªaula">9ªaula</option>
+              <select name="devolucao" id="classEndScheduling" class="form-control"  required>
+                <option value="1">1ªaula</option>
+                <option value="2">2ªaula</option>
+                <option value="3">3ªaula</option>
+                <option value="4">4ªaula</option>
+                <option value="5">5ªaula</option>
+                <option value="6">6ªaula</option>
+                <option value="7">7ªaula</option>
+                <option value="8">8ªaula</option>
+                <option value="9">9ªaula</option>
               </select>
             </div>
           </div>
