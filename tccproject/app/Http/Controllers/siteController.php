@@ -37,8 +37,8 @@ class siteController extends Controller
 
     public function agendamentos()
     {
-    // $dados = agendamento::where('idUser', '=', auth()->user()->id )->get();
-     return view('/user/agendamentos');
+    $agendamento = agendamento::where('userId', '=', auth()->user()->id )->get();
+     return view('/user/agendamentos', compact('agendamento'));
     }
 
     public function coordenacao()

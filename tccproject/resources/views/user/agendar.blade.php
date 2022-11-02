@@ -16,13 +16,12 @@
         <script type="text/javascript">
             $('#success').modal('show');
         </script>
-    @else
     @endif
 
 <main>
 
   <div class="title">
-   <h1>Selecione uma data e horário</h1>
+   <h1>Agendar</h1>
     <div class="separatorTitle"></div>
   </div>
 
@@ -31,7 +30,7 @@
  <div class="Container">
     <div class="block">
       <img src="\img\block-user.png"
-       width="50px"
+       width="40px"
        draggable="false">
       <h1>Você está <strong>bloqueado!</strong></h1>
     </div>

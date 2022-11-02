@@ -90,14 +90,14 @@ main {
     justify-content: center;
     align-items: center;
     position: fixed;
-    margin-top:3vh;
+    margin-top: 3vh;
 }
 
 .input-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     width: 35vw;
     height: 50px;
     position: relative;
@@ -264,7 +264,7 @@ footer {
         width: 70vw;
     }
 
-    .buttonContainer{
+    .buttonContainer {
         margin-top: 34vh;
     }
 }

@@ -46,9 +46,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(158, 158, 158, 0.295);
     padding: 10px;
     border-radius: 4px;
+    background-color: rgba(158, 158, 158, 0.295);
+    box-shadow: rgba(0, 0, 0, 0.26) 1.95px 1.95px 2.6px;
 }
 
 .block h1 {
