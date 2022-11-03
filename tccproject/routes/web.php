@@ -23,20 +23,23 @@ use App\Http\Controllers\siteController;
 */
 
 /* AUTENTICAÇÃO */
-
 Route::get('/', [userControl::class, 'login'])->name("login.page");
 Route::post('/', [userControl::class, 'auth'])->name("auth.user");
+
 Route::get('/logout', [userControl::class, 'logout'])->name("auth.log");
 
+Route::view('/forgot-password', 'passwords.forgotPassword')->name('forgot-password');
+Route::view('/change-password', 'passwords.changePassword')->name('change-password');
 
 /* MIDDLEWARE DE AUTENTICAÇÃO */
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('agendar', [siteController::class, 'agendar'])->name('Home');;
+    Route::get('agendar', [siteController::class, 'agendar'])->name('Home');
 
     Route::get('agendamentos', [siteController::class, 'agendamentos']);
 
-    Route::resource('ocorrencia', ContactController::class);
+    Route::get('ocorrencia', [ContactController::class, 'index']);
+    Route::post('ocorrencia/send', [ContactController::class, 'send'])->name('send.mail.ocorrencia');
 
 
     /* GRUPO DE ROTAS COORDENAÇÃO */
