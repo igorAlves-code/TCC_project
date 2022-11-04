@@ -1,52 +1,47 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\agendamentosController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\enviromentsController;
 use App\Http\Controllers\equipmentsController;
+use App\Http\Controllers\forgotPasswordController;
 use App\Http\Controllers\managementsController;
 use App\Http\Controllers\teachersController;
 use App\Http\Controllers\userControl;
 use App\Http\Controllers\siteController;
 
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 /* AUTENTICAÇÃO */
+
 Route::get('/', [userControl::class, 'login'])->name("login.page");
 Route::post('/', [userControl::class, 'auth'])->name("auth.user");
 
 Route::get('/logout', [userControl::class, 'logout'])->name("auth.log");
 
-Route::view('/forgot-password', 'passwords.forgotPassword')->name('forgot-password');
+Route::get('/forgot-password', [forgotPasswordController::class, 'index'])->name('forgot-password');
+Route::post('/forgot-password/send', [forgotPasswordController::class, 'store'])->name('forgot-password.link');
 Route::view('/change-password', 'passwords.changePassword')->name('change-password');
 
 /* MIDDLEWARE DE AUTENTICAÇÃO */
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('agendar', [siteController::class, 'agendar'])->name('Home');
+    Route::post('agendar/enviar', [siteController::class, 'store']);
 
-    Route::get('agendamentos', [siteController::class, 'agendamentos']);
+    // GRUPO DE ROTAS AGENDAMENTOS  
+    Route::prefix('agendamentos')->group(function () {
+        Route::get('/', [agendamentosController::class, 'view'])->name('agendamentos.view');
+        Route::patch('/{id}/update', [agendamentosController::class, 'update'])->name('agendamentos.update');
+        Route::delete('/{id}', [agendamentosController::class, 'destroy'])->name('agendamentos.destroy');
+    });
 
     Route::get('ocorrencia', [ContactController::class, 'index']);
     Route::post('ocorrencia/send', [ContactController::class, 'send'])->name('send.mail.ocorrencia');
-
 
     /* GRUPO DE ROTAS COORDENAÇÃO */
     Route::prefix('coordenacao')->group(function () {
 
         Route::get('/', [siteController::class, 'coordenacao']);
-
 
         /* CRUD PROFESSORES */
         Route::prefix('teachers')->group(function () {

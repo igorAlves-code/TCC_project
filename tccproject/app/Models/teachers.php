@@ -14,7 +14,7 @@ class teachers extends Authenticatable
         'nome',
         'sobrenome',
         'email',
-        'senha',
+        'password',
         'disciplina',
         'acesso'
     ];

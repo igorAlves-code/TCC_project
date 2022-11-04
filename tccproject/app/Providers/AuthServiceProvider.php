@@ -5,6 +5,7 @@ namespace App\Providers;
 // use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use App\Models\User;
+use App\Models\teachers;
 use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
@@ -32,5 +33,15 @@ class AuthServiceProvider extends ServiceProvider
             return $user->admin === 1;
 
         });
+
+
+        Gate::define('bloqueado', function(User $user){
+
+            return $user->acesso === 1;
+    
+        });
+
+
     }
+    
 }

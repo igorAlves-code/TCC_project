@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/css/styleCoordenacao.css">
 
-<!-- Modal Edição Ambiente -->
+<!-- Modal Edição Professor -->
 <div class="modal fade" id="editTeacher{{ $teacher->id }}" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog  modal-dialog-centered">
@@ -32,10 +32,13 @@
                     <div class="mb-3">
                         <label for="acesso" class="form-label">Acesso</label>
                         <select class="form-select form-control" name="acesso" aria-label="Default select example" value="{{ $teacher->acesso }}">
-                            <option selected="true" disabled="disabled">Selecione o tipo do acesso</option>
-                            <option value="0">Liberado</option>
-                            <option value="1">Bloqueado</option>
-                            <option value="2">Teste</option>
+                            @if ($teacher->acesso == 0)
+                                <option value="0" selected>Liberado</option>
+                                <option value="1">Bloqueado</option>
+                            @else
+                                <option value="0">Liberado</option>
+                                <option value="1" selected>Bloqueado</option>                               
+                            @endif
                           </select>
                     </div>
                 </div>

@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests\storeUpdateTeachersFormRequest;
 use App\Models\teachers;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Crypt;
+
+use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
@@ -21,15 +23,14 @@ class teachersController extends Controller
     public function index(Request $request)
     {
         $search = $request->search;
-        $teachers = teachers::where(function ($query) use ($search){
-            if($search) {
-                $query->where('disciplina', 'LIKE', "%{$search}%");
-            }
-        })->paginate(3);
+        $teachers = User::where('admin', '=', 0)->where(function ($query) use ($search){
+                if($search) {
+                    $query->where('disciplina', 'LIKE', "%{$search}%");
+                }
+            })->paginate(3); // Seleciona o professor
+
         return view('admin.teachers', compact('teachers'));
     }
-
-
 
     /**
      * Store a newly created resource in storage.
@@ -41,8 +42,10 @@ class teachersController extends Controller
     {
         $data = $request->all();
         $password = Str::random(8);
-        $data['senha'] = Hash::make($password);
-        $teachers = teachers::create($data);
+        $data['password'] = Hash::make($password);
+        $remember_token = Str::random(10);
+        $data['remember_token'] = $remember_token;
+        $teachers = User::create($data);
 
         $mail_data = [
             // 'recipient' => 'gabrielsouzat2005@outlook.com',
@@ -50,14 +53,14 @@ class teachersController extends Controller
             'nome' => $request->nome,
             'sobrenome' => $request->sobrenome,
             'disciplina' => $request->disciplina,
-            'senha' => $password,
+            'password' => $password,
             'subject' => '',
         ];
 
         session()->put('nome', $mail_data['nome']);
         session()->put('sobrenome', $mail_data['sobrenome']);
         session()->put('to', $mail_data['to']);
-        session()->put('senha', $mail_data['senha']);
+        session()->put('password', $mail_data['password']);
         session()->put('disciplina', $mail_data['disciplina']);
 
         Mail::send('layouts.emails.teachersPassword', $mail_data, function($email) use ($mail_data) {
@@ -67,6 +70,7 @@ class teachersController extends Controller
         });
 
         if ($teachers) {
+            // event(new Registered($teachers));
             return redirect()->route('teachers.index')
                 ->with(['success' => 'Professor cadastrado com sucesso!']);
         }
@@ -81,7 +85,7 @@ class teachersController extends Controller
      */
     public function update(storeUpdateTeachersFormRequest $request, $id)
     {
-        $teachers = teachers::find($id);
+        $teachers = User::find($id);
         $data = $request->all();
         $teachers->fill($data)->update();
         if ($teachers) {
@@ -98,7 +102,7 @@ class teachersController extends Controller
      */
     public function destroy($id)
     {
-        $teachers = teachers::find($id);
+        $teachers = User::find($id);
         $teachers->delete();
         if ($teachers) {
             return redirect()->route('teachers.index')

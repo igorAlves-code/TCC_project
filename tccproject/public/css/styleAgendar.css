@@ -35,6 +35,26 @@
     background-color: rgb(0, 0, 0);
 }
 
+.Container {
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(158, 158, 158, 0.295);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.block h1 {
+    font-size: 25px;
+}
+
 @media only screen and (max-width: 768px) {
     #calendar {
         width: 95vw;

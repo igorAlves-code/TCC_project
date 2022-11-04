@@ -43,14 +43,12 @@
                     <label class="label" for="Senha">Senha</label>
                 </div>
 
-                {{-- 
-           <div class="remember">
-             <input type="checkbox" name="remember" class="rememberInput"> Lembrar-me
-           </div>
-          --}}
+                {{-- <div class="remember">
+                    <input type="checkbox" name="remember" class="rememberInput"> Lembrar-me
+                </div> --}}
 
-                <div class="change">
-                    <a href="{{ route('changePassword') }}"></a>
+                <div class="forgot-password">
+                    <a href="{{ route('forgot-password') }}">Esqueceu a senha?</a>
                 </div>
 
             </div>

@@ -69,6 +69,33 @@
                         </tr>
                     @endforeach
 
+                    {{-- @foreach ($profs as $prof)
+                        <tr>
+                            @include('layouts.modais.teachers.selectSubjectTeacher')
+                            <td>{{ $prof->nome }}</td>
+                            <td>{{ $prof->sobrenome }}</td>
+                            <td>{{ $prof->email }}</td>
+                            <td>{{ $prof->disciplina }}</td>
+                            <td id="acesso">
+                                @if ($prof->acesso == 0)
+                                    Liberado
+                                @else
+                                    Bloqueado
+                                @endif
+                            </td>
+                            <td>
+                                <a href="#editTeacher{{ $prof->id }}" class="btn btn-warning btn-modal btn-edit"
+                                    data-toggle="modal"><i class="bi bi-pencil-square"></i> Editar</a>
+                            </td>
+                            <td>
+                                <a href="#destroyTeacher{{ $prof->id }}" class="btn btn-warning btn-modal btn-danger"
+                                    data-toggle="modal"><i class="bi bi-trash2-fill"></i> Excluir</a>
+                            </td>
+                            @include('layouts.modais.teachers.edit')
+                            @include('layouts.modais.teachers.delete')
+                        </tr>
+                    @endforeach --}}
+
                 </tbody>
             </table>
         </div>

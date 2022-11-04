@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="/css/styleCoordenacao.css">
-
 <!-- Modal Exclusão Ambiente -->
 <div class="modal fade" id="destroyEnviroment{{ $enviroment->id }}" data-backdrop="static" data-keyboard="false"
     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

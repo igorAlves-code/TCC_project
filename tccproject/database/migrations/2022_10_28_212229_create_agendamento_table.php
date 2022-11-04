@@ -13,11 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ambiente', function (Blueprint $table) {
+        Schema::create('agendamentos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nomeAmbiente')->unique();
-            $table->string('tipoAmbiente');
-            $table->integer('quantidadeAmbiente');
+            $table->string("userId");
+            $table->string("title");
+            $table->string("recurso")->nullable();
+            $table->string("ambiente")->nullable();
+            $table->dateTime("start");
+            $table->integer("retirada");
+            $table->integer("devolucao");
             $table->timestamps();
         });
     }
@@ -29,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ambiente');
+        Schema::dropIfExists('agendamentos');
     }
 };

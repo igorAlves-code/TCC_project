@@ -10,12 +10,38 @@
 @endsection
 
 @section('content')
+
+    @if (session('success'))
+        @include('layouts.modais.success')
+        <script type="text/javascript">
+            $('#success').modal('show');
+        </script>
+    @else
+    @endif
+
 <main>
+
   <div class="title">
-    <h1>Selecione uma data e horário</h1>
+   <h1>Selecione uma data e horário</h1>
     <div class="separatorTitle"></div>
   </div>
-  <div id="calendar"></div>
+
+  @can('bloqueado')
+
+ <div class="Container">
+    <div class="block">
+      <img src="\img\block-user.png"
+       width="50px"
+       draggable="false">
+      <h1>Você está <strong>bloqueado!</strong></h1>
+    </div>
+  </div>
+
+  @else
+
+   <div id="calendar"></div>
+
+  @endcan
 
 </main>
 @endsection
@@ -28,63 +54,61 @@
         <h5 class="modal-title" id="newSchedulingLabel">Realizar Agendamento</h5>
         <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">X</button>
       </div>
-      <form action="" method="POST">
+      <form action="{{ url('agendar/enviar') }}" method="POST">
+        @csrf 
+        <input value="{{auth()->User()->nome}}" name="title" aria-describedby="emailHelp" type="hidden" required>
+        <input  value="{{auth()->User()->id}}" name="userId" aria-describedby="emailHelp" type="hidden" required>
         <div class="modal-body">
-          <div class="mb-3">
+          <div class="mb-3"> 
             <label for="equipmentScheduling" class="form-label">Recurso/Dispositivo</label>
-            <select class="form-select form-control" id="equipmentScheduling" aria-label="Default select example">
+            <select class="form-select form-control" name="recurso" id="equipmentScheduling" aria-label="Default select example">
               <option selected="true" disabled="disabled">Selecione o recurso</option>
-              <option value="Datashow #1">Datashow #1</option>
-              <option value="Datashow #2">Datashow #2</option>
-              <option value="Datashow #3">Datashow #3</option>
+              @foreach ($equipments as $equipments)
+              <option value="{{ $equipments->nomeEquipamento }}">{{ $equipments->nomeEquipamento }}</option>
+              @endforeach
             </select>
           </div>
           <div class="mb-3">
             <label for="enviromentScheduling" class="form-label">Ambiente</label>
-            <select class="form-select form-control" id="enviromentScheduling" aria-label="Default select example">
-              <option selected="true" disabled="disabled">Selecione o Ambiente</option>
-              <option value="Auditório">Auditório</option>
-              <option value="Sala Nivonei">Sala Nivonei</option>
-              <option value="Mini auditório">Mini auditório</option>
-              <option value="Lab. Informática">Lab. Informática</option>
-              <option value="Lab. Química">Lab. Química</option>
-              <option value="Lab. Meio Ambiente">Lab. Meio Ambiente</option>
+            <select class="form-select form-control" name="ambiente" id="enviromentScheduling" aria-label="Default select example">
+            <option selected="true" disabled="disabled">Selecione o Ambiente</option>
+            @foreach ($enviroments as $enviroment)
+              <option value="{{ $enviroment->nomeAmbiente }}">{{ $enviroment->nomeAmbiente }}</option>
+            @endforeach
             </select>
           </div>
           <div class="mb-3">
             <label for="dateWithdrawalScheduling" class="form-label">Data do Agendamento</label>
-            <input type="date" class="form-control" id="dateWithdrawalScheduling" aria-describedby="emailHelp" required>
+            <input type="date" class="form-control" name="start" id="dateWithdrawalScheduling" aria-describedby="emailHelp" required>
           </div>
           <label for="" class="form-label">Horário:</label>
           <div class="mb-3" id="containerHour">
           <div>
               <label for="classStartScheduling" class="form-label">De</label>
-              <!-- <input type="time" class="form-control" id="dateStartScheduling" aria-describedby="emailHelp" required"> -->
-              <select name="classStartScheduling" id="classStartScheduling" class="form-control">
-                <option value="1ªaula">1ªaula</option>
-                <option value="2ªaula">2ªaula</option>
-                <option value="3ªaula">3ªaula</option>
-                <option value="4ªaula">4ªaula</option>
-                <option value="5ªaula">5ªaula</option>
-                <option value="6ªaula">6ªaula</option>
-                <option value="7ªaula">7ªaula</option>
-                <option value="8ªaula">8ªaula</option>
-                <option value="9ªaula">9ªaula</option>
+              <select name="retirada" id="classStartScheduling" class="form-control"  required>
+                <option value="1">1ªaula</option>
+                <option value="2">2ªaula</option>
+                <option value="3">3ªaula</option>
+                <option value="4">4ªaula</option>
+                <option value="5">5ªaula</option>
+                <option value="6">6ªaula</option>
+                <option value="7">7ªaula</option>
+                <option value="8">8ªaula</option>
+                <option value="9">9ªaula</option>
               </select>
             </div>
             <div>
               <label for="classEndScheduling" class="form-label">Até</label>
-              <!-- <input type="time" class="form-control" id="dateEndScheduling" aria-describedby="emailHelp" required"> -->
-              <select name="classEndScheduling" id="classEndScheduling" class="form-control">
-                <option value="1ªaula">1ªaula</option>
-                <option value="2ªaula">2ªaula</option>
-                <option value="3ªaula">3ªaula</option>
-                <option value="4ªaula">4ªaula</option>
-                <option value="5ªaula">5ªaula</option>
-                <option value="6ªaula">6ªaula</option>
-                <option value="7ªaula">7ªaula</option>
-                <option value="8ªaula">8ªaula</option>
-                <option value="9ªaula">9ªaula</option>
+              <select name="devolucao" id="classEndScheduling" class="form-control"  required>
+                <option value="1">1ªaula</option>
+                <option value="2">2ªaula</option>
+                <option value="3">3ªaula</option>
+                <option value="4">4ªaula</option>
+                <option value="5">5ªaula</option>
+                <option value="6">6ªaula</option>
+                <option value="7">7ªaula</option>
+                <option value="8">8ªaula</option>
+                <option value="9">9ªaula</option>
               </select>
             </div>
           </div>

@@ -83,10 +83,11 @@ main {
 
 .loginForm a {
     text-decoration: none;
+    color: #000;
 }
 
 .loginForm a:hover {
-    color: #fff;
+    text-decoration: underline;
 }
 
 /* INPUTS */
@@ -177,6 +178,10 @@ main {
     width: 29vw;
     font-size: 14px;
     gap: 5px;
+}
+
+.forgot-password a {
+    font-size: 0.7em;
 }
 
 /* Botão */

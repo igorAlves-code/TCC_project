@@ -14,15 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('professor', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('nome');
             $table->string('sobrenome');
             $table->string('email')->unique();
-            $table->string('senha');
+            $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->string('disciplina');
-            $table->integer('acesso');
+            $table->boolean('acesso');
             $table->timestamps();
         });
     }

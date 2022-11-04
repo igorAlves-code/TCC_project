@@ -36,21 +36,25 @@
     </header>
 
     <main>
-        <div class="title">
-            <h1>Esqueceu a senha?</h1>
-            <div></div>
+        <div class="logo">
+            <img draggable="false" src="/img/logoASR.png" />
         </div>
 
-        <form action="" method="post" class="formChangePass">
+        <form action="{{ route('forgot-password.link') }}" method="post" class="formChangePass">
+            @csrf
+            <div class="container">
+                <div class="inputsContainer">
+                    <p>Esqueceu sua senha? Sem problemas. Basta nos informar seu endereço de e-mail e nós lhe enviaremos um link de redefinição de senha que permitirá que você escolha uma nova.</p>
+                </div>
+                <div class="inputsContainer">
+                    <input type="email" id="email" name="email" class="input" value="{{ session('email') }}">
+                    <label id="labelEmail" for="email">Email:</label>
+                </div>
 
-            <div class="inputsContainer">
-                <input type="text" id="email" class="pw input" value="{{ session('email') }}">
-                <label for="email">Email:</label>
-            </div>
 
-
-            <div class="inputsContainer">
-                <button id="Env" type="submit">Alterar Senha</button>
+                <div class="inputsContainer">
+                    <button id="EnvF" type="submit">Enviar email de recuperação</button>
+                </div>
             </div>
 
         </form>

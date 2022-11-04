@@ -10,7 +10,7 @@ main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 70vw;
+    width: 90vw;
     height: 70vh;
     margin-top: 0.5em;
     background: #dedede;
@@ -116,9 +116,8 @@ main {
     align-items: flex-start;
     flex-wrap: wrap;
     width: 100%;
-    height: 90%;
+    height: 95%;
     margin: 1em;
-
     background: #b7b5b5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 1em 0.5em;
@@ -203,19 +202,140 @@ main {
 }
 
 /* NÃO MEXER, EM HIPPÓTESE ALGUMA */
-#btnCad{color:#fff;background-color:#007bff;border-color:#007bff}#btnCad:hover{color:#fff;background-color:#0069d9;border-color:#0062cc}#btnCad.focus,#btnCad:focus{box-shadow:0 0 0 .2rem rgba(0,123,255,.5)}#btnCad.disabled,#btnCad:disabled{color:#fff;background-color:#007bff;border-color:#007bff}#btnCad:not(:disabled):not(.disabled).active,#btnCad:not(:disabled):not(.disabled):active,.show>#btnCad.dropdown-toggle{color:#fff;background-color:#0062cc;border-color:#005cbf}#btnCad:not(:disabled):not(.disabled).active:focus,#btnCad:not(:disabled):not(.disabled):active:focus,.show>#btnCad.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(0,123,255,.5)}
+#btnCad {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+#btnCad:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+#btnCad.focus,
+#btnCad:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+#btnCad.disabled,
+#btnCad:disabled {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+#btnCad:not(:disabled):not(.disabled).active,
+#btnCad:not(:disabled):not(.disabled):active,
+.show > #btnCad.dropdown-toggle {
+    color: #fff;
+    background-color: #0062cc;
+    border-color: #005cbf;
+}
+#btnCad:not(:disabled):not(.disabled).active:focus,
+#btnCad:not(:disabled):not(.disabled):active:focus,
+.show > #btnCad.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
 
 /* NÃO MEXER, EM HIPPÓTESE ALGUMA */
-#btnFiltro{color:#fff;background-color:#17a2b8;border-color:#17a2b8}#btnFiltro:hover{color:#fff;background-color:#138496;border-color:#117a8b}#btnFiltro.focus,#btnFiltro:focus{box-shadow:0 0 0 .2rem rgba(23,162,184,.5)}#btnFiltro.disabled,#btnFiltro:disabled{color:#fff;background-color:#17a2b8;border-color:#17a2b8}#btnFiltro:not(:disabled):not(.disabled).active,#btnFiltro:not(:disabled):not(.disabled):active,.show>#btnFiltro.dropdown-toggle{color:#fff;background-color:#117a8b;border-color:#10707f}#btnFiltro:not(:disabled):not(.disabled).active:focus,#btnFiltro:not(:disabled):not(.disabled):active:focus,.show>#btnFiltro.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(23,162,184,.5)}
+#btnFiltro {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+#btnFiltro:hover {
+    color: #fff;
+    background-color: #138496;
+    border-color: #117a8b;
+}
+#btnFiltro.focus,
+#btnFiltro:focus {
+    box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
+}
+#btnFiltro.disabled,
+#btnFiltro:disabled {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+#btnFiltro:not(:disabled):not(.disabled).active,
+#btnFiltro:not(:disabled):not(.disabled):active,
+.show > #btnFiltro.dropdown-toggle {
+    color: #fff;
+    background-color: #117a8b;
+    border-color: #10707f;
+}
+#btnFiltro:not(:disabled):not(.disabled).active:focus,
+#btnFiltro:not(:disabled):not(.disabled):active:focus,
+.show > #btnFiltro.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
+}
 
 /* NÃO MEXER, EM HIPPÓTESE ALGUMA */
-#btnDanger{color:#fff;background-color:#dc3545;border-color:#dc3545}#btnDanger:hover{color:#fff;background-color:#c82333;border-color:#bd2130}#btnDanger.focus,#btnDanger:focus{box-shadow:0 0 0 .2rem rgba(220,53,69,.5)}#btnDanger.disabled,#btnDanger:disabled{color:#fff;background-color:#dc3545;border-color:#dc3545}#btnDanger:not(:disabled):not(.disabled).active,#btnDanger:not(:disabled):not(.disabled):active,.show>#btnDanger.dropdown-toggle{color:#fff;background-color:#bd2130;border-color:#b21f2d}#btnDanger:not(:disabled):not(.disabled).active:focus,#btnDanger:not(:disabled):not(.disabled):active:focus,.show>#btnDanger.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(220,53,69,.5)}
+#btnDanger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+#btnDanger:hover {
+    color: #fff;
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+#btnDanger.focus,
+#btnDanger:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+}
+#btnDanger.disabled,
+#btnDanger:disabled {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+#btnDanger:not(:disabled):not(.disabled).active,
+#btnDanger:not(:disabled):not(.disabled):active,
+.show > #btnDanger.dropdown-toggle {
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+}
+#btnDanger:not(:disabled):not(.disabled).active:focus,
+#btnDanger:not(:disabled):not(.disabled):active:focus,
+.show > #btnDanger.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+}
 
-h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
 
-.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{margin-bottom:.5rem;font-family:inherit;font-weight:500;line-height:1.2;color:inherit}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
 
-.h5,h5{font-size:1.25rem}
+.h5,
+h5 {
+    font-size: 1.25rem;
+}
 
 /* ------------------- MOBILE -------------------- */
 
@@ -297,16 +417,13 @@ h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}
         background-color: #242424;
     }
 
-    #check:checked~#menuAdmin {
+    #check:checked ~ #menuAdmin {
         animation: hidden 1s ease forwards;
-    }
-
-    #containerTable {
-        height: 70%;
     }
 
     #tableCrud {
         overflow-x: auto;
+        height: 100%;
     }
 
     .table {
@@ -321,7 +438,9 @@ h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}
     }
 
     #containerTable {
-        width: 107%;
+        height: 65vh;
+        width: 95vw;
+        margin-top: -6vh;
     }
 }
 

@@ -43,27 +43,30 @@
         </div>
 
         <form action="" method="post" class="formChangePass">
+            @csrf
+            <div class="container">
+                <div class="inputsContainer">
+                    <input type="text" id="password" class="pw input" value="{{ session('senha') }}">
+                    <label for="password">Senha Atual:</label>
+                    <img id="eyePassword">
+                </div>
 
-            <div class="inputsContainer">
-                <input type="text" id="password" class="pw input" value="{{ session('senha') }}">
-                <label for="password">Senha Atual:</label>
-                <img id="eyePassword">
-            </div>
+                <div class="inputsContainer">
+                    <input type="text" id="newPassword" class="pw input">
+                    <label for="newPassword">Nova Senha:</label>
+                    <img id="eyeNewPassword">
+                </div>
 
-            <div class="inputsContainer">
-                <input type="text" id="newPassword" class="pw input">
-                <label for="newPassword">Nova Senha:</label>
-                <img id="eyeNewPassword">
-            </div>
+                <div class="inputsContainer">
+                    <input type="text" id="confirmPassword" class="pw input">
+                    <label for="confirmPassword">Confirmar Senha:</label>
+                    <img id="eyeConfirmPassword">
+                </div>
 
-            <div class="inputsContainer">
-                <input type="text" id="confirmPassword" class="pw input">
-                <label for="confirmPassword">Confirmar Senha:</label>
-                <img id="eyeConfirmPassword">
-            </div>
+                <div class="inputsContainer">
+                    <button id="Env" type="submit">Alterar Senha</button>
+                </div>
 
-            <div class="inputsContainer">
-                <button id="Env" type="submit">Alterar Senha</button>
             </div>
 
         </form>

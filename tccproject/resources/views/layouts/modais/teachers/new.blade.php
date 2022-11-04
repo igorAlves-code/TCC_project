@@ -33,7 +33,6 @@
                             <option selected="true" disabled="disabled">Selecione o tipo do acesso</option>
                             <option value="0">Liberado</option>
                             <option value="1">Bloqueado</option>
-                            <option value="2">Teste</option>
                           </select>
                     </div>
                     
