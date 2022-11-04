@@ -26,7 +26,7 @@ class teachersController extends Controller
                 $query->where('disciplina', 'LIKE', "%{$search}%");
             }
         })->paginate(3);
-        return view('admin.teachers', compact('teachers', 'prof'));
+        return view('admin.teachers', compact('teachers'));
     }
 
 

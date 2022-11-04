@@ -25,30 +25,21 @@ class siteController extends Controller
 
     public function store(Request $request)
     {
-    request()->validate(agendamento::$rules);
-    $agendamento = agendamento::create($request->all());
-
-    return back()
-        ->with('success', 'Seu agendamento foi salvo!');
-    }
-
-
-    /**Geral controller**/
-
-    public function agendamentos()
-    {
-    $agendamento = agendamento::where('userId', '=', auth()->user()->id )->get();
-     return view('/user/agendamentos', compact('agendamento'));
+        request()->validate(agendamento::$rules);
+        agendamento::create($request->all());
+            
+        return back()
+            ->with('success', 'Seu agendamento foi salvo!');  
+        
     }
 
     public function coordenacao()
     {
-    if (Gate::denies('admin')){
-        return redirect()->back();
-    }
-    else{
-       return view('admin/index');
-    }
-
+        if (Gate::denies('admin')){
+            return redirect()->back();
+        }
+        else{
+        return view('admin/index');
+        }
     }
 }

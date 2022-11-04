@@ -19,6 +19,7 @@
 .empty h1 {
     font-size: 25px;
     margin-bottom: 0;
+    font-weight: 500 !important;
 }
 
 /**--------------------------------------------CARD-----------------------------------------------**/
@@ -27,7 +28,7 @@
     padding: 5px;
     height: 78vh;
     overflow-y: scroll;
-    margin-top: 0.5vh;
+    margin-top: 1vh;
 }
 
 .scroll::-webkit-scrollbar {
@@ -35,7 +36,7 @@
 }
 
 .cardContainer {
-    margin-top: 2vh;
+    margin-bottom: 2vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,15 +67,22 @@
 
 .table td,
 .table th {
-    border-top: none;
+    border-top: none !important;
 }
 
 .table thead tr {
-    border: 2px solid rgb(158, 158, 158);
+    border-top: 2px solid rgb(158, 158, 158) !important;
+    border-bottom: 2px solid rgb(158, 158, 158) !important;
 }
 
 .table thead th {
-    border-bottom: none;
+    border-bottom: none !important;
+}
+
+.btn-edit,
+.btn-danger {
+    width: 6em !important;
+    margin-left: 0 !important;
 }
 
 /**--------------------------------------------MOBILE-----------------------------------------------**/

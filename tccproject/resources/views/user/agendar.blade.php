@@ -11,6 +11,13 @@
 
 @section('content')
 
+    @if (Session::has('errors'))
+        @include('layouts.modais.errors')
+        <script type="text/javascript">
+            $('#error').modal('show');
+        </script>
+    @endif
+
     @if (session('success'))
         @include('layouts.modais.success')
         <script type="text/javascript">
@@ -18,31 +25,30 @@
         </script>
     @endif
 
-<main>
+    <main>
 
-  <div class="title">
-   <h1>Agendar</h1>
-    <div class="separatorTitle"></div>
-  </div>
+      <div class="title">
+        <h1>Agendar</h1>
+        <div class="separatorTitle"></div>
+      </div>
 
-  @can('bloqueado')
+    @can('bloqueado')
 
- <div class="Container">
-    <div class="block">
-      <img src="\img\block-user.png"
-       width="40px"
-       draggable="false">
-      <h1>Você está <strong>bloqueado!</strong></h1>
-    </div>
-  </div>
+      <div class="Container">
+        <div class="block">
+        <img src="\img\block-user.png"
+        width="40px"
+        draggable="false">
+        <h1>Você está <strong>bloqueado!</strong></h1>
+        </div>
+      </div>
 
-  @else
+    @else
 
-   <div id="calendar"></div>
+      <div id="calendar"></div>
 
   @endcan
-
-</main>
+    </main>
 @endsection
 
 <!-- Modal Agendamento -->
@@ -56,7 +62,7 @@
       <form action="{{ url('agendar/enviar') }}" method="POST">
         @csrf 
         <input value="{{auth()->User()->name}}" name="title" aria-describedby="emailHelp" type="hidden" required>
-        <input  value="{{auth()->User()->id}}" name="userId" aria-describedby="emailHelp" type="hidden" required>
+        <input value="{{auth()->User()->id}}" name="userId" aria-describedby="emailHelp" type="hidden" required>
         <div class="modal-body">
           <div class="mb-3"> 
             <label for="equipmentScheduling" class="form-label">Recurso/Dispositivo</label>
@@ -85,29 +91,31 @@
           <div>
               <label for="classStartScheduling" class="form-label">De</label>
               <select name="retirada" id="classStartScheduling" class="form-control"  required>
-                <option value="1ªaula">1ªaula</option>
-                <option value="2ªaula">2ªaula</option>
-                <option value="3ªaula">3ªaula</option>
-                <option value="4ªaula">4ªaula</option>
-                <option value="5ªaula">5ªaula</option>
-                <option value="6ªaula">6ªaula</option>
-                <option value="7ªaula">7ªaula</option>
-                <option value="8ªaula">8ªaula</option>
-                <option value="9ªaula">9ªaula</option>
+              <option selected="true" disabled="disabled">Selecione uma aula</option>
+                <option value="1">1ªaula</option>
+                <option value="2">2ªaula</option>
+                <option value="3">3ªaula</option>
+                <option value="4">4ªaula</option>
+                <option value="5">5ªaula</option>
+                <option value="6">6ªaula</option>
+                <option value="7">7ªaula</option>
+                <option value="8">8ªaula</option>
+                <option value="9">9ªaula</option>
               </select>
             </div>
             <div>
               <label for="classEndScheduling" class="form-label">Até</label>
-              <select name="devolução" id="classEndScheduling" class="form-control"  required>
-                <option value="1ªaula">1ªaula</option>
-                <option value="2ªaula">2ªaula</option>
-                <option value="3ªaula">3ªaula</option>
-                <option value="4ªaula">4ªaula</option>
-                <option value="5ªaula">5ªaula</option>
-                <option value="6ªaula">6ªaula</option>
-                <option value="7ªaula">7ªaula</option>
-                <option value="8ªaula">8ªaula</option>
-                <option value="9ªaula">9ªaula</option>
+              <select name="devolucao" id="classEndScheduling" class="form-control"  required>
+              <option selected="true" disabled="disabled">Selecione uma aula</option>
+                <option value="1">1ªaula</option>
+                <option value="2">2ªaula</option>
+                <option value="3">3ªaula</option>
+                <option value="4">4ªaula</option>
+                <option value="5">5ªaula</option>
+                <option value="6">6ªaula</option>
+                <option value="7">7ªaula</option>
+                <option value="8">8ªaula</option>
+                <option value="9">9ªaula</option>
               </select>
             </div>
           </div>
@@ -121,6 +129,6 @@
   </div>
 </div>
 
-@section('js')
-<script src="/js/scriptAgendar.js" defer></script>
-@endsection
+  @section('js')
+    <script src="/js/scriptAgendar.js" defer></script>
+  @endsection
