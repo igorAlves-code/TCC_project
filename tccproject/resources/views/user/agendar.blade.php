@@ -11,39 +11,44 @@
 
 @section('content')
 
+    @if (Session::has('errors'))
+        @include('layouts.modais.errors')
+        <script type="text/javascript">
+            $('#error').modal('show');
+        </script>
+    @endif
+
     @if (session('success'))
         @include('layouts.modais.success')
         <script type="text/javascript">
             $('#success').modal('show');
         </script>
-    @else
     @endif
 
-<main>
+    <main>
 
-  <div class="title">
-   <h1>Selecione uma data e horário</h1>
-    <div class="separatorTitle"></div>
-  </div>
+      <div class="title">
+        <h1>Agendar</h1>
+        <div class="separatorTitle"></div>
+      </div>
 
-  @can('bloqueado')
+    @can('bloqueado')
 
- <div class="Container">
-    <div class="block">
-      <img src="\img\block-user.png"
-       width="50px"
-       draggable="false">
-      <h1>Você está <strong>bloqueado!</strong></h1>
-    </div>
-  </div>
+      <div class="Container">
+        <div class="block">
+        <img src="\img\block-user.png"
+        width="40px"
+        draggable="false">
+        <h1>Você está <strong>bloqueado!</strong></h1>
+        </div>
+      </div>
 
-  @else
+    @else
 
-   <div id="calendar"></div>
+      <div id="calendar"></div>
 
   @endcan
-
-</main>
+    </main>
 @endsection
 
 <!-- Modal Agendamento -->
@@ -86,6 +91,7 @@
           <div>
               <label for="classStartScheduling" class="form-label">De</label>
               <select name="retirada" id="classStartScheduling" class="form-control"  required>
+              <option selected="true" disabled="disabled">Selecione uma aula</option>
                 <option value="1">1ªaula</option>
                 <option value="2">2ªaula</option>
                 <option value="3">3ªaula</option>
@@ -100,6 +106,7 @@
             <div>
               <label for="classEndScheduling" class="form-label">Até</label>
               <select name="devolucao" id="classEndScheduling" class="form-control"  required>
+              <option selected="true" disabled="disabled">Selecione uma aula</option>
                 <option value="1">1ªaula</option>
                 <option value="2">2ªaula</option>
                 <option value="3">3ªaula</option>
@@ -122,6 +129,6 @@
   </div>
 </div>
 
-@section('js')
-<script src="/js/scriptAgendar.js" defer></script>
-@endsection
+  @section('js')
+    <script src="/js/scriptAgendar.js" defer></script>
+  @endsection

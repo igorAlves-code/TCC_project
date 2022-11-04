@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('agendamentos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string("userId");
-            $table->string("title");
+            $table->foreignId('userId')->constrained('users');
+            $table->string('title');
             $table->string("recurso")->nullable();
             $table->string("ambiente")->nullable();
             $table->dateTime("start");

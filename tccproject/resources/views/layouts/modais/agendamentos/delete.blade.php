@@ -17,8 +17,8 @@
                         <i class="bi bi-exclamation-triangle"></i> Deseja realmente excluir esse registro?
                     </div>
                     <div class="mb-3">
-                        <label for="title" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="title" aria-describedby="emailHelp"
+                        <label for="recurso" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="Nome" aria-describedby="typeHelp"
                             readonly value="{{ $agendamentos->title }}">
                     </div>
                     <div class="mb-3">
@@ -28,23 +28,18 @@
                     </div>
                     <div class="mb-3">
                         <label for="ambiente" class="form-label">Ambiente</label>
-                        <input type="number" class="form-control" id="ambiente" aria-describedby="numberHelp"
+                        <input type="text" class="form-control" id="ambiente" aria-describedby="numberHelp"
                             readonly value="{{ $agendamentos->ambiente }}">
                     </div>
                     <div class="mb-3">
-                        <label for="retirada" class="form-label">Aula retirada</label>
-                        <input type="number" class="form-control" id="retirada" aria-describedby="numberHelp"
-                            readonly value="{{ $agendamentos->retirada }}">
+                        <label for="retirada" class="form-label">Retirada</label>
+                        <input type="text" class="form-control" id="retirada" aria-describedby="numberHelp"
+                            readonly value="{{ $agendamentos->retirada }}º aula">
                     </div>
                     <div class="mb-3">
-                        <label for="devolucao" class="form-label">Aula de devolução</label>
-                        <input type="number" class="form-control" id="devolucao" aria-describedby="numberHelp"
-                            readonly value="{{ $agendamentos->devolucao }}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="start" class="form-label">Data do Agendamento</label>
-                        <input type="number" class="form-control" id="start" aria-describedby="numberHelp"
-                            readonly value="{{ $agendamentos->start }}">
+                        <label for="devolucao" class="form-label">Devolução</label>
+                        <input type="text" class="form-control" id="devolucao" aria-describedby="numberHelp"
+                            readonly value="{{ $agendamentos->devolucao }}º aula">
                     </div>
                 </div>
                 <div class="modal-footer">

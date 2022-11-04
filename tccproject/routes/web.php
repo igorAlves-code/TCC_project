@@ -12,18 +12,16 @@ use App\Http\Controllers\userControl;
 use App\Http\Controllers\siteController;
 
 /* AUTENTICAÇÃO */
-
-Route::get('/', [userControl::class, 'login'])->name("login.page");
-Route::post('/', [userControl::class, 'auth'])->name("auth.user");
-
-Route::get('/logout', [userControl::class, 'logout'])->name("auth.log");
+    Route::get('/', [userControl::class, 'login'])->name("login.page");
+    Route::post('/', [userControl::class, 'auth'])->name("auth.user");
+    Route::get('/logout', [userControl::class, 'logout'])->name("auth.log");
 
 Route::get('/forgot-password', [forgotPasswordController::class, 'index'])->name('forgot-password');
 Route::post('/forgot-password/send', [forgotPasswordController::class, 'store'])->name('forgot-password.link');
 Route::view('/change-password', 'passwords.changePassword')->name('change-password');
 
 /* MIDDLEWARE DE AUTENTICAÇÃO */
-Route::middleware(['auth', 'verified'])->group(function () {
+    Route::middleware(['auth'])->group(function () {    
 
     Route::get('agendar', [siteController::class, 'agendar'])->name('Home');
     Route::post('agendar/enviar', [siteController::class, 'store']);

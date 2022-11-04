@@ -68,7 +68,6 @@ class teachersController extends Controller
                 ->from(Auth::user()->email, $mail_data['nome'])
                 ->subject('Aqui está o seu acesso');
         });
-
         if ($teachers) {
             // event(new Registered($teachers));
             return redirect()->route('teachers.index')
