@@ -33,7 +33,11 @@
       @foreach ($agendamentos as $agendamentos)
       <div class="cardContainer ">
         <div class="card">
-          <h1 class="titleDate">{{date('d/m/Y')}}</h1>
+        <?php
+        $date = $agendamentos->start;
+        $data_brasileira = implode("/",array_reverse(explode("-",$date)));
+        ?>
+          <h1 class="titleDate" id="titleDate">{{$data_brasileira}}</h1>
             <div class="table-responsive">
               <table class="table">
                 <thead>

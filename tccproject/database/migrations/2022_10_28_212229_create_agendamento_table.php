@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->string("recurso")->nullable();
             $table->string("ambiente")->nullable();
-            $table->dateTime("start");
+            $table->date("start");
             $table->integer("retirada");
             $table->integer("devolucao");
             $table->timestamps();

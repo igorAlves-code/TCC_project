@@ -21,12 +21,14 @@ use App\Http\Controllers\siteController;
 
         Route::get('agendar', [siteController::class, 'agendar'])->name('Home');
         Route::post('agendar/enviar', [siteController::class, 'store']);
+        Route::get('agendar/show', [siteController::class, 'show']);
 
         // GRUPO DE ROTAS AGENDAMENTOS  
         Route::prefix('agendamentos')->group(function(){
             Route::get('/', [agendamentosController::class, 'view'])->name('agendamentos.view');
             Route::patch('/{id}/update', [agendamentosController::class, 'update'])->name('agendamentos.update');
-            Route::delete('/{id}', [agendamentosController::class, 'destroy'])->name('agendamentos.destroy');
+            Route::delete('/{id}', [agendamentosController::class, 'destroy'])->name('agendamentos.destroy');   
+
         });
 
         Route::resource('ocorrencia', ContactController::class);

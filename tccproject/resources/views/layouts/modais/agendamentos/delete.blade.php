@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/css/styleCoordenacao.css">
 
-<!-- Modal Exclusão Ambiente -->
+
 <div class="modal fade" id="destroyAgendamento{{ $agendamentos->id }}" data-backdrop="static" data-keyboard="false"
     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog  modal-dialog-centered">

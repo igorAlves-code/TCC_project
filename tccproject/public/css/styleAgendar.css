@@ -7,6 +7,18 @@
     border: none;
 }
 
+.fc-theme-standard .fc-popover {
+    background-color: #000 !important;
+}
+
+.fc .fc-popover-title {
+    color: #fff !important;
+}
+
+.fc .fc-daygrid-more-link {
+    color: red !important;
+}
+
 .modal-content {
     border: none;
     line-height: 1;

@@ -16,8 +16,7 @@ class siteController extends Controller
      /**Agendar controller**/
 
     public function agendar(request $request)
-    {
-        $agendamento = agendamento::all(); 
+    { 
         $enviroments = enviroments::all();
         $equipments = equipments::all();
         return view('/user/agendar', compact('enviroments', 'equipments'));
@@ -32,6 +31,16 @@ class siteController extends Controller
             ->with('success', 'Seu agendamento foi salvo!');  
         
     }
+
+    public function show(Request $request){
+        $agendamentos = agendamento::all();
+        $agendJSON = json_encode($agendamentos);
+
+        return $agendJSON;
+    }
+
+ 
+    /**Outros**/
 
     public function coordenacao()
     {

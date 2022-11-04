@@ -13,7 +13,7 @@ class agendamentosController extends Controller
     public function view(){
         $enviroments = enviroments::all();
         $equipments = equipments::all();
-
+    
         if(auth()->user()->admin === 0){
             $agendamentos = agendamento::where('userId', auth()->user()->id)->get();
             return view('user/agendamentos', compact('enviroments', 'equipments', 'agendamentos'));
