@@ -37,7 +37,7 @@ class storeUpdateManagementsFormRequest extends FormRequest
             ], 
             'email' => [
                 'required',
-                Rule::unique('coordenador')->ignore($this->id),
+                Rule::unique('users')->ignore($this->id),
                 'max:191',
             ],
         ];
@@ -58,7 +58,7 @@ class storeUpdateManagementsFormRequest extends FormRequest
             'sobrenome.required' => 'O sobrenome do coordenador é obrigatório!',
             'sobrenome.max' => 'O limite é de 191 caracteres para o sobrenome do coordenador!',
             'email.required' => 'O email do coordenador é obrigatório!',
-            'email.unique' => 'Um coordenador com esse email já está cadastrado!',
+            'email.unique' => 'Um usuário com esse email já está cadastrado!',
             'email.max' => 'O limite é de 191 caracteres para o email do coordenador!',
         ];
     }   

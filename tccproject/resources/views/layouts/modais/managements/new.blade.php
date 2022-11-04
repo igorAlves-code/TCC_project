@@ -11,6 +11,7 @@
             </div>
             <form action="{{ route('managements.store') }}" method="post">
                 @csrf
+                <input type="hidden" name="admin" value="1">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="nome" class="form-label">Nome</label>

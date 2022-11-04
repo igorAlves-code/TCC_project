@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('agendamentos', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreignId('userId')->constrained('users');
+            $table->foreignId('userId')->constrained('users') ->onUpdate('cascade')->onDelete('cascade');
             $table->string('title');
             $table->string("recurso")->nullable();
             $table->string("ambiente")->nullable();

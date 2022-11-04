@@ -36,48 +36,49 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+            'host' => env('MAIL_HOST', 'smtp.gmail.com'),
             'port' => env('MAIL_PORT', 587),
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+            'encryption' => env('MAIL_ENCRYPTION', 'TLS'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
+            // 'ssh' => env('MAIL_SSH', 465),
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
 
-        'ses' => [
-            'transport' => 'ses',
-        ],
+        // 'ses' => [
+        //     'transport' => 'ses',
+        // ],
 
-        'mailgun' => [
-            'transport' => 'mailgun',
-        ],
+        // 'mailgun' => [
+        //     'transport' => 'mailgun',
+        // ],
 
-        'postmark' => [
-            'transport' => 'postmark',
-        ],
+        // 'postmark' => [
+        //     'transport' => 'postmark',
+        // ],
 
-        'sendmail' => [
-            'transport' => 'sendmail',
-            'path' => env('MAIL_SENDMAIL_PATH', '/usr/sbin/sendmail -bs -i'),
-        ],
+        // 'sendmail' => [
+        //     'transport' => 'sendmail',
+        //     'path' => env('MAIL_SENDMAIL_PATH', '/usr/sbin/sendmail -bs -i'),
+        // ],
 
-        'log' => [
-            'transport' => 'log',
-            'channel' => env('MAIL_LOG_CHANNEL'),
-        ],
+        // 'log' => [
+        //     'transport' => 'log',
+        //     'channel' => env('MAIL_LOG_CHANNEL'),
+        // ],
 
-        'array' => [
-            'transport' => 'array',
-        ],
+        // 'array' => [
+        //     'transport' => 'array',
+        // ],
 
-        'failover' => [
-            'transport' => 'failover',
-            'mailers' => [
-                'smtp',
-                'log',
-            ],
-        ],
+        // 'failover' => [
+        //     'transport' => 'failover',
+        //     'mailers' => [
+        //         'smtp',
+        //         'log',
+        //     ],
+        // ],
     ],
 
     /*
@@ -92,8 +93,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'gabrielsouzat2005@outlook.com'),
+        'name' => env('MAIL_FROM_NAME', 'Testeeeee'),
     ],
 
     /*

@@ -5,19 +5,23 @@ use App\Http\Controllers\agendamentosController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\enviromentsController;
 use App\Http\Controllers\equipmentsController;
+use App\Http\Controllers\forgotPasswordController;
 use App\Http\Controllers\managementsController;
 use App\Http\Controllers\teachersController;
 use App\Http\Controllers\userControl;
 use App\Http\Controllers\siteController;
 
-        /* AUTENTICAÇÃO */
-        Route::get('/', [userControl::class, 'login'])->name("login.page");
-        Route::post('/', [userControl::class, 'auth'])->name("auth.user");
-        Route::get('/logout', [userControl::class, 'logout'])->name("auth.log");
+/* AUTENTICAÇÃO */
+    Route::get('/', [userControl::class, 'login'])->name("login.page");
+    Route::post('/', [userControl::class, 'auth'])->name("auth.user");
+    Route::get('/logout', [userControl::class, 'logout'])->name("auth.log");
 
+Route::get('/forgot-password', [forgotPasswordController::class, 'index'])->name('forgot-password');
+Route::post('/forgot-password/send', [forgotPasswordController::class, 'store'])->name('forgot-password.link');
+Route::view('/change-password', 'passwords.changePassword')->name('change-password');
 
-        /* MIDDLEWARE DE AUTENTICAÇÃO */
-        Route::middleware(['auth'])->group(function () {    
+/* MIDDLEWARE DE AUTENTICAÇÃO */
+    Route::middleware(['auth'])->group(function () {    
 
         Route::get('agendar', [siteController::class, 'agendar'])->name('Home');
         Route::post('agendar/enviar', [siteController::class, 'store']);
@@ -31,11 +35,11 @@ use App\Http\Controllers\siteController;
 
         });
 
-        Route::resource('ocorrencia', ContactController::class);
+    Route::get('ocorrencia', [ContactController::class, 'index']);
+    Route::post('ocorrencia/send', [ContactController::class, 'send'])->name('send.mail.ocorrencia');
 
-
-        /* GRUPO DE ROTAS COORDENAÇÃO */
-        Route::prefix('coordenacao')->group(function () {
+    /* GRUPO DE ROTAS COORDENAÇÃO */
+    Route::prefix('coordenacao')->group(function () {
 
         Route::get('/', [siteController::class, 'coordenacao']);
 

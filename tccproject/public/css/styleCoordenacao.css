@@ -10,7 +10,7 @@ main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 70vw;
+    width: 90vw;
     height: 70vh;
     margin-top: 0.5em;
     background: #dedede;
@@ -107,7 +107,7 @@ main {
     align-items: center;
     flex-direction: row;
     width: 100%;
-    height: 90%;
+    height: 80%;
 }
 
 #tableCrud {

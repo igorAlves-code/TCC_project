@@ -37,7 +37,7 @@ class storeUpdateTeachersFormRequest extends FormRequest
             ], 
             'email' => [
                 'required',
-                Rule::unique('professor')->ignore($this->id),
+                Rule::unique('users')->ignore($this->id),
                 'max:191',
             ],
             'disciplina' => [
@@ -69,7 +69,7 @@ class storeUpdateTeachersFormRequest extends FormRequest
             'sobrenome.required' => 'O sobrenome do professor é obrigatório!',
             'sobrenome.max' => 'O limite é de 191 caracteres para o sobrenome do professor!',
             'email.required' => 'O email do professor é obrigatório!',
-            'email.unique' => 'Um professor com esse email já está cadastrado!',
+            'email.unique' => 'Um usuário com esse email já está cadastrado!',
             'email.max' => 'O limite é de 191 caracteres para o email do professor!',
             'disciplina.required' => 'A disciplina que o professor leciona é obrigatória!',
             'disciplina.max' => 'O limite é de 191 caracteres para a disciplina do professor!',

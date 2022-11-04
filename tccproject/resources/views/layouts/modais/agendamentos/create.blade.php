@@ -9,7 +9,7 @@
       </div>
       <form action="{{ url('agendar/enviar') }}" method="POST">
         @csrf 
-        <input value="{{auth()->User()->name}}" name="title" aria-describedby="emailHelp" type="hidden" required>
+        <input value="{{auth()->User()->nome}} {{auth()->User()->sobrenome}}" name="title" aria-describedby="emailHelp" type="hidden" required>
         <input value="{{auth()->User()->id}}" name="userId" aria-describedby="emailHelp" type="hidden" required>
         <input type="hidden" id="start" name="start" aria-describedby="typeHelp" required >
         <div class="modal-body">
