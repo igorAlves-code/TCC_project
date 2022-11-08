@@ -39,7 +39,7 @@ class siteController extends Controller
             return redirect()->back();
         }
         else{
-        return view('admin/index');
+            return view('admin/index');
         }
     }
 }

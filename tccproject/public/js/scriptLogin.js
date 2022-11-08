@@ -7,3 +7,11 @@ document.querySelectorAll(".text-input").forEach((element) => {
         }
     });
 });
+
+const inputPassword = document.querySelector("#password");
+const eyePassword = document.querySelector("#eyePassword");
+
+eyePassword.addEventListener("click", () => {
+    inputPassword.classList.toggle("pw");
+    eyePassword.classList.toggle("cancel");
+});

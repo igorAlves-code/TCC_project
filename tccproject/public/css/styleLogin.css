@@ -171,6 +171,21 @@ main {
     opacity: 1;
 }
 
+#password.pw {
+    -webkit-text-security: disc;
+    position: relative;
+}
+
+#eyePassword {
+    content: url("../img/eyePassword.png");
+    position: absolute;
+    right: 45px;
+}
+
+#eyePassword.cancel {
+    content: url("../img/cancelEyePassword.png");
+}
+
 .remember {
     display: flex;
     justify-content: flex-start;
@@ -185,6 +200,16 @@ main {
 }
 
 /* Botão */
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(223, 223, 223);
+    margin-top: 40vh;
+    padding: 10px;
+    z-index: 2;
+}
+
 .loginButton {
     display: flex;
     align-items: center;
@@ -205,16 +230,6 @@ main {
     width: 21vw;
 }
 
-.buttonContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(223, 223, 223);
-    margin-top: 40vh;
-    padding: 10px;
-    z-index: 2;
-}
-
 /* Seção final  */
 footer {
     position: fixed;
@@ -226,57 +241,150 @@ footer {
     text-transform: uppercase;
 }
 
-@media only screen and (max-width: 768px) {
+/* MOBILE - RESPONSIVIDADE */
+@media (max-width: 375px) {
+    #eyePassword {
+        width: 7.5vw;
+    }
+}
+
+@media (max-width: 425px) {
     #header img {
         width: 5em;
     }
 
-    .loginForm {
-        width: 80vw;
-        height: 35vh;
-        margin-top: 10px;
-    }
-
-    .logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 3;
-        margin-bottom: -7vh;
-        margin-top: 13vh;
-        background-color: rgb(223, 223, 223);
-    }
-
     .logo img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 70vw;
+    }
+
+    .loginForm {
+        width: 90vw;
+    }
+
+    .container {
+        width: 90vw;
+    }
+
+    .input-container {
+        width: 100%;
+    }
+
+    .text-input {
+        width: 100%;
+    }
+
+    .label {
+        left: 10px;
+    }
+
+    #eyePassword {
+        width: 7vw;
+        right: 10px;
+    }
+
+    .buttonContainer {
         width: 60vw;
     }
 
     .loginButton {
-        width: 50vw;
-        font-size: 16px;
-        border-radius: 0.3em;
+        width: 100%;
     }
 
     .loginButton:hover {
-        width: 40vw;
+        width: 90%;
     }
 
+    .alert {
+        margin-top: 1.5rem;
+        width: 90vw;
+        height: 10vh;
+        font-size: 16px;
+    }
+
+    .alert-dismissible .close {
+        top: -10px;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    #header img {
+        width: 10em;
+    }
+
+    .logo img {
+        width: 65vw;
+    }
+
+    .loginForm {
+        /* height: 50vh; */
+        width: 90vw;
+    }
+    
+    .container {
+        width: 90vw;
+    }
+    
     .input-container {
-        width: 70vw;
-    }
-
-    .label {
-        left: 20px;
+        width: 90%;
+        margin-bottom: 30px;
     }
 
     .text-input {
-        width: 70vw;
+        width: 100%;
+        font-size: 1.25em;
+    }
+
+    .label {
+        left: 15px;
+        top: 5px;
+        font-size: 1.25em;
+    }
+
+    .text-input:focus+.label,
+    .filled {
+        top: -33px;
+        color: #000000e7;
+        background-color: rgb(223, 223, 223);
+        font-size: 24px;
+    }
+
+    #eyePassword {
+        width: 5vw;
+        right: 15px;
     }
 
     .buttonContainer {
-        margin-top: 34vh;
+        width: 60vw;
+    }
+    
+    .forgot-password {
+        margin-top: 15px;
+    }
+
+    .forgot-password a {
+        font-size: 1.25em;
+    }
+
+    .loginButton {
+        width: 100%;
+        font-size: 1.25em;
+    }
+
+    .loginButton:hover {
+        width: 90%;
+    }
+
+    .alert {
+        margin-top: 1.5rem;
+        width: 90vw;
+        font-size: 30px;
+    }
+
+    .alert-dismissible .close span {
+        zoom: 1.75;
+    }
+
+    footer {
+        font-size: 20px;
     }
 }

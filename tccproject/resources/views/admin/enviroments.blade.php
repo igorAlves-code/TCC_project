@@ -18,7 +18,7 @@
     @include('layouts.modais.enviroments.new')
     <div id="containerTable">
         <div id="tableCrud">
-            <table class="table">
+            <table class="table" id="tableEnviroments">
                 <thead>
                     <tr>
                         <td scope="col" colspan="2">

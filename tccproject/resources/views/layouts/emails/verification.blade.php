@@ -20,7 +20,7 @@
     </script>
 
     {{-- CSS da aplicação --}}
-    {{-- <link rel="stylesheet" href="/css/styleMain.css"> --}}
+    <link rel="stylesheet" href="/css/styleMain.css">
 
     {{-- CSS Específico da página --}}
     <link rel="stylesheet" href="/css/stylePassword.css">
@@ -40,21 +40,18 @@
             <img draggable="false" src="/img/logoASR.png" />
         </div>
 
-        <form action="{{ route('forgot-password.link') }}" method="post" class="formChangePass">
+        <form action="{{ route('verification.send') }}" method="post" class="formChangePass">
             @csrf
             <div class="container">
                 <div class="inputsContainer">
-                    <p>Esqueceu sua senha? Sem problemas. Basta nos informar seu endereço de e-mail e nós lhe enviaremos
-                        um link de redefinição de senha que permitirá que você escolha uma nova.</p>
-                </div>
-                <div class="inputsContainer">
-                    <input type="email" id="email" name="email" class="input" value="{{ session('email') }}">
-                    <label id="labelEmail" for="email">Email:</label>
+                    <p>Agradecemos por usar nosso sistema! Antes de começarmos, você poderia verificar seu endereço de
+                        email clicando no link que enviamos para você? Se você não recebeu o email, nós poderemos te
+                        enviar outro.</p>
                 </div>
 
 
                 <div class="inputsContainer">
-                    <button id="EnvF" type="submit">Enviar email de recuperação</button>
+                    <button id="EnvF" type="submit">Enviar email</button>
                 </div>
             </div>
 
@@ -65,7 +62,6 @@
             <script type="text/javascript">
                 $('#success').modal('show');
             </script>
-        @else
         @endif
 
     </main>

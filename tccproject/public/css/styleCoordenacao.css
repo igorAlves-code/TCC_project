@@ -207,31 +207,36 @@ main {
     background-color: #007bff;
     border-color: #007bff;
 }
+
 #btnCad:hover {
     color: #fff;
     background-color: #0069d9;
     border-color: #0062cc;
 }
+
 #btnCad.focus,
 #btnCad:focus {
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 }
+
 #btnCad.disabled,
 #btnCad:disabled {
     color: #fff;
     background-color: #007bff;
     border-color: #007bff;
 }
+
 #btnCad:not(:disabled):not(.disabled).active,
 #btnCad:not(:disabled):not(.disabled):active,
-.show > #btnCad.dropdown-toggle {
+.show>#btnCad.dropdown-toggle {
     color: #fff;
     background-color: #0062cc;
     border-color: #005cbf;
 }
+
 #btnCad:not(:disabled):not(.disabled).active:focus,
 #btnCad:not(:disabled):not(.disabled):active:focus,
-.show > #btnCad.dropdown-toggle:focus {
+.show>#btnCad.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 }
 
@@ -241,31 +246,36 @@ main {
     background-color: #17a2b8;
     border-color: #17a2b8;
 }
+
 #btnFiltro:hover {
     color: #fff;
     background-color: #138496;
     border-color: #117a8b;
 }
+
 #btnFiltro.focus,
 #btnFiltro:focus {
     box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
 }
+
 #btnFiltro.disabled,
 #btnFiltro:disabled {
     color: #fff;
     background-color: #17a2b8;
     border-color: #17a2b8;
 }
+
 #btnFiltro:not(:disabled):not(.disabled).active,
 #btnFiltro:not(:disabled):not(.disabled):active,
-.show > #btnFiltro.dropdown-toggle {
+.show>#btnFiltro.dropdown-toggle {
     color: #fff;
     background-color: #117a8b;
     border-color: #10707f;
 }
+
 #btnFiltro:not(:disabled):not(.disabled).active:focus,
 #btnFiltro:not(:disabled):not(.disabled):active:focus,
-.show > #btnFiltro.dropdown-toggle:focus {
+.show>#btnFiltro.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
 }
 
@@ -275,31 +285,36 @@ main {
     background-color: #dc3545;
     border-color: #dc3545;
 }
+
 #btnDanger:hover {
     color: #fff;
     background-color: #c82333;
     border-color: #bd2130;
 }
+
 #btnDanger.focus,
 #btnDanger:focus {
     box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
 }
+
 #btnDanger.disabled,
 #btnDanger:disabled {
     color: #fff;
     background-color: #dc3545;
     border-color: #dc3545;
 }
+
 #btnDanger:not(:disabled):not(.disabled).active,
 #btnDanger:not(:disabled):not(.disabled):active,
-.show > #btnDanger.dropdown-toggle {
+.show>#btnDanger.dropdown-toggle {
     color: #fff;
     background-color: #bd2130;
     border-color: #b21f2d;
 }
+
 #btnDanger:not(:disabled):not(.disabled).active:focus,
 #btnDanger:not(:disabled):not(.disabled):active:focus,
-.show > #btnDanger.dropdown-toggle:focus {
+.show>#btnDanger.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
 }
 
@@ -338,42 +353,169 @@ h5 {
 }
 
 /* ------------------- MOBILE -------------------- */
-
-/* Mobile S */
-@media only screen and (max-width: 300px) {
-    * {
-        font-size: 50px;
+@media (max-width: 320px) {
+    #menu {
+        width: 8vw;
+        height: 0vh;
     }
 
-    .modal-content {
-        font-size: 30px;
+    #menu.change {
+        width: 5vw;
+
+    }
+
+    .changeBg {
+        width: 100vw;
+        height: 75vh;
+        transform: translate(-54%, -33%);
+    }
+
+    .navigationMobile {
+        margin: 0 10px;
+    }
+    
+    .navigationMobile li {
+        padding: 10px;
+    }
+
+    .navigationMobile li a {
+        font-size: 0.8em;
+    }
+    
+    .navigationMobile button {
+        font-size: 0.8em;
+    }
+
+    #tableTeachers {
+        font-size: 12px;
+        margin-left: 80vh;
+    }
+
+    #tableManagements {
+        font-size: 12px;
+        margin-left: 45vh;
+    }
+
+    #tableEnviroments {
+        font-size: 12px;
+        margin-left: 40vh;
+    }
+
+    #tableEquipments {
+        font-size: 12px;
+        margin-left: 40vh;
     }
 }
 
-@media only screen and (max-width: 575px) {
-    * {
-        font-size: 15px;
+@media (min-width: 321px) and (max-width: 375px) {
+    #menu {
+        width: 8vw;
+        height: 0vh;
     }
 
-    .modal-content {
-        font-size: 30px;
+    #menu.change {
+        width: 5vw;
+
+    }
+
+    .changeBg {
+        width: 100vw;
+        height: 75vh;
+        transform: translate(-54%, -33%);
+    }
+
+    .navigationMobile {
+        margin: 0 10px;
+    }
+    
+    .navigationMobile li {
+        padding: 10px;
+    }
+
+    .navigationMobile li a {
+        font-size: 0.8em;
+    }
+    
+    .navigationMobile button {
+        font-size: 0.8em;
+    }
+
+    #tableTeachers {
+        font-size: 12px;
+        margin-left: 70vh;
+    }
+
+    #tableManagements {
+        font-size: 12px;
+        margin-left: 35vh;
+    }
+
+    #tableEnviroments {
+        font-size: 12px;
+        margin-left: 30vh;
+    }
+
+    #tableEquipments {
+        font-size: 12px;
+        margin-left: 30vh;
     }
 }
 
-@media only screen and (min-width: 576) and (max-width: 620px) {
-    * {
-        font-size: 50px;
+@media (min-width: 376px) and (max-width: 425px) {
+    #menu {
+        width: 7vw;
+        height: 0vh;
     }
 
-    .modal-content {
-        margin-top: 7%;
-        font-size: 30px;
-        width: 250vw;
-        margin-left: -81vw;
+    #menu.change {
+        width: 5vw;
+
+    }
+
+    .changeBg {
+        width: 100vw;
+        height: 75vh;
+        transform: translate(-54%, -33%);
+    }
+
+    .navigationMobile {
+        margin: 0 10px;
+    }
+    
+    .navigationMobile li {
+        padding: 10px;
+    }
+
+    .navigationMobile li a {
+        font-size: 0.8em;
+    }
+    
+    .navigationMobile button {
+        font-size: 0.8em;
+    }
+
+    #tableTeachers {
+        font-size: 12px;
+        margin-left: 60vh;
+    }
+
+    #tableManagements {
+        font-size: 12px;
+        margin-left: 25vh;
+    }
+
+    #tableEnviroments {
+        font-size: 12px;
+        margin-left: 20vh;
+    }
+
+    #tableEquipments {
+        font-size: 12px;
+        margin-left: 20vh;
     }
 }
 
-@media only screen and (max-width: 920px) {
+@media (max-width: 768px) {
     .modal-content {
         margin-top: 7%;
     }
@@ -417,7 +559,7 @@ h5 {
         background-color: #242424;
     }
 
-    #check:checked ~ #menuAdmin {
+    #check:checked~#menuAdmin {
         animation: hidden 1s ease forwards;
     }
 
@@ -427,22 +569,84 @@ h5 {
     }
 
     .table {
-        display: block;
-        padding-left: 10px;
         text-align: center;
         width: 100%;
+        font-size: 12px;
     }
+
+    /* #tableTeachers {
+        font-size: 12px;
+        margin-left: 80vh;
+    }
+    
+    #tableManagements {
+        font-size: 12px;
+        margin-left: 45vh;
+    }
+
+    #tableEnviroments {
+        font-size: 12px;
+        margin-left: 40vh;
+    }
+
+    #tableEquipments {
+        font-size: 12px;
+        margin-left: 40vh;
+    } */
 
     .table thead {
         width: 50%;
     }
 
     #containerTable {
-        height: 65vh;
+        height: 55vh;
         width: 95vw;
         margin-top: -6vh;
     }
+
+    #pagination {
+        margin-top: 3vh;
+    }
 }
+
+/*
+@media (min-width: 320px) {
+    #tableTeachers {
+        font-size: 12px;
+        margin-left: 80vh;
+    }
+
+    #tableManagements {
+        font-size: 12px;
+        margin-left: 45vh;
+    }
+
+    #tableEnviroments {
+        font-size: 12px;
+        margin-left: 40vh;
+    }
+
+    #tableEquipments {
+        font-size: 12px;
+        margin-left: 40vh;
+    }
+} */
+/*
+@media (min-width: 501px) and (max-width: 600px) {
+    .table {
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 720px) {
+    .table {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 721px) and (max-width: 920px) {
+    
+} */
 
 @keyframes hidden {
     100% {

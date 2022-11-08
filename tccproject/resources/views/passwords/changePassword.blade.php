@@ -20,7 +20,7 @@
     </script>
 
     {{-- CSS da aplicação --}}
-    <link rel="stylesheet" href="/css/styleMain.css">
+    {{-- <link rel="stylesheet" href="/css/styleMain.css"> --}}
 
     {{-- CSS Específico da página --}}
     <link rel="stylesheet" href="/css/stylePassword.css">
@@ -36,29 +36,26 @@
     </header>
 
     <main>
-
-        <div class="title">
-            <h1>Alterar Senha</h1>
-            <div></div>
+        <div class="logo">
+            <img draggable="false" src="/img/logoASR.png" />
         </div>
 
-        <form action="" method="post" class="formChangePass">
+        <form action="{{ route('password.update') }}" method="post" class="formChangePass">
             @csrf
             <div class="container">
+                <input type="hidden" name="token" id="token" value="{{ $token }}">
                 <div class="inputsContainer">
-                    <input type="text" id="password" class="pw input" value="{{ session('senha') }}">
-                    <label for="password">Senha Atual:</label>
+                    <input type="email" id="emailReset" name="email" class="input" value="{{ session('email') }}">
+                    <label id="labelEmailReset" for="email">Email:</label>
+                </div>
+                <div class="inputsContainer">
+                    <input type="text" id="password" name="password" class="pw input">
+                    <label for="password">Nova Senha:</label>
                     <img id="eyePassword">
                 </div>
 
                 <div class="inputsContainer">
-                    <input type="text" id="newPassword" class="pw input">
-                    <label for="newPassword">Nova Senha:</label>
-                    <img id="eyeNewPassword">
-                </div>
-
-                <div class="inputsContainer">
-                    <input type="text" id="confirmPassword" class="pw input">
+                    <input type="text" id="confirmPassword" name="confirmPassword" class="pw input">
                     <label for="confirmPassword">Confirmar Senha:</label>
                     <img id="eyeConfirmPassword">
                 </div>
@@ -70,6 +67,21 @@
             </div>
 
         </form>
+
+        @if (session('success'))
+            @include('layouts.modais.success')
+            <script type="text/javascript">
+                $('#success').modal('show');
+            </script>
+        @else
+        @endif
+
+        @if (Session::has('errors'))
+            @include('layouts.modais.errors')
+            <script type="text/javascript">
+                $('#error').modal('show');
+            </script>
+        @endif
 
     </main>
 
