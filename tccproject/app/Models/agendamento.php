@@ -17,8 +17,7 @@ class agendamento extends Model
      'ambiente',
      'retirada',
      'devolucao',
-     'start',
-     'end'
+     'start'
     ];
 
     protected $fillable=[
@@ -29,7 +28,6 @@ class agendamento extends Model
      'ambiente',
      'retirada',
      'devolucao',
-     'start',
-     'end'
+     'start'
     ];
 }

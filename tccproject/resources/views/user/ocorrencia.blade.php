@@ -36,7 +36,7 @@
                 <div class="inputsContainer">
                     <div class="containerField">
                         <label>Nome</label>
-                        <input type="text" value="{{ auth()->User()->nome }}" autocomplete="off" name="nome">
+                        <input type="text" value="{{auth()->User()->nome}} {{auth()->User()->sobrenome}}" autocomplete="off" name="nome">
                     </div>
 
 

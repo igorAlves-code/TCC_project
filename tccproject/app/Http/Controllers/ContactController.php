@@ -34,17 +34,9 @@ class ContactController extends Controller
             'ocorrencia' => 'required'
         ]);
 
-
-
-        // Mail::to(config('mail.from.address'))
-        //     ->send( new SendMail($data));
-
-        //     return back()
-        //             ->with('success', 'Sua ocorrência foi enviada.');
-
         if ($this->isOnline()) {
             $mail_data = [
-                'recipient' => 'gabrielsouzat2005@outlook.com',
+                'recipient' => 'matheusborges123567@gmail.com',
                 'data' => $request->data,
                 'nome' => $request->nome,
                 'ocorrencia' => $request->ocorrencia

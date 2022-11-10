@@ -51,7 +51,7 @@
     border: none;
     background-color: rgba(158, 158, 158, 0.295);
     box-shadow: rgba(0, 0, 0, 0.26) 1.95px 1.95px 2.6px;
-    min-width: 50vw;
+    min-width: 60vw;
 }
 
 .titleDate {
@@ -84,6 +84,12 @@
     width: 6em !important;
     margin-left: 0 !important;
 }
+/* 
+#pagination nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+} */
 
 /**--------------------------------------------MOBILE-----------------------------------------------**/
 

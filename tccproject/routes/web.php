@@ -41,15 +41,17 @@ Route::post('/change-password', [resetPasswordController::class, 'resetPassword'
 /* MIDDLEWARE DE AUTENTICAÇÃO */
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    Route::get('agendar', [siteController::class, 'agendar'])->name('Home');
-    Route::post('agendar/enviar', [siteController::class, 'store']);
+        Route::get('agendar', [siteController::class, 'agendar'])->name('Home');
+        Route::post('agendar/enviar', [siteController::class, 'store']);
+        Route::get('agendar/show', [siteController::class, 'show']);
 
-    // GRUPO DE ROTAS AGENDAMENTOS  
-    Route::prefix('agendamentos')->group(function () {
-        Route::get('/', [agendamentosController::class, 'view'])->name('agendamentos.view');
-        Route::patch('/{id}/update', [agendamentosController::class, 'update'])->name('agendamentos.update');
-        Route::delete('/{id}', [agendamentosController::class, 'destroy'])->name('agendamentos.destroy');
-    });
+        // GRUPO DE ROTAS AGENDAMENTOS  
+        Route::prefix('agendamentos')->group(function(){
+            Route::get('/', [agendamentosController::class, 'view'])->name('agendamentos.view');
+            Route::patch('/{id}/update', [agendamentosController::class, 'update'])->name('agendamentos.update');
+            Route::delete('/{id}', [agendamentosController::class, 'destroy'])->name('agendamentos.destroy');   
+
+        });
 
     Route::get('ocorrencia', [ContactController::class, 'index']);
     Route::post('ocorrencia/send', [ContactController::class, 'send'])->name('send.mail.ocorrencia');
