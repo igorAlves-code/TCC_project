@@ -2,11 +2,11 @@
 @section('title', 'A.S.R - Agendamento de Salas e Recursos')
 
 @section('css')
-<link rel="stylesheet" href="/css/styleAgendar.css">
+    <link rel="stylesheet" href="/css/styleAgendar.css">
 
-{{-- fullcalendar--}}
-<link href="/fullcalendar/main.css" rel='stylesheet' />
-<script src="/fullcalendar/main.js"></script>
+    {{-- fullcalendar --}}
+    <link href="/fullcalendar/main.css" rel='stylesheet' />
+    <script src="/fullcalendar/main.js"></script>
 @endsection
 
 @section('content')
@@ -27,32 +27,26 @@
 
     <main>
 
-      <div class="title">
-        <h1>Agendar</h1>
-        <div class="separatorTitle"></div>
-      </div>
-
-    @can('bloqueado')
-
-      <div class="Container">
-        <div class="block">
-        <img src="\img\block-user.png"
-        width="40px"
-        draggable="false">
-        <h1>Você está <strong>bloqueado!</strong></h1>
+        <div class="title">
+            <h1>Agendar</h1>
+            <div class="separatorTitle"></div>
         </div>
-      </div>
 
-    @else
-
-      <div id="calendar"></div>
-
-  @endcan
+        @can('bloqueado')
+            <div class="Container">
+                <div class="block">
+                    <img src="\img\block-user.png" width="40px" draggable="false">
+                    <h1>Você está <strong>bloqueado!</strong></h1>
+                </div>
+            </div>
+        @else
+            <div id="calendar"></div>
+        @endcan
     </main>
 @endsection
 
 @include('layouts.modais.agendamentos.create')
 
 @section('js')
-  <script src="/js/scriptAgendar.js" defer></script>
+    <script src="/js/scriptAgendar.js" defer></script>
 @endsection

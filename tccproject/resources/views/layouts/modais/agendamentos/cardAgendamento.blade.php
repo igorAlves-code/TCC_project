@@ -35,22 +35,22 @@
                     <td>{{$agendamentos->retirada}}º aula</td>
                     <td>{{$agendamentos->devolucao}}º aula</td>
                     <td>
-                      <a href="#editAgendamento{{ $agendamentos->id }}" 
+                      <a href="#editAgendamento {{ $agendamentos->id . '/' . $date }}" 
                       class="btn btn-modal btn btn-dark" 
                       data-toggle="modal">
-                      <i class="bi bi-pencil-square"></i> Editar</a>
+                      <i class="bi bi-pencil-square"></i> Editar</a> 
+                      @include('layouts.modais.agendamentos.edit')
                       </td>
                       <td>
-                      <a href="#destroyAgendamento{{ $agendamentos->id }}" 
+                      <a href="#destroyAgendamento{{ $agendamentos->id . '/' . $date }}" 
                       class="btn btn-modal btn-danger" 
                       data-toggle="modal">
                       <i class="bi bi-trash2-fill"></i> Excluir</a>
                       @include('layouts.modais.agendamentos.delete')
-                      @include('layouts.modais.agendamentos.edit')
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>  
          </div>
-       </div> 
+       </div>  

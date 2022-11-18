@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\agendamentosRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Models\agendamento;
@@ -23,7 +24,7 @@ class siteController extends Controller
         return view('/user/agendar', compact('enviroments', 'equipments'));
     }
 
-    public function store(Request $request)
+    public function store(agendamentosRequest $request)
     {
         request()->validate(agendamento::$rules);
         agendamento::create($request->all());
@@ -49,7 +50,7 @@ class siteController extends Controller
             return redirect()->back();
         }
         else{
-        return view('admin/index');
+            return view('admin/index');
         }
     }
 }

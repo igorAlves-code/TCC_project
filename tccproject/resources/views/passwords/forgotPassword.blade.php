@@ -19,11 +19,8 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 
-    {{-- CSS da aplicação --}}
-    <link rel="stylesheet" href="/css/styleMain.css">
-
     {{-- CSS Específico da página --}}
-    <link rel="stylesheet" href="/css/stylePassword.css">
+    <link rel="stylesheet" href="/css/styleLogin.css">
 
     {{-- Favicon do Site --}}
     <link rel="shortcut icon" href="/img/faviconASR.ico" type="image/x-icon">
@@ -40,24 +37,33 @@
             <img draggable="false" src="/img/logoASR.png" />
         </div>
 
-        <form action="{{ route('forgot-password.link') }}" method="post" class="formChangePass">
+        <form action="{{ route('forgot-password.link') }}" method="post" class="loginForm">
             @csrf
             <div class="container">
-                <div class="inputsContainer">
-                    <p>Esqueceu sua senha? Sem problemas. Basta nos informar seu endereço de e-mail e nós lhe enviaremos um link de redefinição de senha que permitirá que você escolha uma nova.</p>
-                </div>
-                <div class="inputsContainer">
-                    <input type="email" id="email" name="email" class="input" value="{{ session('email') }}">
-                    <label id="labelEmail" for="email">Email:</label>
-                </div>
 
-
-                <div class="inputsContainer">
-                    <button id="EnvF" type="submit">Enviar email de recuperação</button>
-                </div>
+            <div class="passwordText">
+            <p>Informe seu endereço de e-mail e enviaremos um link para <strong>redefinição de senha</strong></p>
             </div>
 
+                <div class="input-container">
+                    <input type="email" id="email" name="email" class="text-input" value="{{ session('email') }}">
+                    <label class="label" id="labelEmail" for="email">Email</label>
+                </div>
+            </div>
+            
+            <div class="buttonContainer">
+                <button class="loginButton" type="submit">Enviar email de redefinição</button>
+            </div>
         </form>
+
+
+        @if (session('success'))
+            @include('layouts.modais.success')
+            <script type="text/javascript">
+                $('#success').modal('show');
+            </script>
+        @else
+        @endif
 
     </main>
 

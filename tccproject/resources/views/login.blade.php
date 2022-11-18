@@ -35,12 +35,13 @@
             @csrf
             <div class="container">
                 <div class="input-container">
-                    <input type="text" id="Name" class="text-input" autocomplete="off" name="email" />
-                    <label class="label" for="Email">Email</label>
+                    <input type="text" id="email" class="text-input" autocomplete="off" name="email" />
+                    <label class="label" for="email">Email</label>
                 </div>
                 <div class="input-container">
-                    <input type="password" id="Email" class="text-input" autocomplete="off" name="password" />
-                    <label class="label" for="Senha">Senha</label>
+                    <input type="text" id="password" class="text-input pw" autocomplete="off" name="password" />
+                    <label class="label" for="password">Senha</label>
+                    <img id="eyePassword">
                 </div>
 
                 {{-- <div class="remember">
@@ -61,11 +62,9 @@
 
         @if ($errors->any())
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+                @foreach ($errors->all() as $error)
+                    {{ $error }}
+                @endforeach
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -79,6 +78,14 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+        @endif
+
+        @if (session('success'))
+            @include('layouts.modais.success')
+            <script type="text/javascript">
+                $('#success').modal('show');
+            </script>
+        @else
         @endif
 
 

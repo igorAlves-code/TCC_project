@@ -19,7 +19,7 @@
     @include('layouts.modais.equipments.new')
     <div id="containerTable">
         <div id="tableCrud">
-            <table class="table">
+            <table class="table"  id="tableEquipments">
                 <thead>
                     <tr>
                         <td scope="col" colspan="2">

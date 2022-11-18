@@ -23,7 +23,7 @@ class forgotPasswordController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function sendEmail(Request $request)
     {
         $request->validate([
             'email' => ['required', 'email'],
@@ -32,10 +32,11 @@ class forgotPasswordController extends Controller
         $status = Password::sendResetLink(
             $request->only('email')
         );
+        
 
         return $status == Password::RESET_LINK_SENT
-                        ? back()->with('status', __($status))
-                        : back()->withInput($request->only('email'))
-                                ->withErrors(['email' => __($status)]);
+            ? back()->with('success', 'Um email já foi enviado!')
+            : back()->withInput($request->only('email'))
+            ->withErrors(['email' => __($status)]);
     }
 }

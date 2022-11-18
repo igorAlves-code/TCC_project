@@ -19,9 +19,11 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 
-    {{-- CSS Específico da página --}}
-    <link rel="stylesheet" href="/css/styleLogin.css">
+    {{-- CSS da aplicação --}}
+    <link rel="stylesheet" href="/css/styleMain.css">
 
+    {{-- CSS Específico da página --}}
+    <link rel="stylesheet" href="/css/stylePassword.css">
 
     {{-- Favicon do Site --}}
     <link rel="shortcut icon" href="/img/faviconASR.ico" type="image/x-icon">
@@ -38,47 +40,27 @@
             <img draggable="false" src="/img/logoASR.png" />
         </div>
 
-        <form action="{{ route('password.update') }}" method="post" class="loginForm">
+        <form action="{{ route('verification.send') }}" method="post" class="formChangePass">
             @csrf
-            <input type="hidden" name="token" id="token" value="{{ $token }}">
             <div class="container">
-
-                <div class="input-container">
-                    <input type="email" id="emailReset" name="email" class="text-input" value="{{ session('email') }}">
-                    <label id="labelEmailReset" class="label" for="email">Email</label>
+                <div class="inputsContainer">
+                    <p>Agradecemos por usar nosso sistema! Antes de começarmos, você poderia verificar seu endereço de
+                        email clicando no link que enviamos para você? Se você não recebeu o email, nós poderemos te
+                        enviar outro.</p>
                 </div>
 
-                <div class="input-container">
-                    <input type="text" id="password" name="password" class="text-input">
-                    <label for="password" class="label">Nova Senha</label>
-                    <img id="eyePassword">
-                </div>
 
-                <div class="input-container">
-                    <input type="text" id="confirmPassword" name="confirmPassword" class="text-input">
-                    <label for="confirmPassword" class="label">Confirmar Senha</label>
-                    <img id="eyeConfirmPassword">
+                <div class="inputsContainer">
+                    <button id="EnvF" type="submit">Enviar email</button>
                 </div>
-
             </div>
 
-            <div class="buttonContainer">
-                <button id="Env" class="loginButton" type="submit">Alterar Senha</button>
-            </div>
         </form>
 
         @if (session('success'))
             @include('layouts.modais.success')
             <script type="text/javascript">
                 $('#success').modal('show');
-            </script>
-        @else
-        @endif
-
-        @if (Session::has('errors'))
-            @include('layouts.modais.errors')
-            <script type="text/javascript">
-                $('#error').modal('show');
             </script>
         @endif
 

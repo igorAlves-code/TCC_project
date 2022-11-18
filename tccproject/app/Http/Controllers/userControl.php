@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Providers\AuthServiceProvider;
+use Illuminate\Auth\Notifications\VerifyEmail;
+use Illuminate\Foundation\Bootstrap\BootProviders;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Session\Middleware\AuthenticateSession;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Auth\Notifications\ResetPassword;
 
 class userControl extends Controller
 {
@@ -47,4 +53,16 @@ class userControl extends Controller
 
         return redirect('/');
     }
+
+    public function sendEmailVerification(Request $request) {
+        $request->user()->sendEmailVerificationNotification();
+ 
+        return back()->with('success', 'Um novo link de verificação já foi enviado para o email registrado!');
+    }
+
+    // public function sendEmailResetPassword ($token) {
+    //     $url = 'http://127.0.0.1:8000/change-password?token='.$token;
+ 
+    //     $this->notify(new ResetPassword($url));
+    // }
 }

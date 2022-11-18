@@ -3,7 +3,7 @@
 @section('title', 'A.S.R - Agendamento de Salas e Recursos')
 
 @section('css')
-<link rel="stylesheet" href="/css/styleAgendamentos.css">
+    <link rel="stylesheet" href="/css/styleAgendamentos.css">
 @endsection
 
 @section('content')
@@ -23,10 +23,10 @@
     @endif
 
     <main>
-      <div class="title">
-        <h1>Agendamentos</h1>
-        <div class="separatorTitle"></div>
-      </div>
+        <div class="title">
+            <h1>Agendamentos</h1>
+            <div class="separatorTitle"></div>
+        </div>
 
     <div class="scroll">
 
@@ -51,10 +51,5 @@
 
     </div>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <div id="pagination" class="flex items-center justify-around w-100">
-        {{-- {{ $agendamentos->links() }} --}}
-    </div>
-   </main>
+    </main>
 @endsection

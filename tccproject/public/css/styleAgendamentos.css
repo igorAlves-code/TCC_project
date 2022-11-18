@@ -84,6 +84,12 @@
     width: 6em !important;
     margin-left: -1em !important;
 }
+/* 
+#pagination nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+} */
 
 /**--------------------------------------------MOBILE-----------------------------------------------**/
 

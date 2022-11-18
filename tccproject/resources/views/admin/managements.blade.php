@@ -19,7 +19,7 @@
     @include('layouts.modais.managements.new')
     <div id="containerTable">
         <div id="tableCrud">
-            <table class="table">
+            <table class="table" id="tableManagements">
                 <thead>
                     <tr>
                         <td scope="col" colspan="5">
