@@ -13,14 +13,13 @@
                 @method('patch')
                 @csrf
                 <div class="modal-body">
+                <?php
+                $date = $agendamentos->start;
+                $data_brasileira = implode("/",array_reverse(explode("-",$date)));
+                ?>
                     <div class="mb-3">
-                        <label for="equipmentScheduling" class="form-label">Recurso/Dispositivo</label>
-                        <select class="form-select form-control" name="recurso" id="equipmentScheduling" aria-label="Default select example">
-                            <option selected="true" disabled="disabled">{{$agendamentos->recurso}}</option>
-                            @foreach ($equipments as $equipments)
-                            <option value="{{ $equipments->nomeEquipamento }}">{{ $equipments->nomeEquipamento }}</option>
-                            @endforeach
-                        </select>
+                        <label for="dateWithdrawalScheduling" class="form-label">Data do Agendamento</label>
+                        <input type="text" class="form-control" value="{{$data_brasileira}}" aria-describedby="typeHelp" readonly >
                     </div>
                     <div class="mb-3">
                         <label for="enviromentScheduling" class="form-label">Ambiente</label>
@@ -32,8 +31,13 @@
                         </select>    
                     </div>
                     <div class="mb-3">
-                        <label for="dateWithdrawalScheduling" class="form-label">Data do Agendamento</label>
-                        <input type="date" class="form-control" name="start" id="dateWithdrawalScheduling" aria-describedby="emailHelp" required>
+                        <label for="equipmentScheduling" class="form-label">Recurso/Dispositivo</label>
+                        <select class="form-select form-control" name="recurso" id="equipmentScheduling" aria-label="Default select example">
+                            <option selected="true" disabled="disabled">{{$agendamentos->recurso}}</option>
+                            @foreach ($equipments as $equipments)
+                            <option value="{{ $equipments->nomeEquipamento }}">{{ $equipments->nomeEquipamento }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <label for="" class="form-label">Horário:</label>
           <div class="mb-3" style="margin-bottom: 1rem !important;" id="containerHour">

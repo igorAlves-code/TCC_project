@@ -32,7 +32,6 @@ Route::view('/change-password', 'passwords.changePassword')->name('change-passwo
             Route::get('/', [agendamentosController::class, 'view'])->name('agendamentos.view');
             Route::patch('/{id}/update', [agendamentosController::class, 'update'])->name('agendamentos.update');
             Route::delete('/{id}', [agendamentosController::class, 'destroy'])->name('agendamentos.destroy');   
-
         });
 
     Route::get('ocorrencia', [ContactController::class, 'index']);

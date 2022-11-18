@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\storeUpdateEquipmentsFormRequest;
 use App\Models\equipments;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class equipmentsController extends Controller
 {
@@ -22,7 +23,12 @@ class equipmentsController extends Controller
                 $query->where('tipoEquipamento', 'LIKE', "%{$search}%");
             }
         })->paginate(3);
-        return view('admin.equipments', compact('equipments'));
+        if (Gate::denies('admin')){
+            return redirect()->back();
+         }
+        else{
+            return view('admin.equipments', compact('equipments'));
+        }
     }
 
     /**

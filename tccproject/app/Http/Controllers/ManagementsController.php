@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Gate;
 
 class managementsController extends Controller
 {
@@ -25,7 +26,12 @@ class managementsController extends Controller
                 $query->where('', 'LIKE', "%{$search}%");
             }
         })->paginate(3);
-        return view('admin.managements', compact('managements'));
+        if (Gate::denies('admin')){
+            return redirect()->back();
+        }
+        else{
+            return view('admin.managements', compact('managements'));
+        }
     }
 
     /**

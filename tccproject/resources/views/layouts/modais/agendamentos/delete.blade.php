@@ -21,16 +21,20 @@
                         <input type="text" class="form-control" id="Nome" aria-describedby="typeHelp"
                             readonly value="{{ $agendamentos->title }}">
                     </div>
-                    <div class="mb-3">
-                        <label for="recurso" class="form-label">Recurso</label>
-                        <input type="text" class="form-control" id="recurso" aria-describedby="typeHelp"
-                            readonly value="{{ $agendamentos->recurso }}">
-                    </div>
+                    @isset($agendamentos->ambiente)
                     <div class="mb-3">
                         <label for="ambiente" class="form-label">Ambiente</label>
                         <input type="text" class="form-control" id="ambiente" aria-describedby="numberHelp"
                             readonly value="{{ $agendamentos->ambiente }}">
                     </div>
+                    @endisset
+                    @isset($agendamentos->recurso)
+                    <div class="mb-3">
+                        <label for="recurso" class="form-label">Recurso</label>
+                        <input type="text" class="form-control" id="recurso" aria-describedby="typeHelp"
+                            readonly value="{{ $agendamentos->recurso }}">
+                    </div>
+                    @endisset
                     <div class="mb-3">
                         <label for="retirada" class="form-label">Retirada</label>
                         <input type="text" class="form-control" id="retirada" aria-describedby="numberHelp"

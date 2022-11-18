@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\storeUpdateEnviromentsFormResquest;
 use Illuminate\Http\Request;
 use App\Models\enviroments;
+use Illuminate\Support\Facades\Gate;
 
 class enviromentsController extends Controller
 {
@@ -22,7 +23,12 @@ class enviromentsController extends Controller
                 $query->where('tipoAmbiente', 'LIKE', "%{$search}%");
             }
         })->paginate(3);
-        return view('admin.enviroments', compact('enviroments'));
+        if (Gate::denies('admin')){
+            return redirect()->back();
+        }
+        else{
+            return view('admin.enviroments', compact('enviroments'));
+        }
     }
 
     /**

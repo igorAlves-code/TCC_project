@@ -79,10 +79,10 @@
     border-bottom: none !important;
 }
 
-.btn-edit,
+.btn-dark,
 .btn-danger {
     width: 6em !important;
-    margin-left: 0 !important;
+    margin-left: -1em !important;
 }
 
 /**--------------------------------------------MOBILE-----------------------------------------------**/
@@ -94,5 +94,10 @@
 
     .scroll {
         margin-top: 1vh;
+    }
+
+    .btn-dark,
+    .btn-danger {
+        margin-left: 0 !important;
     }
 }

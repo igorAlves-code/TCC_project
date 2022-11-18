@@ -113,7 +113,7 @@ main {
 
 .label {
     position: absolute;
-    left: 45px;
+    left: 50px;
     top: 13px;
     transition: all 0.2s;
     padding: 0 2px;

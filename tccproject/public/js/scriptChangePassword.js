@@ -8,8 +8,6 @@ document.querySelectorAll(".input").forEach((element) => {
     });
 });
 
-
-
 const inputPassword = document.querySelector("#password");
 const inputNewPassword = document.querySelector("#newPassword");
 const inputConfirmPassword = document.querySelector("#confirmPassword");

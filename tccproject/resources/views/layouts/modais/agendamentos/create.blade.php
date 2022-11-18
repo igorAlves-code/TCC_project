@@ -17,15 +17,6 @@
             <label for="dateWithdrawalScheduling" class="form-label">Data do Agendamento</label>
             <input type="text" class="form-control" id="data" aria-describedby="typeHelp" readonly >
           </div>
-          <div class="mb-3"> 
-            <label for="equipmentScheduling" class="form-label">Recurso/Dispositivo</label>
-            <select class="form-select form-control" name="recurso" id="equipmentScheduling" aria-label="Default select example">
-              <option selected="true" disabled="disabled">Selecione o recurso</option>
-              @foreach ($equipments as $equipments)
-              <option value="{{ $equipments->nomeEquipamento }}">{{ $equipments->nomeEquipamento }}</option>
-              @endforeach
-            </select>
-          </div>
           <div class="mb-3">
             <label for="enviromentScheduling" class="form-label">Ambiente</label>
             <select class="form-select form-control" name="ambiente" id="enviromentScheduling" aria-label="Default select example">
@@ -33,6 +24,15 @@
             @foreach ($enviroments as $enviroment)
               <option value="{{ $enviroment->nomeAmbiente }}">{{ $enviroment->nomeAmbiente }}</option>
             @endforeach
+            </select>
+          </div>
+          <div class="mb-3"> 
+            <label for="equipmentScheduling" class="form-label">Recurso/Dispositivo</label>
+            <select class="form-select form-control" name="recurso" id="equipmentScheduling" aria-label="Default select example">
+              <option selected="true" disabled="disabled">Selecione o recurso</option>
+              @foreach ($equipments as $equipments)
+              <option value="{{ $equipments->nomeEquipamento }}">{{ $equipments->nomeEquipamento }}</option>
+              @endforeach
             </select>
           </div>
           <label for="" class="form-label">Horário:</label>

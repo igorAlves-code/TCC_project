@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\storeUpdateTeachersFormRequest;
 use App\Models\teachers;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Gate;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
@@ -29,7 +29,12 @@ class teachersController extends Controller
                 }
             })->paginate(3); // Seleciona o professor
 
+        if (Gate::denies('admin')){
+                return redirect()->back();
+        }
+        else{
         return view('admin.teachers', compact('teachers'));
+        }
     }
 
     /**

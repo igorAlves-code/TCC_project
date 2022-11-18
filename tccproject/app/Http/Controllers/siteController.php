@@ -19,6 +19,7 @@ class siteController extends Controller
     { 
         $enviroments = enviroments::all();
         $equipments = equipments::all();
+
         return view('/user/agendar', compact('enviroments', 'equipments'));
     }
 

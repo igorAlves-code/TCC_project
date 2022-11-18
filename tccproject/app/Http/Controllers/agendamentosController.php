@@ -15,11 +15,11 @@ class agendamentosController extends Controller
         $equipments = equipments::all();
     
         if(auth()->user()->admin === 0){
-            $agendamentos = agendamento::where('userId', auth()->user()->id)->get();
+            $agendamentos = agendamento::where('userId', auth()->user()->id)->where('start', '>=', date("Y-m-d"))->get();
             return view('user/agendamentos', compact('enviroments', 'equipments', 'agendamentos'));
         }
         else{
-            $agendamentos = agendamento::get();
+            $agendamentos = agendamento::where('start', '>=', date("Y-m-d"))->get();
             return view('user/agendamentos', compact('enviroments', 'equipments', 'agendamentos'));
         }
     }
