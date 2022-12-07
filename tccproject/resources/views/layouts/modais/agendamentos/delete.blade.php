@@ -43,12 +43,12 @@
                     <div class="mb-3" style="margin-bottom: 1rem !important;" id="containerHour">
                         <div>
                             <label for="classStartScheduling" class="form-label">De</label>
-                            <input type="text" class="form-control" id="ambiente" aria-describedby="numberHelp"
+                            <input type="text" class="form-control"  aria-describedby="numberHelp"
                             readonly value="{{ $agendamentos->retirada }}ªaula">
                         </div>
                         <div>
                             <label for="classEndScheduling" class="form-label">Até</label>
-                            <input type="text" class="form-control" id="ambiente" aria-describedby="numberHelp"
+                            <input type="text" class="form-control"  aria-describedby="numberHelp"
                             readonly value="{{ $agendamentos->devolucao }}ªaula">
                         </div>
                     </div>

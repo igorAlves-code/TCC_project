@@ -27,16 +27,104 @@ class agendamentosController extends Controller
         }
     }
 
+
+
+//Verificações
+public function verifyRecurso($request){
+
+    $recursoVerify = $request->get('recurso');
+    $dateVerify = $request->get('start');
+    $retiradaVerify = $request->get('retirada');
+    $devolucaoVerify = $request->get('devolucao');
+    $agendamentosVerify = agendamento::all();
+
+    foreach($agendamentosVerify as $agendamento){
+        if($agendamento->start == $dateVerify){
+            if($agendamento->retirada == $retiradaVerify){
+                if($agendamento->recurso == null){
+                    return null;
+                }elseif($agendamento->recurso == $recursoVerify){
+                    return true;
+                }
+                }elseif($agendamento->devolucao == $devolucaoVerify){
+                    if($agendamento->recurso == null){
+                        return null;
+                    }elseif($agendamento->recurso == $recursoVerify){
+                        return true;
+                    }
+                };
+                
+            };
+        };
+    }
+
+
+    public function verifyAmbiente($request){
+
+        $ambienteVerify = $request->get('ambiente');
+        $dateVerify = $request->get('start');
+        $retiradaVerify = $request->get('retirada');
+        $devolucaoVerify = $request->get('devolucao');
+        $agendamentosVerify = agendamento::all();
+    
+        foreach($agendamentosVerify as $agendamento){
+            if($agendamento->start == $dateVerify){
+                if($agendamento->retirada == $retiradaVerify){
+                    if($agendamento->ambiente == null){
+                        return null;
+                    }elseif($agendamento->ambiente == $ambienteVerify){
+                        return true;
+                    }
+                    }elseif($agendamento->devolucao == $devolucaoVerify){
+                        if($agendamento->ambiente == null){
+                            return null;
+                        }elseif($agendamento->ambiente == $ambienteVerify){
+                            return true;
+                        }
+                    };
+                };
+            };
+        }
+
+
     public function update(agendamentosRequest $request, $id)
     {
         request()->validate(agendamento::$rules);
         $agendamentos = agendamento::find($id);
         $data = $request->all();
+        $ambienteVerify = $request->get('ambiente');
+        $recursoVerify = $request->get('recurso');
+        $retiradaVerify = $request->get('retirada');
+        $entregaVerify = $request->get('entrega');
+        $verifyRecurso =  $this->verifyRecurso($request);
+        $verifyAmbiente =  $this->verifyAmbiente($request);
 
-        $agendamentos->fill($data)->update();
+        //verifica se tem entrega e retirada
+        if($retiradaVerify === null && $entregaVerify === null){
+            return back()
+            ->withErrors('Selecione uma aula de retirada e de entrega!');
+        };
 
-        if ($agendamentos) {
-            return back()->with(['success' => 'Agendamento editado com sucesso!']);
+        //verifica se tem um recurso ou ambiente
+        if($ambienteVerify === null && $recursoVerify === null){
+            return back()
+            ->withErrors('Selecione um recurso ou ambiente!');
+        }
+
+          
+        if($verifyRecurso == true ){
+
+            return back()
+            ->withErrors('Já há um agendamento com esse Recurso nesse horário!');
+
+        }elseif($verifyAmbiente == true ){
+
+            return back()
+            ->withErrors('Já há um agendamento com esse Ambiente nesse horário!');
+
+        }elseif($verifyRecurso == null && $verifyAmbiente === null){
+            $agendamentos->fill($data)->update();
+             return back()->with(['success' => 'Agendamento editado com sucesso!']);
         }
     }
 

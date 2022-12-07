@@ -11,7 +11,10 @@
               <table class="table">
                 <thead>
                   <tr>
+                  @can('admin')
                     <th scope="col">Nome</th>
+                  @endcan
+
                     @isset($agendamentos->ambiente)
                     <th scope="col">Ambiente</th>
                     @endisset
@@ -25,7 +28,9 @@
                 </thead>
                 <tbody>
                   <tr>
+                  @can('admin')
                     <td><strong>{{$agendamentos->title}}</strong></td>
+                  @endcan
                     @isset($agendamentos->ambiente)
                     <td>{{$agendamentos->ambiente}}</td>
                     @endisset

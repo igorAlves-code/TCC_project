@@ -47,6 +47,11 @@
     background-color: rgb(0, 0, 0);
 }
 
+#selected {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+}
+
 .Container {
     margin-top: 2vh;
     display: flex;

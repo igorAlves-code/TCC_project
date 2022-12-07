@@ -49,7 +49,7 @@
                 </div> --}}
 
                 <div class="forgot-password">
-                    <a href="{{ route('forgot-password') }}">Esqueceu a senha?</a>
+                    <a href="{{ route('forgot-password') }}">Redefinir senha</a>
                 </div>
 
             </div>
@@ -89,7 +89,7 @@
         @endif
 
 
-        <footer>&copy; Todos os direitos reservados</footer>
+        <footer>&copy; ASR - Agendamento de Salas e Recursos</footer>
         <script src="/js/scriptLogin.js"></script>
 </body>
 

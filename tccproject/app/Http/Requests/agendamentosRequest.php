@@ -26,7 +26,7 @@ class agendamentosRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'start' =>'after:today | before:21days',
+            'start' =>'after:yesterday | before:21days',
             'retirada' =>'lte:devolucao',
             'devolucao' =>'gte:retirada',
         ];
@@ -47,5 +47,5 @@ class agendamentosRequest extends FormRequest
             'retirada.lte' => 'A aula de retirada deve ser anterior a de devolução.',
             'devolucao.gte' => 'A aula de devolução deve ser posterior a de retirada.',
         ];
-    }                
+    }
 }

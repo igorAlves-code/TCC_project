@@ -99,7 +99,7 @@
     @yield('content')
 
     <footer>
-        &copy; Todos os direitos reservados
+        &copy; ASR - Agendamento de Salas e Recursos
     </footer>
 
     @yield('js')

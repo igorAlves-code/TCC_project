@@ -46,6 +46,7 @@
 @endsection
 
 @include('layouts.modais.agendamentos.create')
+@include('layouts.modais.agendamentos.view')
 
 @section('js')
     <script src="/js/scriptAgendar.js" defer></script>

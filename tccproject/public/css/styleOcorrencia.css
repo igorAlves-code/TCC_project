@@ -52,7 +52,7 @@ main {
     margin: 0;
     padding: 5px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    background-color: rgba(240, 248, 255, 0.486);
+    background-color: rgb(248, 248, 248);
     margin-bottom: 5px;
 }
 
@@ -75,7 +75,7 @@ main {
     padding: 5px;
     resize: none;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    background-color: rgba(240, 248, 255, 0.486);
+    background-color: rgb(248, 248, 248);
 }
 
 .form textarea:focus {
@@ -145,7 +145,6 @@ main {
         margin: 0;
         padding: 5px;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-        background-color: rgb(255, 240, 240);
         margin-bottom: 5px;
     }
 
@@ -160,7 +159,6 @@ main {
         padding: 5px;
         resize: none;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-        background-color: rgb(255, 240, 240);
     }
 
     #Env {

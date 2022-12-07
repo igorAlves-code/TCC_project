@@ -24,7 +24,7 @@
                         <label for="equipmentScheduling" class="form-label">Recurso/Dispositivo</label>
                         <select class="form-select form-control" name="recurso" id="equipmentScheduling"
                             aria-label="Default select example">
-                            <option selected="true" disabled="disabled">Selecione o recurso</option>
+                            <option selected="true" value="" >Selecione o Recurso</option>
                             @foreach ($equipments as $equipment)
                                 <option value="{{ $equipment->nomeEquipamento }}">{{ $equipment->nomeEquipamento }}
                                 </option>
@@ -35,7 +35,7 @@
                         <label for="enviromentScheduling" class="form-label">Ambiente</label>
                         <select class="form-select form-control" name="ambiente" id="enviromentScheduling"
                             aria-label="Default select example">
-                            <option selected="true" disabled="disabled">Selecione o Ambiente</option>
+                            <option selected="true" value="" >Selecione o Ambiente</option>
                             @foreach ($enviroments as $enviroment)
                                 <option value="{{ $enviroment->nomeAmbiente }}">{{ $enviroment->nomeAmbiente }}</option>
                             @endforeach
@@ -48,19 +48,19 @@
                             <select name="retirada" id="classStartScheduling" class="form-control" required>
                                 <option selected="true" disabled="disabled">Selecione uma aula</option>
                                 <optgroup label="Manhã/Tarde">
-                                    <option value="1">1ªaula</option>
-                                    <option value="2">2ªaula</option>
-                                    <option value="3">3ªaula</option>
-                                    <option value="4">4ªaula</option>
-                                    <option value="5">5ªaula</option>
-                                    <option value="6">6ªaula</option>
-                                    <option value="7">7ªaula</option>
-                                    <option value="8">8ªaula</option>
-                                    <option value="9">9ªaula</option>
+                                    <option value="1">1ª aula</option>
+                                    <option value="2">2ª aula</option>
+                                    <option value="3">3ª aula</option>
+                                    <option value="4">4ª aula</option>
+                                    <option value="5">5ª aula</option>
+                                    <option value="6">6ª aula</option>
+                                    <option value="7">7ª aula</option>
+                                    <option value="8">8ª aula</option>
+                                    <option value="9">9ª aula</option>
                                 </optgroup>
                                 <optgroup label="Modular">
-                                    <option value="1">1ºbloco</option>
-                                    <option value="2">2ºbloco</option>
+                                    <option value="1">1º bloco</option>
+                                    <option value="2">2º bloco</option>
                                 </optgroup>
                             </select>
                         </div>
@@ -69,19 +69,19 @@
                             <select name="devolucao" id="classEndScheduling" class="form-control" required>
                                 <option selected="true" disabled="disabled">Selecione uma aula</option>
                                 <optgroup label="Manhã/Tarde">
-                                    <option value="1">1ªaula</option>
-                                    <option value="2">2ªaula</option>
-                                    <option value="3">3ªaula</option>
-                                    <option value="4">4ªaula</option>
-                                    <option value="5">5ªaula</option>
-                                    <option value="6">6ªaula</option>
-                                    <option value="7">7ªaula</option>
-                                    <option value="8">8ªaula</option>
-                                    <option value="9">9ªaula</option>
+                                    <option value="1">1ª aula</option>
+                                    <option value="2">2ª aula</option>
+                                    <option value="3">3ª aula</option>
+                                    <option value="4">4ª aula</option>
+                                    <option value="5">5ª aula</option>
+                                    <option value="6">6ª aula</option>
+                                    <option value="7">7ª aula</option>
+                                    <option value="8">8ª aula</option>
+                                    <option value="9">9ª aula</option>
                                 </optgroup>
                                 <optgroup label="Modular">
-                                    <option value="1">1ºbloco</option>
-                                    <option value="2">2ºbloco</option>
+                                    <option value="1">1º bloco</option>
+                                    <option value="2">2º bloco</option>
                                 </optgroup>
                             </select>
                         </div>

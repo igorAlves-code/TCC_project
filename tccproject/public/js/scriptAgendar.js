@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         events: "",
         locale: "pt-br",
         selectable: true,
-        weekends: false,
+        hiddenDays: [0],
         selectHelper: true,
         select: function (info) {
             $("#newScheduling").modal("toggle");
@@ -23,11 +23,49 @@ document.addEventListener("DOMContentLoaded", function () {
         validRange: function (currentDate) {
             var startDate = new Date(currentDate.getTime());
             var endDate = new Date(currentDate.valueOf());
-            endDate.setDate(endDate.getDate() + 21);
+            endDate.setDate(endDate.getDate() + 14);
             return {
                 start: startDate,
                 end: endDate,
             };
+        },
+        eventClick: function (info) {
+            $("#viewAgendamento").modal("toggle");
+            let data_americana = info.event.startStr;
+            let data_brasileira = data_americana.split("-").reverse().join("/");
+            let ifnullRecurso = document.querySelector(
+                "#viewAgendamento #ifNullRecurso"
+            );
+            let ifnullAmbiente = document.querySelector(
+                "#viewAgendamento #ifNullAmbiente"
+            );
+
+            $("#viewAgendamento #start").val(data_brasileira);
+            $("#viewAgendamento #Nome").val(info.event.title);
+            $("#viewAgendamento #Retirada").val(
+                info.event.extendedProps.retirada + "ªaula"
+            );
+            $("#viewAgendamento #Devolucao").val(
+                info.event.extendedProps.devolucao + "ªaula"
+            );
+
+            if (info.event.extendedProps.ambiente === null) {
+                ifnullAmbiente.style.display = "none";
+            } else {
+                ifnullAmbiente.style.display = "block";
+                $("#viewAgendamento #Ambiente").val(
+                    info.event.extendedProps.ambiente
+                );
+            }
+
+            if (info.event.extendedProps.recurso === null) {
+                ifnullRecurso.style.display = "none";
+            } else {
+                ifnullRecurso.style.display = "block";
+                $("#viewAgendamento #Recurso").val(
+                    info.event.extendedProps.recurso
+                );
+            }
         },
         events: "http://127.0.0.1:8000/agendar/show",
         eventColor: "#000",

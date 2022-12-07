@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Tempo de geração: 08-Nov-2022 às 06:24
--- Versão do servidor: 8.0.27
--- versão do PHP: 8.0.13
+-- Host: 127.0.0.1
+-- Tempo de geração: 07-Dez-2022 às 01:43
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,33 +27,29 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `agendamentos`
 --
 
-DROP TABLE IF EXISTS `agendamentos`;
-CREATE TABLE IF NOT EXISTS `agendamentos` (
-  `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  `userId` bigint UNSIGNED NOT NULL,
+CREATE TABLE `agendamentos` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `userId` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `recurso` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ambiente` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `start` date NOT NULL,
-  `retirada` int NOT NULL,
-  `devolucao` int NOT NULL,
+  `retirada` int(11) NOT NULL,
+  `devolucao` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `agendamentos_userid_foreign` (`userId`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `agendamentos`
 --
 
 INSERT INTO `agendamentos` (`id`, `userId`, `title`, `recurso`, `ambiente`, `start`, `retirada`, `devolucao`, `created_at`, `updated_at`) VALUES
-(1, 13, 'Gabriel Souza', 'Datashow Epson', 'Laboratório de Informática 3', '2022-11-10', 6, 7, '2022-11-08 11:51:34', '2022-11-08 11:51:34'),
-(2, 13, 'Gabriel Souza', 'Datashow Epson', 'Laboratório de Informática 3', '2022-11-15', 6, 7, '2022-11-08 11:51:34', '2022-11-08 11:51:34'),
-(3, 13, 'Gabriel Souza', 'Datashow Epson', 'Laboratório de Informática 1', '2022-11-14', 7, 9, '2022-11-08 09:18:10', '2022-11-08 09:18:10'),
-(4, 13, 'Gabriel Souza', 'Notebook Lenovo', 'Laboratório de Informática 2', '2022-11-24', 3, 3, '2022-11-08 09:18:21', '2022-11-08 09:18:21'),
-(5, 13, 'Gabriel Souza', 'Datashow Epson', 'Laboratório de Informática 1', '2022-11-25', 7, 7, '2022-11-08 09:18:28', '2022-11-08 09:18:28'),
-(6, 13, 'Gabriel Souza', 'Datashow Epson', 'Laboratório de Química 2', '2022-11-16', 6, 7, '2022-11-08 09:18:40', '2022-11-08 09:18:40');
+(1, 3, 'Gabriel Souza', 'Notbook Lenovo', 'Nivonei', '2022-12-19', 1, 3, '2022-12-07 03:30:51', '2022-12-07 03:30:51'),
+(2, 3, 'Gabriel Souza', 'Datashow Favin', NULL, '2022-12-09', 1, 2, '2022-12-07 03:31:15', '2022-12-07 03:31:15'),
+(3, 4, 'João  Victor', 'Notbook Lenovo', NULL, '2022-12-09', 1, 2, '2022-12-07 03:32:07', '2022-12-07 03:32:07'),
+(4, 5, 'Tiago Contador', 'Datashow Epson', NULL, '2022-12-09', 5, 6, '2022-12-07 03:33:08', '2022-12-07 03:33:08'),
+(5, 5, 'Tiago Contador', NULL, 'Auditório', '2022-12-14', 1, 4, '2022-12-07 03:33:26', '2022-12-07 03:33:26');
 
 -- --------------------------------------------------------
 
@@ -61,29 +57,24 @@ INSERT INTO `agendamentos` (`id`, `userId`, `title`, `recurso`, `ambiente`, `sta
 -- Estrutura da tabela `ambiente`
 --
 
-DROP TABLE IF EXISTS `ambiente`;
-CREATE TABLE IF NOT EXISTS `ambiente` (
-  `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ambiente` (
+  `id` int(10) UNSIGNED NOT NULL,
   `nomeAmbiente` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tipoAmbiente` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `quantidadeAmbiente` int NOT NULL,
+  `quantidadeAmbiente` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `ambiente_nomeambiente_unique` (`nomeAmbiente`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `ambiente`
 --
 
 INSERT INTO `ambiente` (`id`, `nomeAmbiente`, `tipoAmbiente`, `quantidadeAmbiente`, `created_at`, `updated_at`) VALUES
-(1, 'Laboratório de Informática 1', 'Laboratório de Informática', 1, '2022-11-03 18:22:37', '2022-11-03 18:22:37'),
-(2, 'Laboratório de Informática 2', 'Laboratório de Informática', 1, '2022-11-07 19:43:13', '2022-11-07 19:43:13'),
-(3, 'Laboratório de Informática 3', 'Laboratório de Informática', 1, '2022-11-07 19:43:19', '2022-11-07 19:43:19'),
-(4, 'Laboratório de Informática 4', 'Laboratório de Informática', 1, '2022-11-07 19:43:26', '2022-11-07 19:43:26'),
-(5, 'Laboratório de Química 1', 'Laboratório de Química', 1, '2022-11-07 19:43:41', '2022-11-07 19:43:41'),
-(6, 'Laboratório de Química 2', 'Laboratório de Química', 1, '2022-11-07 19:43:54', '2022-11-07 19:43:54');
+(1, 'Nivonei', 'Nivonei', 1, '2022-12-07 03:26:23', '2022-12-07 03:26:23'),
+(2, 'Auditório', 'Auditório', 1, '2022-12-07 03:26:39', '2022-12-07 03:26:39'),
+(3, 'Mini auditório', 'Auditório', 1, '2022-12-07 03:27:03', '2022-12-07 03:27:03'),
+(4, 'Lab. Informática', 'Laboratório', 1, '2022-12-07 03:27:36', '2022-12-07 03:27:36');
 
 -- --------------------------------------------------------
 
@@ -91,27 +82,23 @@ INSERT INTO `ambiente` (`id`, `nomeAmbiente`, `tipoAmbiente`, `quantidadeAmbient
 -- Estrutura da tabela `equipamento`
 --
 
-DROP TABLE IF EXISTS `equipamento`;
-CREATE TABLE IF NOT EXISTS `equipamento` (
-  `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `equipamento` (
+  `id` int(10) UNSIGNED NOT NULL,
   `nomeEquipamento` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tipoEquipamento` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `quantidadeEquipamento` int NOT NULL,
+  `quantidadeEquipamento` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `equipamento_nomeequipamento_unique` (`nomeEquipamento`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `equipamento`
 --
 
 INSERT INTO `equipamento` (`id`, `nomeEquipamento`, `tipoEquipamento`, `quantidadeEquipamento`, `created_at`, `updated_at`) VALUES
-(1, 'Notebook Positivo', 'Notebook', 5, '2022-11-03 18:22:45', '2022-11-07 19:44:28'),
-(2, 'Datashow Epson', 'Datashow', 3, '2022-11-07 19:44:07', '2022-11-07 19:45:56'),
-(3, 'Notebook Lenovo', 'Notebook', 10, '2022-11-07 19:44:21', '2022-11-07 19:44:21'),
-(4, 'Datashow Favin', 'Datashow', 2, '2022-11-07 19:45:48', '2022-11-07 19:45:48');
+(1, 'Datashow Epson', 'Datashow', 5, '2022-12-07 03:28:26', '2022-12-07 03:29:49'),
+(2, 'Datashow Favin', 'Datashow', 5, '2022-12-07 03:28:56', '2022-12-07 03:29:37'),
+(3, 'Notbook Lenovo', 'Notbook', 5, '2022-12-07 03:29:29', '2022-12-07 03:29:29');
 
 -- --------------------------------------------------------
 
@@ -119,17 +106,14 @@ INSERT INTO `equipamento` (`id`, `nomeEquipamento`, `tipoEquipamento`, `quantida
 -- Estrutura da tabela `failed_jobs`
 --
 
-DROP TABLE IF EXISTS `failed_jobs`;
-CREATE TABLE IF NOT EXISTS `failed_jobs` (
-  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
   `uuid` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -138,13 +122,11 @@ CREATE TABLE IF NOT EXISTS `failed_jobs` (
 -- Estrutura da tabela `migrations`
 --
 
-DROP TABLE IF EXISTS `migrations`;
-CREATE TABLE IF NOT EXISTS `migrations` (
-  `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `migrations`
@@ -165,20 +147,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- Estrutura da tabela `password_resets`
 --
 
-DROP TABLE IF EXISTS `password_resets`;
-CREATE TABLE IF NOT EXISTS `password_resets` (
+CREATE TABLE `password_resets` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  KEY `password_resets_email_index` (`email`)
+  `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Extraindo dados da tabela `password_resets`
---
-
-INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
-('gabrielsouzat2005@outlook.com', '$2y$10$uh6CrnJbWJD1Kbo0NTnFvuXGnuHXPwE9g8J89yhV0pQ7rckYhMAt6', '2022-11-08 09:05:28');
 
 -- --------------------------------------------------------
 
@@ -186,20 +159,16 @@ INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 -- Estrutura da tabela `personal_access_tokens`
 --
 
-DROP TABLE IF EXISTS `personal_access_tokens`;
-CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
-  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `personal_access_tokens` (
+  `id` bigint(20) UNSIGNED NOT NULL,
   `tokenable_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tokenable_id` bigint UNSIGNED NOT NULL,
+  `tokenable_id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
-  KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`)
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -208,39 +177,136 @@ CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
 -- Estrutura da tabela `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
   `nome` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sobrenome` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `disciplina` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `admin` tinyint(1) NOT NULL DEFAULT '0',
-  `acesso` tinyint(1) NOT NULL DEFAULT '0',
+  `admin` tinyint(1) NOT NULL DEFAULT 0,
+  `acesso` tinyint(1) NOT NULL DEFAULT 0,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `users`
 --
 
 INSERT INTO `users` (`id`, `nome`, `sobrenome`, `email`, `email_verified_at`, `password`, `disciplina`, `admin`, `acesso`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Pattie', 'Silva', 'myrtice15@example.net', '2022-11-03 18:00:43', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'filo', 1, 0, 'KAEGonbmKG', '2022-11-03 18:00:43', '2022-11-03 18:00:43'),
-(3, 'Stefan', 'Silva', 'bwalter@example.net', '2022-11-03 18:00:43', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'filo', 0, 0, 'ISCkP4hRQC', '2022-11-03 18:00:43', '2022-11-03 18:00:43'),
-(5, 'Reyes', 'Silva', 'sanford12@example.net', '2022-11-03 18:00:43', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'filo', 1, 0, 'KY7WltIBVnQc9CigM8wB12YsG2vDfNDF1qgCzMVIfXnZzJ34hglW1ooOBtOy', '2022-11-03 18:00:43', '2022-11-03 18:00:43'),
-(6, 'Miller', 'Silva', 'pcartwright@example.com', '2022-11-03 18:01:37', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'geo', 0, 1, '1PUC0OfsYl', '2022-11-03 18:01:37', '2022-11-03 18:01:37'),
-(7, 'Bethel', 'Silva', 'titus.auer@example.net', '2022-11-03 18:01:37', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'geo', 1, 1, 'r7Xu37o2yX', '2022-11-03 18:01:37', '2022-11-03 18:01:37'),
-(8, 'Karl', 'Silva', 'virginie.hermiston@example.com', '2022-11-03 18:01:37', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'geo', 1, 0, 'aW37kIIUGQ', '2022-11-03 18:01:37', '2022-11-03 18:01:37'),
-(9, 'Rosemarie', 'Silva', 'blick.jaylin@example.com', '2022-11-03 18:01:37', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'geo', 0, 1, 'LZpOwWXpFn', '2022-11-03 18:01:37', '2022-11-03 18:01:37'),
-(10, 'Bartholome', 'Silva', 'gkonopelski@example.com', '2022-11-03 18:01:37', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'geo', 0, 0, 'RUXAnoyz9h', '2022-11-03 18:01:37', '2022-11-03 18:01:37'),
-(13, 'Gabriel', 'Souza', 'gabrielsouzat2005@outlook.com', '2022-11-07 17:19:35', '$2y$10$mXu51XCGunWDardTKNbB1.cWphPT0nLz55LKMnEpyoTdmz..3UDgm', NULL, 1, 0, 'N2NrjUFkrrsz0kHOfCMJBbqqxZLPaocrUYv7IePSx5gG3iGt4nZxMurCm4wI', '2022-11-03 18:51:46', '2022-11-07 19:42:01'),
-(16, 'Gabriel', 'Silva', 'gabrielsouzat2005@gmail.com', '2022-11-07 17:24:08', '$2y$10$KaDcbOn8F6X/prNQ1rMlqOyO6w.OA5A0tWUBXcq35zAZ7FZghe5t.', 'Matemática', 0, 0, '0dDBhYtC2d6EWMLcayi3fd5UI7pEFdG8GeNaBXbglQMMZwBJw07cptrCDfW4', '2022-11-03 19:00:36', '2022-11-07 17:24:08');
+(1, 'Matheus ', 'Borges', 'ward.orval@example.com', '2022-12-07 03:13:38', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Coordenador', 1, 0, 'kGxGDRkHQJ3f5SwH17Yun4I4EfUTUZYMhU779ZEhLi8g6kLznzwLMg90wmq5', '2022-12-07 03:13:38', '2022-12-07 03:13:38'),
+(2, 'Geovana ', 'Beatriz', 'giovanni64@example.com', '2022-12-07 03:13:38', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Coordenador', 1, 0, 'mSKOilbvXv', '2022-12-07 03:13:38', '2022-12-07 03:13:38'),
+(3, 'Gabriel', 'Souza', 'weimann.sid@example.com', '2022-12-07 03:13:38', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Matemática', 0, 0, 'jM5xCqncrz8ZEAwpwIKqiQTVC9n0sFUvZSYt3qIdZBfBOZC50VUEMPJiVwtk', '2022-12-07 03:13:38', '2022-12-07 03:13:38'),
+(4, 'João ', 'Victor', 'yparker@example.com', '2022-12-07 03:13:38', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Geografia', 0, 0, 'Nstu3TuBktoSIP6XJSi3TjAkJ6cEvxSJHVxNA9ubTlVPtw5P0VvPQqcDDf8x', '2022-12-07 03:13:38', '2022-12-07 03:13:38'),
+(5, 'Tiago', 'Contador', 'heathcote.lacy@example.net', '2022-12-07 03:13:38', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Portugês', 0, 1, 'X7zBMUx89ihpWljPsbbynYv11fVUGQ2itf3QZf53LMWRbABuvKdqYanRO0N2', '2022-12-07 03:13:38', '2022-12-07 03:13:38');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `agendamentos`
+--
+ALTER TABLE `agendamentos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `agendamentos_userid_foreign` (`userId`);
+
+--
+-- Índices para tabela `ambiente`
+--
+ALTER TABLE `ambiente`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `ambiente_nomeambiente_unique` (`nomeAmbiente`);
+
+--
+-- Índices para tabela `equipamento`
+--
+ALTER TABLE `equipamento`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `equipamento_nomeequipamento_unique` (`nomeEquipamento`);
+
+--
+-- Índices para tabela `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Índices para tabela `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Índices para tabela `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+
+--
+-- Índices para tabela `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `agendamentos`
+--
+ALTER TABLE `agendamentos`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de tabela `ambiente`
+--
+ALTER TABLE `ambiente`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `equipamento`
+--
+ALTER TABLE `equipamento`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de tabela `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restrições para despejos de tabelas
