@@ -163,7 +163,7 @@ main {
     width: 100%;
 }
 
-.btn-edit {
+.btn-dark {
     margin-left: 1.3em;
 }
 
@@ -228,7 +228,7 @@ main {
 
 #btnCad:not(:disabled):not(.disabled).active,
 #btnCad:not(:disabled):not(.disabled):active,
-.show>#btnCad.dropdown-toggle {
+.show > #btnCad.dropdown-toggle {
     color: #fff;
     background-color: #0062cc;
     border-color: #005cbf;
@@ -236,7 +236,7 @@ main {
 
 #btnCad:not(:disabled):not(.disabled).active:focus,
 #btnCad:not(:disabled):not(.disabled):active:focus,
-.show>#btnCad.dropdown-toggle:focus {
+.show > #btnCad.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 }
 
@@ -267,7 +267,7 @@ main {
 
 #btnFiltro:not(:disabled):not(.disabled).active,
 #btnFiltro:not(:disabled):not(.disabled):active,
-.show>#btnFiltro.dropdown-toggle {
+.show > #btnFiltro.dropdown-toggle {
     color: #fff;
     background-color: #117a8b;
     border-color: #10707f;
@@ -275,7 +275,7 @@ main {
 
 #btnFiltro:not(:disabled):not(.disabled).active:focus,
 #btnFiltro:not(:disabled):not(.disabled):active:focus,
-.show>#btnFiltro.dropdown-toggle:focus {
+.show > #btnFiltro.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
 }
 
@@ -306,7 +306,7 @@ main {
 
 #btnDanger:not(:disabled):not(.disabled).active,
 #btnDanger:not(:disabled):not(.disabled):active,
-.show>#btnDanger.dropdown-toggle {
+.show > #btnDanger.dropdown-toggle {
     color: #fff;
     background-color: #bd2130;
     border-color: #b21f2d;
@@ -314,7 +314,7 @@ main {
 
 #btnDanger:not(:disabled):not(.disabled).active:focus,
 #btnDanger:not(:disabled):not(.disabled):active:focus,
-.show>#btnDanger.dropdown-toggle:focus {
+.show > #btnDanger.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
 }
 
@@ -361,7 +361,6 @@ h5 {
 
     #menu.change {
         width: 5vw;
-
     }
 
     .changeBg {
@@ -373,7 +372,7 @@ h5 {
     .navigationMobile {
         margin: 0 10px;
     }
-    
+
     .navigationMobile li {
         padding: 10px;
     }
@@ -381,7 +380,7 @@ h5 {
     .navigationMobile li a {
         font-size: 0.8em;
     }
-    
+
     .navigationMobile button {
         font-size: 0.8em;
     }
@@ -415,7 +414,6 @@ h5 {
 
     #menu.change {
         width: 5vw;
-
     }
 
     .changeBg {
@@ -427,7 +425,7 @@ h5 {
     .navigationMobile {
         margin: 0 10px;
     }
-    
+
     .navigationMobile li {
         padding: 10px;
     }
@@ -435,7 +433,7 @@ h5 {
     .navigationMobile li a {
         font-size: 0.8em;
     }
-    
+
     .navigationMobile button {
         font-size: 0.8em;
     }
@@ -469,7 +467,6 @@ h5 {
 
     #menu.change {
         width: 5vw;
-
     }
 
     .changeBg {
@@ -481,7 +478,7 @@ h5 {
     .navigationMobile {
         margin: 0 10px;
     }
-    
+
     .navigationMobile li {
         padding: 10px;
     }
@@ -489,7 +486,7 @@ h5 {
     .navigationMobile li a {
         font-size: 0.8em;
     }
-    
+
     .navigationMobile button {
         font-size: 0.8em;
     }
@@ -559,7 +556,7 @@ h5 {
         background-color: #242424;
     }
 
-    #check:checked~#menuAdmin {
+    #check:checked ~ #menuAdmin {
         animation: hidden 1s ease forwards;
     }
 

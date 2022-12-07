@@ -45,7 +45,7 @@
                             <td>{{ $enviroment->tipoAmbiente }}</td>
                             <td>{{ $enviroment->quantidadeAmbiente }}</td>
                             <td>
-                                <a href="#editEnviroment{{ $enviroment->id }}" class="btn btn-warning btn-modal btn-edit"
+                                <a href="#editEnviroment{{ $enviroment->id }}" class="btn btn-warning btn-modal btn-dark"
                                     data-toggle="modal"><i class="bi bi-pencil-square"></i> Editar</a>
                             </td>
                             <td>

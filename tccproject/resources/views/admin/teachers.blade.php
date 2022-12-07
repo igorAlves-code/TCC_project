@@ -57,7 +57,7 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="#editTeacher{{ $teacher->id }}" class="btn btn-warning btn-modal btn-edit"
+                                <a href="#editTeacher{{ $teacher->id }}" class="btn btn-warning btn-modal btn-dark"
                                     data-toggle="modal"><i class="bi bi-pencil-square"></i> Editar</a>
                             </td>
                             <td>
